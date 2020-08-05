@@ -1,0 +1,6 @@
+framework module Pods_RighteousRevenue_RighteousRevenueUITests {
+  umbrella header "Pods-RighteousRevenue-RighteousRevenueUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

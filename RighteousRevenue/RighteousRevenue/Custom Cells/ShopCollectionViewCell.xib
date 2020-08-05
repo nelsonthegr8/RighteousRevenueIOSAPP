@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCard" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="ShopCollectionViewCell" customModule="RighteousRevenue" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="251"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="251"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmB-Xr-HAT">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="251"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="R8U-Kt-mva">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="168"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Create a New Invetion! Save Monwy! Live Better! Walmart" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-q2-kQJ">
+                                <rect key="frame" x="0.0" y="176" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Doi-q2-kQJ" secondAttribute="trailing" id="4EQ-8q-7Rp"/>
+                            <constraint firstItem="Doi-q2-kQJ" firstAttribute="leading" secondItem="HmB-Xr-HAT" secondAttribute="leading" id="7Os-rS-Bhx"/>
+                            <constraint firstItem="R8U-Kt-mva" firstAttribute="leading" secondItem="HmB-Xr-HAT" secondAttribute="leading" id="HKM-YE-BSG"/>
+                            <constraint firstItem="Doi-q2-kQJ" firstAttribute="top" secondItem="R8U-Kt-mva" secondAttribute="bottom" constant="8" id="NtX-29-s0w"/>
+                            <constraint firstAttribute="bottom" secondItem="Doi-q2-kQJ" secondAttribute="bottom" constant="25" id="TDi-sT-vht"/>
+                            <constraint firstAttribute="trailing" secondItem="R8U-Kt-mva" secondAttribute="trailing" id="azn-Sa-fRZ"/>
+                            <constraint firstItem="R8U-Kt-mva" firstAttribute="top" secondItem="HmB-Xr-HAT" secondAttribute="top" id="cIK-uY-aVV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="HmB-Xr-HAT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DXJ-wO-12I"/>
+                <constraint firstAttribute="bottom" secondItem="HmB-Xr-HAT" secondAttribute="bottom" id="Lvh-3p-LLz"/>
+                <constraint firstItem="HmB-Xr-HAT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tyh-tS-rha"/>
+                <constraint firstAttribute="trailing" secondItem="HmB-Xr-HAT" secondAttribute="trailing" id="WMc-z6-5fg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="300" height="251"/>
+            <connections>
+                <outlet property="cardImg" destination="R8U-Kt-mva" id="KBn-cq-l8m"/>
+                <outlet property="cardInfo" destination="Doi-q2-kQJ" id="Z73-NH-gn9"/>
+                <outlet property="cardView" destination="HmB-Xr-HAT" id="wdK-Ph-uyK"/>
+            </connections>
+            <point key="canvasLocation" x="266.66666666666669" y="99.441964285714278"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cat" width="300" height="168"/>
+    </resources>
+</document>
