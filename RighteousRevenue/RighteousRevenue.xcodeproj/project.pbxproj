@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */; };
 		12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */; };
+		12711ADC24DB7EE1001281AB /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADB24DB7EE1001281AB /* AddEditViewController.swift */; };
 		12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1724D60AF900C01778 /* AppDelegate.swift */; };
 		12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1924D60AF900C01778 /* SceneDelegate.swift */; };
 		12C03F1C24D60AF900C01778 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1B24D60AF900C01778 /* HomeViewController.swift */; };
@@ -60,6 +61,7 @@
 		0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RighteousRevenueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		12711ADB24DB7EE1001281AB /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		12A8FD73329CEEA8C0CB89B0 /* Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue-RighteousRevenueUITests/Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		12C03F1424D60AF900C01778 /* RighteousRevenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RighteousRevenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C03F1724D60AF900C01778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				12C1981424D767A8002A7151 /* LessonsTableViewController.swift */,
 				12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */,
 				12C1982D24DA1688002A7151 /* ShopViewController.swift */,
+				12711ADB24DB7EE1001281AB /* AddEditViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */,
 				12C1982E24DA1688002A7151 /* ShopViewController.swift in Sources */,
 				12C1981D24D77E5E002A7151 /* LessonCards.swift in Sources */,
+				12711ADC24DB7EE1001281AB /* AddEditViewController.swift in Sources */,
 				12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */,
 				12C1982424D892EC002A7151 /* TextFieldDoneHelper.swift in Sources */,
 				12C1981824D767C1002A7151 /* LessonsTableViewCell.swift in Sources */,
