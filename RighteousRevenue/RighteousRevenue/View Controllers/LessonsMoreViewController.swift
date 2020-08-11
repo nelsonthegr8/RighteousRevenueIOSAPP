@@ -33,9 +33,4 @@ class LessonsMoreViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func setupHero(info: LessonCards){
-              finalImg = info.img
-              finalTitle = info.title
-              finalDesc = info.description
-    }
 }

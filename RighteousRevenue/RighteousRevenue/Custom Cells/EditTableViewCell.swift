@@ -1,16 +1,17 @@
 //
-//  BillsSectionTableViewCell.swift
+//  EditTableViewCell.swift
 //  RighteousRevenue
 //
-//  Created by Nelson Brumaire on 8/6/20.
+//  Created by Nelson Brumaire on 8/11/20.
 //  Copyright © 2020 Nelson Brumaire. All rights reserved.
 //
 
 import UIKit
 
-class BillsSectionTableViewCell: UITableViewCell {
+class EditTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var billNameTxtbx: UILabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +23,5 @@ class BillsSectionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

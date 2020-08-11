@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleTxt: UILabel!
     @IBOutlet weak var cardView: UIView!
@@ -16,28 +16,37 @@ class AddEditViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var billNameTxtbx: UITextField!
     @IBOutlet weak var billAmountTxtbx: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sectionTitle: UILabel!
+    public var Section: Int = 0
+    public var SectionTitle: String = ""
+    var sectionInfo: [MoreInfoForPieSection] = []
+    let db = dataAccess()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setCardViews()
+        grabSectionInfo()
         setupTableView()
     }
-    
-    @IBAction func cancelPressed(_ sender: Any) {
+  
+    @IBAction func xButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
+        db.addUserInformation(input: UserSectionInput(section: Section, billName: "Tester", billAmount: 200.43))
+        sectionInfo.append(MoreInfoForPieSection(billName: "Tester", billAmount: 200.43))
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          30
+        sectionInfo.count
       }
       
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billsCell", for: indexPath) as! BillsSectionTableViewCell
-        
+        cell.billNameTxtbx.text = sectionInfo[indexPath.row].billName
         return cell
       }
     
@@ -58,6 +67,11 @@ class AddEditViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(nib, forCellReuseIdentifier: "billsCell")
         tableView.delegate = self
         tableView.dataSource = self
+        sectionTitle.text = SectionTitle
+    }
+    
+    func grabSectionInfo(){
+        sectionInfo = db.grabMoreInfoForSection(Section: Section)
     }
     
 }
