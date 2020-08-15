@@ -39,16 +39,16 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
-  - SwiftyPlistManager (1.0.2)
   - TextFieldEffects (1.6.0)
+  - YouTubePlayer (0.7.2)
 
 DEPENDENCIES:
   - BEMCheckBox
   - Charts
   - Google-Mobile-Ads-SDK
   - SQLite.swift
-  - SwiftyPlistManager
   - TextFieldEffects
+  - YouTubePlayer
 
 SPEC REPOS:
   trunk:
@@ -61,8 +61,8 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SQLite.swift
-    - SwiftyPlistManager
     - TextFieldEffects
+    - YouTubePlayer
 
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
@@ -74,9 +74,9 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
-  SwiftyPlistManager: 5895924cccb7fe28deccbe14890e8aed78ae78ae
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+  YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 417e7899777eb7efdb526f3b986e6c81ffefb727
+PODFILE CHECKSUM: ac8b60d9ce716fb8c74a76c4b9aa22559e52cd64
 
 COCOAPODS: 1.8.4

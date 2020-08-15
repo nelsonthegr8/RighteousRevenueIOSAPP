@@ -9,7 +9,7 @@ pod 'SQLite.swift'
 pod 'Google-Mobile-Ads-SDK'
 pod 'TextFieldEffects'
 pod 'BEMCheckBox'
-pod 'SwiftyPlistManager'
+pod 'YouTubePlayer'
 
   # Pods for RighteousRevenue
 

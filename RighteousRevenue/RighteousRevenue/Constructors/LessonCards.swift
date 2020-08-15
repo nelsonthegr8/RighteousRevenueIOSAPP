@@ -11,9 +11,10 @@ import UIKit
 
 struct LessonCards{
     
-    var id: String
     var img: String
     var title: String
-    var description: String
+    var subheading: String
+    var lesson: String
+    var videolink: String
 
 }

@@ -9,11 +9,13 @@
 import UIKit
 import Charts
 import GoogleMobileAds
-import SwiftyPlistManager
 
 
 class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresentationControllerDelegate, GADBannerViewDelegate{
     let db = dataAccess()
+    
+    //MARK: - Outlets
+    
     @IBOutlet weak var scriptureOfTheDay: UIImageView!
     @IBOutlet weak var billsPie: PieChartView!
     @IBOutlet weak var addSection: GADBannerView!
@@ -37,6 +39,17 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
     private var selectedSectionName = "test"
     private var selectedSectionNumber = 1
     private var monthlyExpense =  0.0
+    
+    //MARK: - View Controller Life Cycle
+    override func viewDidAppear(_ animated: Bool) {
+        if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
+            let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            if let tutorialViewController = storyboard.instantiateViewController(identifier: "TutorialViewController") as? TutorialViewController{
+                tutorialViewController.modalPresentationStyle = .fullScreen
+                present(tutorialViewController, animated: true, completion: nil)
+            }
+        }
+    }
     
      override func viewDidLoad() {
         super.viewDidLoad()

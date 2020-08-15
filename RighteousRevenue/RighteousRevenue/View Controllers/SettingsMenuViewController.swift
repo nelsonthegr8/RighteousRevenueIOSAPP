@@ -13,10 +13,8 @@ class SettingsMenuController: UIViewController, UITableViewDataSource, UITableVi
     
     private enum menuItems: String, CaseIterable{
         case help = "Help"
-        case removeAds = "Remove Ads"
-        case shop = "Shop"
-        case about = "About"
         case contact = "Contact Us"
+        case removeAds = "Remove Ads"
     }
     
     
@@ -51,14 +49,21 @@ class SettingsMenuController: UIViewController, UITableViewDataSource, UITableVi
         switch selectedItem{
         case .help:
             performSegue(withIdentifier: "Help", sender: self)
-        case .removeAds:
-            performSegue(withIdentifier: "RemoveAds", sender: self)
-        case .shop:
-            performSegue(withIdentifier: "Shop", sender: self)
-        case .about:
-            performSegue(withIdentifier: "About", sender: self)
+            tableView.deselectRow(at: indexPath, animated: false)
         case .contact:
             performSegue(withIdentifier: "Contact", sender: self)
+            tableView.deselectRow(at: indexPath, animated: false)
+        case .removeAds:
+            performSegue(withIdentifier: "RemoveAds", sender: self)
+            tableView.deselectRow(at: indexPath, animated: false)
+        
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "Help"){
+            let viewController = segue.destination as! TutorialViewController
+            viewController.buttonsVisible = true
         }
     }
     

@@ -31,7 +31,7 @@ class LessonsTableViewCell: UITableViewCell {
     {
         CardImg.image = UIImage(named: cardInfo.img)
         CardTitle.text = cardInfo.title
-        CardSubtitle.text = cardInfo.description
+        CardSubtitle.text = cardInfo.subheading
         
         CardView.layer.shadowColor = UIColor.gray.cgColor
         CardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)

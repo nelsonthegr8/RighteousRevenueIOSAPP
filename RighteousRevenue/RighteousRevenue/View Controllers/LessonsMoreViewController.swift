@@ -8,15 +8,16 @@
 
 import UIKit
 import GoogleMobileAds
+import YouTubePlayer
 
-class LessonsMoreViewController: UIViewController,GADBannerViewDelegate {
+class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTubePlayerDelegate {
 
-    @IBOutlet weak var MoreInfoImg: UIImageView!
+    @IBOutlet weak var YoutubeVideo: YouTubePlayerView!
     @IBOutlet weak var MoreInfoTitle: UILabel!
     @IBOutlet weak var MoreInfoDescription: UITextView!
     @IBOutlet weak var addSection: GADBannerView!
     
-    var finalImg:String = ""
+    var finalYouTubeURL:String = ""
     var finalTitle: String = ""
     var finalDesc: String = ""
     
@@ -25,7 +26,9 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate {
 
         // Do any additional setup after loading the view.
         addGoogleAdsToView(addSection: addSection, view: self)
-        MoreInfoImg.image = UIImage(named: finalImg)
+        let myVideoURL = URL(string: finalYouTubeURL)!
+        YoutubeVideo.delegate = self
+        YoutubeVideo.loadVideoURL(myVideoURL)
         MoreInfoTitle.text = finalTitle
         MoreInfoDescription.text = finalDesc
         addSection.delegate = self

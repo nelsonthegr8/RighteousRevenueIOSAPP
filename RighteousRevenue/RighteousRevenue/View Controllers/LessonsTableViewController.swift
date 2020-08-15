@@ -14,6 +14,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addSection: GADBannerView!
     var cardsData:[LessonCards] = []
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonsTableCell", for: indexPath) as! LessonsTableViewCell
-        cardsData.append(LessonCards(id: "0", img: "cat", title: "Cat Gang", description: "Gang gang gang"))
+        cardsData.append(LessonCards( img: "cat", title: "Cat Gang", subheading: "dont get caught up in the", lesson: "Gang gang gang", videolink: "https://www.youtube.com/watch?v=2mgUPt2KI08&t=1s"))
         // Configure the cell...
         cell.configure(cardInfo: cardsData[indexPath.row])
 
@@ -46,6 +47,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "MoreInfo", sender: self)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     private func initializeTableVIew()
@@ -58,9 +60,9 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! LessonsMoreViewController
-        vc.finalImg = cardsData[0].img
-        vc.finalTitle = cardsData[0].title
-        vc.finalDesc = cardsData[0].description
+        vc.finalYouTubeURL = cardsData[index].videolink
+        vc.finalTitle = cardsData[index].title
+        vc.finalDesc = cardsData[index].lesson
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
