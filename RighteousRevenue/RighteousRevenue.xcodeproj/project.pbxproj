@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1200561A24E6EF75004A6D86 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1200561924E6EF75004A6D86 /* Help.storyboard */; };
-		1200561F24E7246A004A6D86 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1200561E24E7246A004A6D86 /* UserInformation.plist */; };
 		1200562124E77A3D004A6D86 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1200562024E77A3D004A6D86 /* StoreKit.framework */; };
+		1200562324E83633004A6D86 /* RemoveAds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1200562224E83633004A6D86 /* RemoveAds.storyboard */; };
+		1200562524E8375D004A6D86 /* RemoveAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200562424E8375D004A6D86 /* RemoveAdsViewController.swift */; };
 		12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */; };
 		12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */; };
 		12711ADC24DB7EE1001281AB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADB24DB7EE1001281AB /* AddViewController.swift */; };
@@ -74,8 +75,9 @@
 		086BE979FB21A58EBA41C8AA /* Pods-RighteousRevenue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue.release.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue/Pods-RighteousRevenue.release.xcconfig"; sourceTree = "<group>"; };
 		0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RighteousRevenueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1200561924E6EF75004A6D86 /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
-		1200561E24E7246A004A6D86 /* UserInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		1200562024E77A3D004A6D86 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1200562224E83633004A6D86 /* RemoveAds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RemoveAds.storyboard; sourceTree = "<group>"; };
+		1200562424E8375D004A6D86 /* RemoveAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewController.swift; sourceTree = "<group>"; };
 		12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		12711ADB24DB7EE1001281AB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +214,6 @@
 			children = (
 				1200561D24E723F6004A6D86 /* Structures */,
 				12C1982224D892C5002A7151 /* Static Gobal Items */,
-				12C1980724D6495F002A7151 /* Data Source */,
 				12C03F5524D60C9700C01778 /* Custom Cells */,
 				12C03F4A24D60B5700C01778 /* Delegates */,
 				12C03F4924D60B2200C01778 /* Story Boards */,
@@ -265,6 +266,7 @@
 				12711AEB24E2F7BA001281AB /* HomePopoverViewController.swift */,
 				12711AEF24E319B4001281AB /* EditViewController.swift */,
 				12711AF724E33430001281AB /* UserPresetViewMoreViewController.swift */,
+				1200562424E8375D004A6D86 /* RemoveAdsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -277,6 +279,7 @@
 				12C03F5A24D60D2700C01778 /* Add.storyboard */,
 				12711AED24E30361001281AB /* Edit.storyboard */,
 				1200561924E6EF75004A6D86 /* Help.storyboard */,
+				1200562224E83633004A6D86 /* RemoveAds.storyboard */,
 			);
 			path = "Story Boards";
 			sourceTree = "<group>";
@@ -303,14 +306,6 @@
 				12711AF524E333F7001281AB /* UserPresetCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
-			sourceTree = "<group>";
-		};
-		12C1980724D6495F002A7151 /* Data Source */ = {
-			isa = PBXGroup;
-			children = (
-				1200561E24E7246A004A6D86 /* UserInformation.plist */,
-			);
-			path = "Data Source";
 			sourceTree = "<group>";
 		};
 		12C1982224D892C5002A7151 /* Static Gobal Items */ = {
@@ -442,10 +437,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C03F2424D60AFA00C01778 /* LaunchScreen.storyboard in Resources */,
+				1200562324E83633004A6D86 /* RemoveAds.storyboard in Resources */,
 				12C1981924D767C1002A7151 /* LessonsTableViewCell.xib in Resources */,
 				12C03F2124D60AFA00C01778 /* Assets.xcassets in Resources */,
 				12C03F5724D60CC900C01778 /* About.storyboard in Resources */,
-				1200561F24E7246A004A6D86 /* UserInformation.plist in Resources */,
 				12711AE024DD07B6001281AB /* BillsSectionTableViewCell.xib in Resources */,
 				12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */,
 				1200561A24E6EF75004A6D86 /* Help.storyboard in Resources */,
@@ -597,6 +592,7 @@
 				12711AFC24E348C8001281AB /* ColorNames.swift in Sources */,
 				12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */,
 				12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */,
+				1200562524E8375D004A6D86 /* RemoveAdsViewController.swift in Sources */,
 				12711AF824E33430001281AB /* UserPresetViewMoreViewController.swift in Sources */,
 				12C1982E24DA1688002A7151 /* HelpViewController.swift in Sources */,
 				12711AFA24E34626001281AB /* ImageNames.swift in Sources */,

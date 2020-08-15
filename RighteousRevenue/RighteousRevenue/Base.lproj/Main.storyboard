@@ -338,6 +338,7 @@
                     <connections>
                         <outlet property="tableView" destination="qXe-uX-MJ7" id="7nU-lx-7tg"/>
                         <segue destination="61E-Lf-kw6" kind="presentation" identifier="Help" id="IC0-bf-3TZ"/>
+                        <segue destination="cIm-oF-MtW" kind="presentation" identifier="RemoveAds" id="9TK-Uf-nyv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxU-jS-ies" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -351,6 +352,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6d-OO-1EX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1638" y="979"/>
+        </scene>
+        <!--RemoveAds-->
+        <scene sceneID="e66-9p-QZo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RemoveAds" id="cIm-oF-MtW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9m-a2-11U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="978"/>
         </scene>
     </scenes>
     <resources>

@@ -36,8 +36,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
     private var sectionStyle = [IconChoice]()
     private var selectedSectionName = "test"
     private var selectedSectionNumber = 1
-    private var monthlyExpense = 0.0
-    
+    private var monthlyExpense =  0.0
     
      override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +90,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        billsPie.centerText = "Monthly Revenue:\n" + String(format: "$%.02f",MonthlyIncome) + "\n\n Monthly Expenses:\n" + String(format: "$%.02f", monthlyExpense)
+        billsPie.centerText = "Monthly Revenue:\n" + String(format: "$%.02f",UserDefaults.standard.double(forKey: "UserMonthlyIncome")) + "\n\n Monthly Expenses:\n" + String(format: "$%.02f", monthlyExpense)
         popOverBtn.isEnabled = false
     }
     

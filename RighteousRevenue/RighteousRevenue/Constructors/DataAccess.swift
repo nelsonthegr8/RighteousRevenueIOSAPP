@@ -62,7 +62,6 @@ class dataAccess{
        {
            let createPieDataTable = "CREATE TABLE PieData(DataID INTEGER PRIMARY KEY AUTOINCREMENT, Section INTEGER, BillName STRING, BillAmount DOUBLE, BillPayed STRING)"
 //           let createLessonDataTable = "CREATE TABLE LessonData(LessonID INTEGER PRIMARY KEY AUTOINCREMENT, LessonImg STRING, LessonTitle STRING, LessonInfo STRING)"
-//           let createPurchaseDataTable = "CREATE TABLE PurchaseData(PurchaseID INTEGER PRIMARY KEY AUTOINCREMENT, UserPayed STRING, ConfirmationNum STRING)"
            let createIconChoiceTable = "CREATE TABLE IconChoice(IconID INTEGER PRIMARY KEY AUTOINCREMENT,Section INTEGER,SectionName STRING, IconName STRING, SectionColor STRING)"
            let createDefaultStyleValues = "INSERT INTO IconChoice (Section,SectionName,IconName,SectionColor)VALUES (1,'Debt','Debt','DebtColor'),(2,'Bills','Bills','BillsColor'),(3,'Recreation','Recreation','RecreationColor'),(4,'Saving','Saving','SavingColor'),(5,'Giving','Giving','GivingColor'),(6,'Investments','Investment','InvestmentColor');"
         
@@ -70,7 +69,6 @@ class dataAccess{
            {
                 try self.database.run(createPieDataTable)
 //                try self.database.run(createLessonDataTable)
-//                try self.database.run(createPurchaseDataTable)
                 try self.database.run(createIconChoiceTable)
                 try self.database.run(createDefaultStyleValues)
            }catch{print(error)}
@@ -176,7 +174,7 @@ class dataAccess{
         
     }
     
-    func updateUserPayed(payed: Bool, ID:Int){
+    public func updateUserPayed(payed: Bool, ID:Int){
         let query = "UPDATE PieData SET BillPayed = '\(String(payed))' WHERE DataID = \(ID)"
         
         do {
