@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class EditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate{
+class EditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, UITextFieldDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var headerTxt: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sectionHeaderTxtxbx: UITextField!
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var googleAddSection: GADBannerView!
+    
+    
     var selectedSectionPresets:IconChoice = IconChoice(iconID: 1, section: 1, iconName: "", sectionColor: "")
     var selectedHeader: String = ""
     private var userSelectedRow:Int = 0
@@ -22,11 +27,16 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addGoogleAdsToView(addSection: googleAddSection, view: self)
+        sectionHeaderTxtxbx.delegate = self
         getStylePresetsFromDB()
         setUpTable()
+        setCardView()
         headerTxt.text = selectedHeader
+        sectionHeaderTxtxbx.text = selectedHeader
+        self.isModalInPresentation = true
+        googleAddSection.delegate = self
     }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -64,6 +74,7 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         if(segue.identifier == "viewMore"){
             let vc = segue.destination as! UserPresetViewMoreViewController
             vc.selectedSection = userSelectedRow
+            vc.pieSectionID = selectedSectionPresets.section
             vc.popoverPresentationController?.delegate = self
         }
         
@@ -73,9 +84,42 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UIModalPresentationStyle.none
     }
     
-    @IBAction func returnFromSegue(){
+    func setCardView(){
+        
+            cardView.layer.shadowColor = UIColor.gray.cgColor
+            cardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+            cardView.layer.shadowOpacity = 1.0
+            cardView.layer.masksToBounds = false
+            cardView.layer.cornerRadius = 10.0
+        
+    }
+    
+    @IBAction func returnFromViewMoreSegue(segue:UIStoryboardSegue){
         getStylePresetsFromDB()
         tableView.reloadData()
+    }
+    
+    @IBAction func exitButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "returnHome", sender: dismiss(animated: true, completion: nil))
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        sectionHeaderTxtxbx.text = sectionHeaderTxtxbx.text?.trimmingCharacters(in: CharacterSet.whitespaces)
+        db.updatePieCustomization(type: 3, section: selectedSectionPresets.section, item: sectionHeaderTxtxbx.text!)
+        headerTxt.text = sectionHeaderTxtxbx.text!
+        tableView.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1) {
+            bannerView.alpha = 1
+        }
     }
     
 }

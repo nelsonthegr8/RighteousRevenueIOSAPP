@@ -8,16 +8,19 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
-class SettingsMenuController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+class SettingsMenuController: UIViewController, UITableViewDataSource, UITableViewDelegate, SKProductsRequestDelegate,SKPaymentTransactionObserver{
+    
     private enum menuItems: String, CaseIterable{
-        case lesson = "Lessons"
-        case settings = "Settings"
+        case help = "Help"
+        case removeAds = "Remove Ads"
         case shop = "Shop"
         case about = "About"
         case contact = "Contact Us"
     }
+    
+    var myProduct: SKProduct?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,6 +32,7 @@ class SettingsMenuController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(nib, forCellReuseIdentifier: "SettingCell")
         tableView.delegate = self
         tableView.dataSource = self
+        fetchProducts()
     }
     
 
@@ -47,10 +51,18 @@ class SettingsMenuController: UIViewController, UITableViewDataSource, UITableVi
         // Relay to delegate about menu item selection
         let selectedItem = menuItems.allCases[indexPath.row]
         switch selectedItem{
-        case .lesson:
-            performSegue(withIdentifier: "Lesson", sender: self)
-        case .settings:
-            performSegue(withIdentifier: "Settings", sender: self)
+        case .help:
+            performSegue(withIdentifier: "Help", sender: self)
+        case .removeAds:
+            guard let myProduct = myProduct else{return}
+            
+            if SKPaymentQueue.canMakePayments(){
+                let payment = SKPayment(product: myProduct)
+                SKPaymentQueue.default().add(self)
+                SKPaymentQueue.default().add(payment)
+            }
+            
+            break
         case .shop:
             performSegue(withIdentifier: "Shop", sender: self)
         case .about:
@@ -60,5 +72,51 @@ class SettingsMenuController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    func fetchProducts(){
+        let request = SKProductsRequest(productIdentifiers: ["com.NelsonBrumaire.RighteousRevenue.removeAd"])
+        request.delegate = self
+        request.start()
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+        for transaction in transactions{
+            
+            switch transaction.transactionState {
+            case .purchasing:
+                //if item has been purchased
+                print("Transaction in progress")
+                break
+            case .purchased, .restored:
+                //payment failed
+                print("Transaction Sucess")
+                SKPaymentQueue.default().finishTransaction(transaction)
+                SKPaymentQueue.default().remove(self)
+                break
+            case .failed, .deferred:
+                //payment was restored
+                print("Transaction Failed")
+                SKPaymentQueue.default().finishTransaction(transaction)
+                SKPaymentQueue.default().remove(self)
+                break
+            @unknown default:
+                //unkown Error New update or case
+                SKPaymentQueue.default().finishTransaction(transaction)
+                SKPaymentQueue.default().remove(self)
+                break
+            }
+         
+        }
+        
+       }
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+            if let product = response.products.first{
+                myProduct = product
+                print(product.price)
+                print(product.productIdentifier)
+            }
+       }
+       
 }
 

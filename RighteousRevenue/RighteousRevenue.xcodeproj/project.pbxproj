@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1200561A24E6EF75004A6D86 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1200561924E6EF75004A6D86 /* Help.storyboard */; };
+		1200561F24E7246A004A6D86 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1200561E24E7246A004A6D86 /* UserInformation.plist */; };
+		1200562124E77A3D004A6D86 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1200562024E77A3D004A6D86 /* StoreKit.framework */; };
 		12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */; };
 		12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */; };
 		12711ADC24DB7EE1001281AB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADB24DB7EE1001281AB /* AddViewController.swift */; };
@@ -25,6 +28,7 @@
 		12711AF824E33430001281AB /* UserPresetViewMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AF724E33430001281AB /* UserPresetViewMoreViewController.swift */; };
 		12711AFA24E34626001281AB /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AF924E34626001281AB /* ImageNames.swift */; };
 		12711AFC24E348C8001281AB /* ColorNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AFB24E348C8001281AB /* ColorNames.swift */; };
+		12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AFD24E58E54001281AB /* GoogleAdInformation.swift */; };
 		12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1724D60AF900C01778 /* AppDelegate.swift */; };
 		12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1924D60AF900C01778 /* SceneDelegate.swift */; };
 		12C03F1C24D60AF900C01778 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1B24D60AF900C01778 /* HomeViewController.swift */; };
@@ -42,11 +46,8 @@
 		12C1981924D767C1002A7151 /* LessonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C1981724D767C1002A7151 /* LessonsTableViewCell.xib */; };
 		12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */; };
 		12C1981D24D77E5E002A7151 /* LessonCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981C24D77E5E002A7151 /* LessonCards.swift */; };
-		12C1982424D892EC002A7151 /* TextFieldDoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982324D892EC002A7151 /* TextFieldDoneHelper.swift */; };
 		12C1982624D8C8F1002A7151 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982524D8C8F1002A7151 /* DataAccess.swift */; };
-		12C1982B24DA1549002A7151 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982924DA1549002A7151 /* ShopCollectionViewCell.swift */; };
-		12C1982C24DA1549002A7151 /* ShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C1982A24DA1549002A7151 /* ShopCollectionViewCell.xib */; };
-		12C1982E24DA1688002A7151 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982D24DA1688002A7151 /* ShopViewController.swift */; };
+		12C1982E24DA1688002A7151 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982D24DA1688002A7151 /* HelpViewController.swift */; };
 		712B4FDBC49D84C572EECD0F /* Pods_RighteousRevenueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */; };
 		958DE2A782F45832F5DF4D38 /* Pods_RighteousRevenue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977F8725DFAFBE439D9F99C9 /* Pods_RighteousRevenue.framework */; };
 		99FBD3E74289EE345233FAFC /* Pods_RighteousRevenue_RighteousRevenueUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFAF35026D0FB5171990E69 /* Pods_RighteousRevenue_RighteousRevenueUITests.framework */; };
@@ -72,6 +73,9 @@
 /* Begin PBXFileReference section */
 		086BE979FB21A58EBA41C8AA /* Pods-RighteousRevenue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue.release.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue/Pods-RighteousRevenue.release.xcconfig"; sourceTree = "<group>"; };
 		0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RighteousRevenueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1200561924E6EF75004A6D86 /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		1200561E24E7246A004A6D86 /* UserInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
+		1200562024E77A3D004A6D86 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		12711ADB24DB7EE1001281AB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		12711AF724E33430001281AB /* UserPresetViewMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresetViewMoreViewController.swift; sourceTree = "<group>"; };
 		12711AF924E34626001281AB /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
 		12711AFB24E348C8001281AB /* ColorNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNames.swift; sourceTree = "<group>"; };
+		12711AFD24E58E54001281AB /* GoogleAdInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdInformation.swift; sourceTree = "<group>"; };
 		12A8FD73329CEEA8C0CB89B0 /* Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue-RighteousRevenueUITests/Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		12C03F1424D60AF900C01778 /* RighteousRevenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RighteousRevenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C03F1724D60AF900C01778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,11 +119,8 @@
 		12C1981724D767C1002A7151 /* LessonsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonsTableViewCell.xib; sourceTree = "<group>"; };
 		12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsMoreViewController.swift; sourceTree = "<group>"; };
 		12C1981C24D77E5E002A7151 /* LessonCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCards.swift; sourceTree = "<group>"; };
-		12C1982324D892EC002A7151 /* TextFieldDoneHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDoneHelper.swift; sourceTree = "<group>"; };
 		12C1982524D8C8F1002A7151 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
-		12C1982924DA1549002A7151 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
-		12C1982A24DA1549002A7151 /* ShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionViewCell.xib; sourceTree = "<group>"; };
-		12C1982D24DA1688002A7151 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		12C1982D24DA1688002A7151 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		1519E2EAE4DFC2CC8E76745B /* Pods-RighteousRevenueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenueTests.debug.xcconfig"; path = "Target Support Files/Pods-RighteousRevenueTests/Pods-RighteousRevenueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AFAF35026D0FB5171990E69 /* Pods_RighteousRevenue_RighteousRevenueUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RighteousRevenue_RighteousRevenueUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C225C72A36A88945E7AF93F /* Pods-RighteousRevenue-RighteousRevenueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue-RighteousRevenueUITests.release.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue-RighteousRevenueUITests/Pods-RighteousRevenue-RighteousRevenueUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958DE2A782F45832F5DF4D38 /* Pods_RighteousRevenue.framework in Frameworks */,
+				1200562124E77A3D004A6D86 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +171,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1200561D24E723F6004A6D86 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				12711AE124E0EBCF001281AB /* ChartSectionInfo.swift */,
+				12711AE324E0F18F001281AB /* UserSectionInput.swift */,
+				12711AE524E0F510001281AB /* MoreInfoForPieSection.swift */,
+				12711AE724E1B092001281AB /* IconChoice.swift */,
+				12711AE924E1E10A001281AB /* UserInformation.swift */,
+				12711AF924E34626001281AB /* ImageNames.swift */,
+				12711AFB24E348C8001281AB /* ColorNames.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		12C03F0B24D60AF900C01778 = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +210,8 @@
 		12C03F1624D60AF900C01778 /* RighteousRevenue */ = {
 			isa = PBXGroup;
 			children = (
-				12C1982224D892C5002A7151 /* Helper Extentions */,
+				1200561D24E723F6004A6D86 /* Structures */,
+				12C1982224D892C5002A7151 /* Static Gobal Items */,
 				12C1980724D6495F002A7151 /* Data Source */,
 				12C03F5524D60C9700C01778 /* Custom Cells */,
 				12C03F4A24D60B5700C01778 /* Delegates */,
@@ -242,7 +260,7 @@
 				12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */,
 				12C1981424D767A8002A7151 /* LessonsTableViewController.swift */,
 				12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */,
-				12C1982D24DA1688002A7151 /* ShopViewController.swift */,
+				12C1982D24DA1688002A7151 /* HelpViewController.swift */,
 				12711ADB24DB7EE1001281AB /* AddViewController.swift */,
 				12711AEB24E2F7BA001281AB /* HomePopoverViewController.swift */,
 				12711AEF24E319B4001281AB /* EditViewController.swift */,
@@ -258,6 +276,7 @@
 				12C03F5624D60CC900C01778 /* About.storyboard */,
 				12C03F5A24D60D2700C01778 /* Add.storyboard */,
 				12711AED24E30361001281AB /* Edit.storyboard */,
+				1200561924E6EF75004A6D86 /* Help.storyboard */,
 			);
 			path = "Story Boards";
 			sourceTree = "<group>";
@@ -276,8 +295,6 @@
 			children = (
 				12C1981624D767C1002A7151 /* LessonsTableViewCell.swift */,
 				12C1981724D767C1002A7151 /* LessonsTableViewCell.xib */,
-				12C1982924DA1549002A7151 /* ShopCollectionViewCell.swift */,
-				12C1982A24DA1549002A7151 /* ShopCollectionViewCell.xib */,
 				12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */,
 				12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */,
 				12711ADD24DD07B6001281AB /* BillsSectionTableViewCell.swift */,
@@ -291,28 +308,23 @@
 		12C1980724D6495F002A7151 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
-				12711AE124E0EBCF001281AB /* ChartSectionInfo.swift */,
-				12711AE324E0F18F001281AB /* UserSectionInput.swift */,
-				12711AE524E0F510001281AB /* MoreInfoForPieSection.swift */,
-				12711AE724E1B092001281AB /* IconChoice.swift */,
-				12711AE924E1E10A001281AB /* UserInformation.swift */,
-				12711AF924E34626001281AB /* ImageNames.swift */,
-				12711AFB24E348C8001281AB /* ColorNames.swift */,
+				1200561E24E7246A004A6D86 /* UserInformation.plist */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		12C1982224D892C5002A7151 /* Helper Extentions */ = {
+		12C1982224D892C5002A7151 /* Static Gobal Items */ = {
 			isa = PBXGroup;
 			children = (
-				12C1982324D892EC002A7151 /* TextFieldDoneHelper.swift */,
+				12711AFD24E58E54001281AB /* GoogleAdInformation.swift */,
 			);
-			path = "Helper Extentions";
+			path = "Static Gobal Items";
 			sourceTree = "<group>";
 		};
 		6829D4B74D4B32E3BD259759 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1200562024E77A3D004A6D86 /* StoreKit.framework */,
 				977F8725DFAFBE439D9F99C9 /* Pods_RighteousRevenue.framework */,
 				3AFAF35026D0FB5171990E69 /* Pods_RighteousRevenue_RighteousRevenueUITests.framework */,
 				0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */,
@@ -431,11 +443,12 @@
 			files = (
 				12C03F2424D60AFA00C01778 /* LaunchScreen.storyboard in Resources */,
 				12C1981924D767C1002A7151 /* LessonsTableViewCell.xib in Resources */,
-				12C1982C24DA1549002A7151 /* ShopCollectionViewCell.xib in Resources */,
 				12C03F2124D60AFA00C01778 /* Assets.xcassets in Resources */,
 				12C03F5724D60CC900C01778 /* About.storyboard in Resources */,
+				1200561F24E7246A004A6D86 /* UserInformation.plist in Resources */,
 				12711AE024DD07B6001281AB /* BillsSectionTableViewCell.xib in Resources */,
 				12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */,
+				1200561A24E6EF75004A6D86 /* Help.storyboard in Resources */,
 				12C03F1F24D60AF900C01778 /* Main.storyboard in Resources */,
 				12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */,
 				12711AEE24E30361001281AB /* Edit.storyboard in Resources */,
@@ -568,7 +581,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12711AE424E0F18F001281AB /* UserSectionInput.swift in Sources */,
-				12C1982B24DA1549002A7151 /* ShopCollectionViewCell.swift in Sources */,
 				12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */,
 				12711AEC24E2F7BA001281AB /* HomePopoverViewController.swift in Sources */,
 				12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */,
@@ -583,14 +595,14 @@
 				12711AF224E31BD2001281AB /* EditTableViewCell.swift in Sources */,
 				12711AF624E333F7001281AB /* UserPresetCollectionViewCell.swift in Sources */,
 				12711AFC24E348C8001281AB /* ColorNames.swift in Sources */,
+				12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */,
 				12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */,
 				12711AF824E33430001281AB /* UserPresetViewMoreViewController.swift in Sources */,
-				12C1982E24DA1688002A7151 /* ShopViewController.swift in Sources */,
+				12C1982E24DA1688002A7151 /* HelpViewController.swift in Sources */,
 				12711AFA24E34626001281AB /* ImageNames.swift in Sources */,
 				12C1981D24D77E5E002A7151 /* LessonCards.swift in Sources */,
 				12711ADC24DB7EE1001281AB /* AddViewController.swift in Sources */,
 				12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */,
-				12C1982424D892EC002A7151 /* TextFieldDoneHelper.swift in Sources */,
 				12C1981824D767C1002A7151 /* LessonsTableViewCell.swift in Sources */,
 				12711AF024E319B4001281AB /* EditViewController.swift in Sources */,
 				12711AE624E0F510001281AB /* MoreInfoForPieSection.swift in Sources */,
@@ -767,16 +779,18 @@
 			baseConfigurationReference = 9145D58A3261BCF85AB7A526 /* Pods-RighteousRevenue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D3DKL6XGK;
 				INFOPLIST_FILE = RighteousRevenue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -787,16 +801,18 @@
 			baseConfigurationReference = 086BE979FB21A58EBA41C8AA /* Pods-RighteousRevenue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D3DKL6XGK;
 				INFOPLIST_FILE = RighteousRevenue/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

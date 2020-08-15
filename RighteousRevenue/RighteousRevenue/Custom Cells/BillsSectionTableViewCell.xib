@@ -16,18 +16,70 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BIlls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLr-cu-gEa">
-                        <rect key="frame" x="16" y="12" width="139" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIlls" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLr-cu-gEa">
+                        <rect key="frame" x="16" y="11" width="143" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idV-SS-lyx">
+                        <rect key="frame" x="289" y="37" width="20" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="8nZ-wZ-ShS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="6"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfT-IE-ao0" customClass="BEMCheckBox">
+                        <rect key="frame" x="286" y="9" width="26" height="26"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="5XO-1X-RRS"/>
+                            <constraint firstAttribute="height" constant="26" id="B5I-Xu-fcy"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                <color key="value" red="0.23150700330000001" green="0.7300961614" blue="0.61015987400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                <color key="value" red="0.23150700330000001" green="0.7300961614" blue="0.61015987400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.00" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-WA-Tgs">
+                        <rect key="frame" x="164" y="12" width="114" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="114" id="ugP-mg-Jzm"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="idV-SS-lyx" secondAttribute="trailing" constant="11" id="5rp-cX-O9F"/>
+                    <constraint firstItem="Rja-WA-Tgs" firstAttribute="leading" secondItem="DLr-cu-gEa" secondAttribute="trailing" constant="5" id="APv-tp-yGh"/>
+                    <constraint firstItem="DLr-cu-gEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="AvB-G2-cj0"/>
+                    <constraint firstAttribute="bottom" secondItem="idV-SS-lyx" secondAttribute="bottom" id="DtS-Wq-sQw"/>
+                    <constraint firstItem="Rja-WA-Tgs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="FOR-KX-uU2"/>
+                    <constraint firstAttribute="trailing" secondItem="CfT-IE-ao0" secondAttribute="trailing" constant="8" id="ORB-hi-Xh6"/>
+                    <constraint firstAttribute="bottom" secondItem="Rja-WA-Tgs" secondAttribute="bottom" constant="11" id="a7h-Xg-r0e"/>
+                    <constraint firstItem="DLr-cu-gEa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aWO-bV-YUV"/>
+                    <constraint firstItem="idV-SS-lyx" firstAttribute="top" secondItem="CfT-IE-ao0" secondAttribute="bottom" constant="2" id="j9V-2Q-LZX"/>
+                    <constraint firstItem="CfT-IE-ao0" firstAttribute="leading" secondItem="Rja-WA-Tgs" secondAttribute="trailing" constant="8" id="mxH-Gp-UC7"/>
+                    <constraint firstAttribute="bottom" secondItem="DLr-cu-gEa" secondAttribute="bottom" constant="11" id="naS-OO-kCJ"/>
+                    <constraint firstItem="CfT-IE-ao0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qDO-I7-SLO"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="billNameTxtbx" destination="DLr-cu-gEa" id="xhl-DU-18s"/>
+                <outlet property="billAmountTxtbx" destination="Rja-WA-Tgs" id="I1Y-tj-nWa"/>
+                <outlet property="billNameTxtbx" destination="DLr-cu-gEa" id="USI-4a-jA1"/>
+                <outlet property="payedCheckbx" destination="CfT-IE-ao0" id="hDx-G9-rwg"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </tableViewCell>

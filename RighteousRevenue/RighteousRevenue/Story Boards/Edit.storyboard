@@ -28,16 +28,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Section Header" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Eo-4V-jVL">
-                                        <rect key="frame" x="31" y="92" width="269" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section Header" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Eo-4V-jVL" customClass="JiroTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="31" y="92" width="269" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="sKM-dN-gOF"/>
+                                            <constraint firstAttribute="height" constant="54" id="sKM-dN-gOF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.23150700330000001" green="0.7300961614" blue="0.61015987400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="none" sectionIndexMinimumDisplayRowCount="2" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uGF-Uo-RGz">
-                                        <rect key="frame" x="31" y="134" width="269" height="125"/>
+                                        <rect key="frame" x="31" y="154" width="269" height="105"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -81,7 +92,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="uGF-Uo-RGz" firstAttribute="top" secondItem="2Eo-4V-jVL" secondAttribute="bottom" constant="8" id="2O3-CG-s3E"/>
+                                    <constraint firstItem="uGF-Uo-RGz" firstAttribute="top" secondItem="2Eo-4V-jVL" secondAttribute="bottom" constant="8" symbolic="YES" id="2O3-CG-s3E"/>
                                     <constraint firstItem="uGF-Uo-RGz" firstAttribute="leading" secondItem="61y-SD-GCJ" secondAttribute="leading" constant="31" id="5um-Go-Xe2"/>
                                     <constraint firstAttribute="bottom" secondItem="uGF-Uo-RGz" secondAttribute="bottom" constant="125" id="CBh-hp-d3h"/>
                                     <constraint firstAttribute="trailing" secondItem="uGF-Uo-RGz" secondAttribute="trailing" constant="30" id="NPq-NI-lpW"/>
@@ -94,26 +105,59 @@
                                     <constraint firstItem="2Eo-4V-jVL" firstAttribute="top" secondItem="RkE-cT-UNW" secondAttribute="bottom" constant="36" id="kXc-4X-ERR"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-8e-Rbi">
+                                <rect key="frame" x="384" y="0.5" width="30" height="29"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="62K-S4-ZId"/>
+                                    <constraint firstAttribute="height" constant="30" id="gex-KV-zgB"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Bvt-BQ-Pu4" appends="YES" id="9BI-nP-FBt"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJN-Qx-XYf" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="l84-iH-SZw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TJN-Qx-XYf" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" id="4ps-bw-eFb"/>
+                            <constraint firstItem="TJN-Qx-XYf" firstAttribute="trailing" secondItem="bCP-LP-dX7" secondAttribute="trailing" id="7Tg-V3-pCS"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="top" secondItem="vJO-Wy-4qi" secondAttribute="top" id="Afc-mL-jnQ"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerY" secondItem="vJO-Wy-4qi" secondAttribute="centerY" id="Lw6-dX-uzt"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" constant="42" id="LyB-QY-9bV"/>
+                            <constraint firstAttribute="trailing" secondItem="kc0-8e-Rbi" secondAttribute="trailing" id="TuG-AC-6ai"/>
                             <constraint firstItem="bCP-LP-dX7" firstAttribute="trailing" secondItem="61y-SD-GCJ" secondAttribute="trailing" constant="42" id="qa1-nZ-dom"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerX" secondItem="vJO-Wy-4qi" secondAttribute="centerX" id="wrh-wU-9Mu"/>
+                            <constraint firstItem="TJN-Qx-XYf" firstAttribute="bottom" secondItem="bCP-LP-dX7" secondAttribute="bottom" id="zgG-Eu-hYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCP-LP-dX7"/>
                     </view>
                     <connections>
+                        <outlet property="cardView" destination="61y-SD-GCJ" id="1ht-eE-KIR"/>
+                        <outlet property="googleAddSection" destination="TJN-Qx-XYf" id="EG8-12-RM8"/>
                         <outlet property="headerTxt" destination="RkE-cT-UNW" id="3OW-2P-hlh"/>
                         <outlet property="sectionHeaderTxtxbx" destination="2Eo-4V-jVL" id="TxW-ap-0al"/>
                         <outlet property="tableView" destination="uGF-Uo-RGz" id="pR3-EU-pn9"/>
                         <segue destination="2Xa-6W-jQR" kind="popoverPresentation" identifier="viewMore" popoverAnchorView="uGF-Uo-RGz" id="ugI-8p-YJh">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
+                        <segue destination="kOr-V1-wMV" kind="unwind" identifier="returnHome" unwindAction="returnFromSelectedItemSegueWithSegue:" id="Jjy-3o-x7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbS-ic-7s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kOr-V1-wMV" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Bvt-BQ-Pu4">
+                    <connections>
+                        <action selector="exitButtonPressed:" destination="si4-Nf-yGh" id="XJ6-rH-YYe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-72.463768115942031" y="173.4375"/>
         </scene>
@@ -177,11 +221,16 @@
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
                         <outlet property="collectionView" destination="K2y-A9-Ini" id="FHg-C5-ysC"/>
+                        <segue destination="fXZ-S6-4fM" kind="unwind" identifier="selectedUnwind" unwindAction="returnFromViewMoreSegueWithSegue:" id="ZcL-Ck-I5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByD-Fg-C7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fXZ-S6-4fM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="644.92753623188412" y="-26.116071428571427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

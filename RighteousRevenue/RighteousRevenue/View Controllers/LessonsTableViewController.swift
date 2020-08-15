@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class LessonsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LessonsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addSection: GADBannerView!
     var cardsData:[LessonCards] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addGoogleAdsToView(addSection: addSection, view: self)
         initializeTableVIew()
+        addSection.delegate = self
     }
 
     // MARK: - Table view data source
@@ -59,4 +63,10 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
         vc.finalDesc = cardsData[0].description
     }
     
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1) {
+            bannerView.alpha = 1
+        }
+    }
 }

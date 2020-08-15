@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMobileAds
+import SwiftyPlistManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SwiftyPlistManager.shared.start(plistNames: ["UserInformation"], logging: true)
+        updateStaticUserVariables()
+        
+        if(UserDefaults.standard.object(forKey: "FirstLaunch") == nil){
+            UserDefaults.standard.set(false, forKey: "FirstLaunch")
+            UserDefaults.standard.set(false, forKey: "UserPayed")
+        }
+        
+        if(!UserDefaults.standard.bool(forKey: "UserPayed")){
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+        }
         return true
     }
 

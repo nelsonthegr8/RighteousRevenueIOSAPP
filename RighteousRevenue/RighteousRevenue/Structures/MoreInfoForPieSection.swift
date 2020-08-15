@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 struct MoreInfoForPieSection{
+    var DataId:Int = 0
     var billName:String
     var billAmount: Double
+    var payed:Bool = false
 }

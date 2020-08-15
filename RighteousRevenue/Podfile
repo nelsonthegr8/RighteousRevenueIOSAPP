@@ -5,8 +5,11 @@ target 'RighteousRevenue' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 pod 'Charts'
-pod 'SideMenu'
 pod 'SQLite.swift'
+pod 'Google-Mobile-Ads-SDK'
+pod 'TextFieldEffects'
+pod 'BEMCheckBox'
+pod 'SwiftyPlistManager'
 
   # Pods for RighteousRevenue
 

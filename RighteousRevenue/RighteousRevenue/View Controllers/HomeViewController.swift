@@ -8,15 +8,19 @@
 
 import UIKit
 import Charts
+import GoogleMobileAds
+import SwiftyPlistManager
 
-class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresentationControllerDelegate{
+
+class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresentationControllerDelegate, GADBannerViewDelegate{
+    let db = dataAccess()
     @IBOutlet weak var scriptureOfTheDay: UIImageView!
     @IBOutlet weak var billsPie: PieChartView!
-    @IBOutlet weak var addSection: UIView!
+    @IBOutlet weak var addSection: GADBannerView!
     @IBOutlet weak var navSection: UINavigationBar!
     @IBOutlet weak var popOverBtn: UIBarButtonItem!
     
-    private enum pieSection: Int, CaseIterable{
+    private enum piection: Int, CaseIterable{
         case Debt = 1
         case Bills = 2
         case Recreation = 3
@@ -25,31 +29,38 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
         case Investments = 6
     }
     
-    private var sectionNames:[String] = ["Debt","Bills","Recreation","Saving","Giving","Investments"]
+    private var sectionNames:[String] = []
     
     private var pieSections: [ChartSectionInfo] = []
     private var pieDataEntries = [PieChartDataEntry]()
     private var sectionStyle = [IconChoice]()
     private var selectedSectionName = "test"
     private var selectedSectionNumber = 1
-    let db = dataAccess()
+    private var monthlyExpense = 0.0
+    
     
      override func viewDidLoad() {
         super.viewDidLoad()
+        addGoogleAdsToView(addSection: addSection, view: self)
         setUpPieData()
         chartValueNothingSelected(billsPie)
+        addSection.delegate = self
     }
     
     func setUpPieData()
     {
-        for section in pieSection.allCases{
-            pieSections.append(db.getPieData(Section: section.rawValue))
+        
+        sectionNames = db.getSectionNames()
+        
+        for sectionID in sectionNames.indices{
+            pieSections.append(db.getPieData(Section: sectionID + 1))
         }
         
         for section in pieSections{
             let labelDisplay = sectionNames[section.section - 1]
             let sectionIcon = db.getIconForSection(Section: section.section)
             let dataEntry = PieChartDataEntry(value: 16.6, label: labelDisplay, icon: UIImage(named: sectionIcon.iconName)!)
+            monthlyExpense = monthlyExpense + section.sectionAmount
             sectionStyle.append(sectionIcon)
             pieDataEntries.append(dataEntry)
         }
@@ -76,16 +87,17 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
         billsPie.data = chartData
         
         customPieTextStyling()
+        chartValueNothingSelected(billsPie)
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        billsPie.centerText = "Monthly Revenue:\n" + "" + "\n Monthly Expenses:\n"
+        billsPie.centerText = "Monthly Revenue:\n" + String(format: "$%.02f",MonthlyIncome) + "\n\n Monthly Expenses:\n" + String(format: "$%.02f", monthlyExpense)
         popOverBtn.isEnabled = false
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         let header = sectionNames[Int(highlight.x)] + "\n"
-        billsPie.centerText = header + "Monthly Total:\n" + String(pieSections[Int(highlight.x)].sectionAmount) + "\n Total Entries in Section:\n" + String(pieSections[Int(highlight.x)].sectionBillAmount)
+        billsPie.centerText = header + "Monthly Total:\n" + String(format: "$%.02f",pieSections[Int(highlight.x)].sectionAmount) + "\n Total Entries in Section:\n" + String(pieSections[Int(highlight.x)].sectionBillAmount)
         popOverBtn.isEnabled = true
         selectedSectionNumber = Int(highlight.x)
         selectedSectionName = sectionNames[Int(highlight.x)]
@@ -112,5 +124,24 @@ class HomeViewController: UIViewController, ChartViewDelegate, UIPopoverPresenta
         return UIModalPresentationStyle.none
     }
     
+    @IBAction func returnFromPopUpSegue(segue:UIStoryboardSegue){
+        clearPieChart()
+    }
+    
+    func clearPieChart(){
+        billsPie.clear()
+        sectionStyle = []
+        pieSections = []
+        pieDataEntries = []
+        monthlyExpense = 0.0
+        setUpPieData()
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1) {
+            bannerView.alpha = 1
+        }
+    }
 }
 

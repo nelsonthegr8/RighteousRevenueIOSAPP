@@ -8,9 +8,9 @@
 
 import UIKit
 
-private let reuseIdentifier = "shopCard"
+private let reuseIdentifier = "cell"
 
-class ShopViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HelpViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageScroller: UIPageControl!
@@ -22,12 +22,11 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        let nib = UINib(nibName: "ShopCollectionViewCell", bundle: nil)
-        collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
-
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         // Do any additional setup after loading the view.
     }
 
@@ -45,20 +44,30 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShopCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         // Configure the cell
-    
+        let iv = UIImageView()
+        iv.image = UIImage(named: "Untitled_Artwork 2")
+        iv.contentMode = .scaleAspectFit
+        cell.backgroundView = iv
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         let w = scrollView.bounds.size.width
         let currentPage = Int(ceil(x/w))
         pageScroller.currentPage = currentPage
+        if(currentPage == pageScroller.numberOfPages){
+            
+        }
     }
 
-
+    @IBAction func xButtonPressed(_ sender: Any) {
+    }
+    
 }

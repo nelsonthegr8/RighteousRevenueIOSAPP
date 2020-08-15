@@ -12,7 +12,9 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
    
     private var itemStrings:[String] = []
     var selectedSection:Int = 0
+    var pieSectionID = 0
     @IBOutlet weak var collectionView: UICollectionView!
+    let db = dataAccess()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,10 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        db.updatePieCustomization(type: selectedSection, section: pieSectionID, item: itemStrings[indexPath.row])
+        self.performSegue(withIdentifier: "selectedUnwind", sender: nil)
     }
-       
+    
     func setSelectionStrings()
     {
         if(selectedSection == 1){
