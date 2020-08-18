@@ -19,6 +19,7 @@ class HomePopoverViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         sectionHeader.text = sectionName
+        overrideUserInterfaceStyle = .dark
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,4 +45,7 @@ class HomePopoverViewController: UIViewController {
         performSegue(withIdentifier: "returnFromPopUp", sender: nil)
     }
     
+    func setColorTheme(){
+        
+    }
 }

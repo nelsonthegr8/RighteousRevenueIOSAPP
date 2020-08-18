@@ -13,8 +13,15 @@
 		1200562724E8561A004A6D86 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200562624E8561A004A6D86 /* TutorialContentViewController.swift */; };
 		1200562924E857D6004A6D86 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200562824E857D6004A6D86 /* TutorialPageViewController.swift */; };
 		1200562B24E85C29004A6D86 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200562A24E85C29004A6D86 /* TutorialViewController.swift */; };
+		1200562D24E96BC9004A6D86 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200562C24E96BC9004A6D86 /* CheckInternet.swift */; };
+		1200562F24E98B4D004A6D86 /* lessonInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1200562E24E98B4D004A6D86 /* lessonInfo.json */; };
+		1200563124E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */; };
+		1200563724EA0A55004A6D86 /* UniversalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200563624EA0A55004A6D86 /* UniversalTabBarController.swift */; };
+		1200564124EB2A29004A6D86 /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200564024EB2A29004A6D86 /* SettingsNavigationViewController.swift */; };
 		12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */; };
 		12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */; };
+		12348A3424EB32F70077ECBA /* User Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12348A3324EB32F70077ECBA /* User Settings.storyboard */; };
+		12348A3624EB38BE0077ECBA /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A3524EB38BE0077ECBA /* UserSettingsViewController.swift */; };
 		12711ADC24DB7EE1001281AB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADB24DB7EE1001281AB /* AddViewController.swift */; };
 		12711ADF24DD07B6001281AB /* BillsSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADD24DD07B6001281AB /* BillsSectionTableViewCell.swift */; };
 		12711AE024DD07B6001281AB /* BillsSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12711ADE24DD07B6001281AB /* BillsSectionTableViewCell.xib */; };
@@ -40,7 +47,7 @@
 		12C03F2F24D60AFA00C01778 /* RighteousRevenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F2E24D60AFA00C01778 /* RighteousRevenueTests.swift */; };
 		12C03F3A24D60AFA00C01778 /* RighteousRevenueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F3924D60AFA00C01778 /* RighteousRevenueUITests.swift */; };
 		12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F4B24D60C1300C01778 /* Tutorial.storyboard */; };
-		12C03F5724D60CC900C01778 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F5624D60CC900C01778 /* About.storyboard */; };
+		12C03F5724D60CC900C01778 /* ContactUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F5624D60CC900C01778 /* ContactUs.storyboard */; };
 		12C03F5B24D60D2700C01778 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F5A24D60D2700C01778 /* Add.storyboard */; };
 		12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */; };
 		12C1981524D767A8002A7151 /* LessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981424D767A8002A7151 /* LessonsTableViewController.swift */; };
@@ -80,8 +87,15 @@
 		1200562624E8561A004A6D86 /* TutorialContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
 		1200562824E857D6004A6D86 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		1200562A24E85C29004A6D86 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		1200562C24E96BC9004A6D86 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		1200562E24E98B4D004A6D86 /* lessonInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lessonInfo.json; sourceTree = "<group>"; };
+		1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDoneCancelButtonToTextField.swift; sourceTree = "<group>"; };
+		1200563624EA0A55004A6D86 /* UniversalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTabBarController.swift; sourceTree = "<group>"; };
+		1200564024EB2A29004A6D86 /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
 		12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		12348A3324EB32F70077ECBA /* User Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "User Settings.storyboard"; sourceTree = "<group>"; };
+		12348A3524EB38BE0077ECBA /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		12711ADB24DB7EE1001281AB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		12711ADD24DD07B6001281AB /* BillsSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsSectionTableViewCell.swift; sourceTree = "<group>"; };
 		12711ADE24DD07B6001281AB /* BillsSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillsSectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -114,7 +128,7 @@
 		12C03F3924D60AFA00C01778 /* RighteousRevenueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RighteousRevenueUITests.swift; sourceTree = "<group>"; };
 		12C03F3B24D60AFA00C01778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12C03F4B24D60C1300C01778 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
-		12C03F5624D60CC900C01778 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		12C03F5624D60CC900C01778 /* ContactUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactUs.storyboard; sourceTree = "<group>"; };
 		12C03F5A24D60D2700C01778 /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
 		12C1981424D767A8002A7151 /* LessonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsTableViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +200,70 @@
 			path = Structures;
 			sourceTree = "<group>";
 		};
+		1200563A24EB292E004A6D86 /* HomeView And Master Tab Section */ = {
+			isa = PBXGroup;
+			children = (
+				12C03F1B24D60AF900C01778 /* HomeViewController.swift */,
+				12711AEB24E2F7BA001281AB /* HomePopoverViewController.swift */,
+				1200563624EA0A55004A6D86 /* UniversalTabBarController.swift */,
+			);
+			path = "HomeView And Master Tab Section";
+			sourceTree = "<group>";
+		};
+		1200563B24EB296E004A6D86 /* Tutorial View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1200562624E8561A004A6D86 /* TutorialContentViewController.swift */,
+				1200562824E857D6004A6D86 /* TutorialPageViewController.swift */,
+				1200562A24E85C29004A6D86 /* TutorialViewController.swift */,
+			);
+			path = "Tutorial View Controllers";
+			sourceTree = "<group>";
+		};
+		1200563C24EB2991004A6D86 /* Lessons View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12C1981424D767A8002A7151 /* LessonsTableViewController.swift */,
+				12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */,
+			);
+			path = "Lessons View Controllers";
+			sourceTree = "<group>";
+		};
+		1200563D24EB29B3004A6D86 /* Add View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12711ADB24DB7EE1001281AB /* AddViewController.swift */,
+			);
+			path = "Add View Controllers";
+			sourceTree = "<group>";
+		};
+		1200563E24EB29C5004A6D86 /* Edit View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12711AEF24E319B4001281AB /* EditViewController.swift */,
+				12711AF724E33430001281AB /* UserPresetViewMoreViewController.swift */,
+			);
+			path = "Edit View Controllers";
+			sourceTree = "<group>";
+		};
+		1200563F24EB29EA004A6D86 /* Settings View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */,
+				1200562424E8375D004A6D86 /* RemoveAdsViewController.swift */,
+				1200564024EB2A29004A6D86 /* SettingsNavigationViewController.swift */,
+				12348A3524EB38BE0077ECBA /* UserSettingsViewController.swift */,
+			);
+			path = "Settings View Controllers";
+			sourceTree = "<group>";
+		};
+		12348A3724EB5A7B0077ECBA /*  Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = " Theme";
+			sourceTree = "<group>";
+		};
 		12C03F0B24D60AF900C01778 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +289,7 @@
 		12C03F1624D60AF900C01778 /* RighteousRevenue */ = {
 			isa = PBXGroup;
 			children = (
+				12348A3724EB5A7B0077ECBA /*  Theme */,
 				1200561D24E723F6004A6D86 /* Structures */,
 				12C1982224D892C5002A7151 /* Static Gobal Items */,
 				12C03F5524D60C9700C01778 /* Custom Cells */,
@@ -222,6 +301,7 @@
 				12C03F1D24D60AF900C01778 /* Main.storyboard */,
 				12C03F2224D60AFA00C01778 /* LaunchScreen.storyboard */,
 				12C03F2524D60AFA00C01778 /* Info.plist */,
+				1200562E24E98B4D004A6D86 /* lessonInfo.json */,
 			);
 			path = RighteousRevenue;
 			sourceTree = "<group>";
@@ -256,18 +336,12 @@
 		12C03F4824D60B1000C01778 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				12C03F1B24D60AF900C01778 /* HomeViewController.swift */,
-				12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */,
-				12C1981424D767A8002A7151 /* LessonsTableViewController.swift */,
-				12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */,
-				12711ADB24DB7EE1001281AB /* AddViewController.swift */,
-				12711AEB24E2F7BA001281AB /* HomePopoverViewController.swift */,
-				12711AEF24E319B4001281AB /* EditViewController.swift */,
-				12711AF724E33430001281AB /* UserPresetViewMoreViewController.swift */,
-				1200562424E8375D004A6D86 /* RemoveAdsViewController.swift */,
-				1200562624E8561A004A6D86 /* TutorialContentViewController.swift */,
-				1200562824E857D6004A6D86 /* TutorialPageViewController.swift */,
-				1200562A24E85C29004A6D86 /* TutorialViewController.swift */,
+				1200563F24EB29EA004A6D86 /* Settings View Controllers */,
+				1200563E24EB29C5004A6D86 /* Edit View Controllers */,
+				1200563D24EB29B3004A6D86 /* Add View Controllers */,
+				1200563C24EB2991004A6D86 /* Lessons View Controllers */,
+				1200563B24EB296E004A6D86 /* Tutorial View Controllers */,
+				1200563A24EB292E004A6D86 /* HomeView And Master Tab Section */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -276,10 +350,11 @@
 			isa = PBXGroup;
 			children = (
 				12C03F4B24D60C1300C01778 /* Tutorial.storyboard */,
-				12C03F5624D60CC900C01778 /* About.storyboard */,
+				12C03F5624D60CC900C01778 /* ContactUs.storyboard */,
 				12C03F5A24D60D2700C01778 /* Add.storyboard */,
 				12711AED24E30361001281AB /* Edit.storyboard */,
 				1200562224E83633004A6D86 /* RemoveAds.storyboard */,
+				12348A3324EB32F70077ECBA /* User Settings.storyboard */,
 			);
 			path = "Story Boards";
 			sourceTree = "<group>";
@@ -312,6 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				12711AFD24E58E54001281AB /* GoogleAdInformation.swift */,
+				1200562C24E96BC9004A6D86 /* CheckInternet.swift */,
+				1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */,
 			);
 			path = "Static Gobal Items";
 			sourceTree = "<group>";
@@ -440,13 +517,15 @@
 				1200562324E83633004A6D86 /* RemoveAds.storyboard in Resources */,
 				12C1981924D767C1002A7151 /* LessonsTableViewCell.xib in Resources */,
 				12C03F2124D60AFA00C01778 /* Assets.xcassets in Resources */,
-				12C03F5724D60CC900C01778 /* About.storyboard in Resources */,
+				12348A3424EB32F70077ECBA /* User Settings.storyboard in Resources */,
+				12C03F5724D60CC900C01778 /* ContactUs.storyboard in Resources */,
 				12711AE024DD07B6001281AB /* BillsSectionTableViewCell.xib in Resources */,
 				12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */,
 				12C03F1F24D60AF900C01778 /* Main.storyboard in Resources */,
 				12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */,
 				12711AEE24E30361001281AB /* Edit.storyboard in Resources */,
 				12C03F5B24D60D2700C01778 /* Add.storyboard in Resources */,
+				1200562F24E98B4D004A6D86 /* lessonInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,9 +656,13 @@
 				12711AE424E0F18F001281AB /* UserSectionInput.swift in Sources */,
 				12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */,
 				12711AEC24E2F7BA001281AB /* HomePopoverViewController.swift in Sources */,
+				1200563724EA0A55004A6D86 /* UniversalTabBarController.swift in Sources */,
+				12348A3624EB38BE0077ECBA /* UserSettingsViewController.swift in Sources */,
 				12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */,
+				1200564124EB2A29004A6D86 /* SettingsNavigationViewController.swift in Sources */,
 				12711AE824E1B092001281AB /* IconChoice.swift in Sources */,
 				12C1982624D8C8F1002A7151 /* DataAccess.swift in Sources */,
+				1200563124E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift in Sources */,
 				12711AE224E0EBCF001281AB /* ChartSectionInfo.swift in Sources */,
 				1200562724E8561A004A6D86 /* TutorialContentViewController.swift in Sources */,
 				12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */,
@@ -590,6 +673,7 @@
 				12711AF624E333F7001281AB /* UserPresetCollectionViewCell.swift in Sources */,
 				12711AFC24E348C8001281AB /* ColorNames.swift in Sources */,
 				12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */,
+				1200562D24E96BC9004A6D86 /* CheckInternet.swift in Sources */,
 				12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */,
 				1200562524E8375D004A6D86 /* RemoveAdsViewController.swift in Sources */,
 				12711AF824E33430001281AB /* UserPresetViewMoreViewController.swift in Sources */,

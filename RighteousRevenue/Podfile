@@ -10,6 +10,7 @@ pod 'Google-Mobile-Ads-SDK'
 pod 'TextFieldEffects'
 pod 'BEMCheckBox'
 pod 'YouTubePlayer'
+pod 'NVActivityIndicatorView'
 
   # Pods for RighteousRevenue
 

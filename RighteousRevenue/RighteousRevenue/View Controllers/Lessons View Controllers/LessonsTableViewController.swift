@@ -16,9 +16,21 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     var cardsData:[LessonCards] = []
     var index = 0
     
+    override func viewDidAppear(_ animated: Bool) {
+        if(!CheckInternet.Connection()){
+            UserDefaults.standard.set(true, forKey: "InternetDisconnected")
+        }
+        if(CheckInternet.Connection() && UserDefaults.standard.bool(forKey: "InternetDisconnected")){
+            addGoogleAdsToView(addSection: addSection, view: self)
+            UserDefaults.standard.set(false, forKey: "InternetDisconnected")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addGoogleAdsToView(addSection: addSection, view: self)
+        getLessonInfo()
         initializeTableVIew()
         addSection.delegate = self
     }
@@ -32,13 +44,12 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return cardsData.count
     }
 
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LessonsTableCell", for: indexPath) as! LessonsTableViewCell
-        cardsData.append(LessonCards( img: "cat", title: "Cat Gang", subheading: "dont get caught up in the", lesson: "Gang gang gang", videolink: "https://www.youtube.com/watch?v=2mgUPt2KI08&t=1s"))
         // Configure the cell...
         cell.configure(cardInfo: cardsData[indexPath.row])
 
@@ -46,6 +57,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
         performSegue(withIdentifier: "MoreInfo", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -70,5 +82,13 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
         UIView.animate(withDuration: 1) {
             bannerView.alpha = 1
         }
+    }
+    
+    func getLessonInfo() {
+        cardsData = loadJson(filename: "lessonInfo") ?? []
+    }
+    
+    func setColorTheme(){
+        
     }
 }

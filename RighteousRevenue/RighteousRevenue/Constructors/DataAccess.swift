@@ -61,14 +61,12 @@ class dataAccess{
    private func createTables()
        {
            let createPieDataTable = "CREATE TABLE PieData(DataID INTEGER PRIMARY KEY AUTOINCREMENT, Section INTEGER, BillName STRING, BillAmount DOUBLE, BillPayed STRING)"
-//           let createLessonDataTable = "CREATE TABLE LessonData(LessonID INTEGER PRIMARY KEY AUTOINCREMENT, LessonImg STRING, LessonTitle STRING, LessonInfo STRING)"
-           let createIconChoiceTable = "CREATE TABLE IconChoice(IconID INTEGER PRIMARY KEY AUTOINCREMENT,Section INTEGER,SectionName STRING, IconName STRING, SectionColor STRING)"
-           let createDefaultStyleValues = "INSERT INTO IconChoice (Section,SectionName,IconName,SectionColor)VALUES (1,'Debt','Debt','DebtColor'),(2,'Bills','Bills','BillsColor'),(3,'Recreation','Recreation','RecreationColor'),(4,'Saving','Saving','SavingColor'),(5,'Giving','Giving','GivingColor'),(6,'Investments','Investment','InvestmentColor');"
+           let createIconChoiceTable = "CREATE TABLE IconChoice(IconID INTEGER PRIMARY KEY AUTOINCREMENT,Section INTEGER,SectionName STRING, IconName STRING, SectionColor STRING, IncomeSymbol STRING)"
+           let createDefaultStyleValues = "INSERT INTO IconChoice (Section,SectionName,IconName,SectionColor,IncomeSymbol)VALUES (1,'Debt','Debt','DebtColor','-'),(2,'Bills','Bills','BillsColor','-'),(3,'Recreation','Recreation','RecreationColor','-'),(4,'Saving','Saving','SavingColor','+'),(5,'Giving','Giving','GivingColor','-'),(6,'Investments','Investment','InvestmentColor','+');"
         
         do
            {
                 try self.database.run(createPieDataTable)
-//                try self.database.run(createLessonDataTable)
                 try self.database.run(createIconChoiceTable)
                 try self.database.run(createDefaultStyleValues)
            }catch{print(error)}
@@ -77,12 +75,17 @@ class dataAccess{
     
     public func getPieData(Section: Int) -> ChartSectionInfo
     {
-        var result = ChartSectionInfo(section: Section, sectionAmount: 0, sectionBillAmount: 0)
+        var result = ChartSectionInfo(section: Section, sectionAmount: 0, sectionBillAmount: 0, symbol: "-")
         let query = "SELECT BillAmount FROM PieData WHERE Section = \(Section)"
+        let query2 = "SELECT IncomeSymbol FROM IconChoice WHERE Section = \(Section)"
         
         for row in try! database.prepare(query){
             result.sectionAmount = result.sectionAmount + (row[0] as! Double)
             result.sectionBillAmount = result.sectionBillAmount + 1
+        }
+        
+        for row in try! database.prepare(query2){
+            result.symbol = row[0] as! String
         }
         
         return result

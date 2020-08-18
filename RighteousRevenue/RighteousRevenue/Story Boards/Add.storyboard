@@ -43,7 +43,7 @@
                                             <constraint firstAttribute="height" constant="53" id="wtZ-NE-noL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.23150700330000001" green="0.7300961614" blue="0.61015987400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

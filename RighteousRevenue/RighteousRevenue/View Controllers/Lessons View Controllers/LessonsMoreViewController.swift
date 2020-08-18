@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import YouTubePlayer
+import NVActivityIndicatorView
 
 class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTubePlayerDelegate {
 
@@ -16,6 +17,8 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTube
     @IBOutlet weak var MoreInfoTitle: UILabel!
     @IBOutlet weak var MoreInfoDescription: UITextView!
     @IBOutlet weak var addSection: GADBannerView!
+    @IBOutlet weak var internetDisconectedView: UIImageView!
+    @IBOutlet weak var loadingVideo: NVActivityIndicatorView!
     
     var finalYouTubeURL:String = ""
     var finalTitle: String = ""
@@ -26,9 +29,15 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTube
 
         // Do any additional setup after loading the view.
         addGoogleAdsToView(addSection: addSection, view: self)
-        let myVideoURL = URL(string: finalYouTubeURL)!
-        YoutubeVideo.delegate = self
-        YoutubeVideo.loadVideoURL(myVideoURL)
+        if(CheckInternet.Connection()){
+            internetDisconectedView.isHidden = true
+            loadingVideo.startAnimating()
+            let myVideoURL = URL(string: finalYouTubeURL)!
+            YoutubeVideo.delegate = self
+            YoutubeVideo.loadVideoURL(myVideoURL)
+        }else{
+            loadingVideo.isHidden = true
+        }
         MoreInfoTitle.text = finalTitle
         MoreInfoDescription.text = finalDesc
         addSection.delegate = self
@@ -43,6 +52,14 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTube
         UIView.animate(withDuration: 1) {
             bannerView.alpha = 1
         }
+    }
+    
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        loadingVideo.stopAnimating()
+    }
+    
+    func setColorTheme(){
+        
     }
     
 }

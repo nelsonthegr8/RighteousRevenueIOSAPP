@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kAZ-WH-LWA">
-                        <rect key="frame" x="280" y="11" width="40" height="21"/>
+                        <rect key="frame" x="254" y="11" width="56" height="21"/>
                         <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvb-7f-dyP">
@@ -31,10 +31,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="kAZ-WH-LWA" secondAttribute="trailing" id="C5l-5f-Cn4"/>
+                    <constraint firstAttribute="trailing" secondItem="kAZ-WH-LWA" secondAttribute="trailing" constant="10" id="C5l-5f-Cn4"/>
                     <constraint firstAttribute="bottom" secondItem="yvb-7f-dyP" secondAttribute="bottom" constant="11" id="MQC-CM-NlO"/>
                     <constraint firstItem="yvb-7f-dyP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RL0-4i-qye"/>
-                    <constraint firstItem="kAZ-WH-LWA" firstAttribute="leading" secondItem="yvb-7f-dyP" secondAttribute="trailing" constant="106" id="bqY-Rq-kRs"/>
+                    <constraint firstItem="kAZ-WH-LWA" firstAttribute="leading" secondItem="yvb-7f-dyP" secondAttribute="trailing" constant="80" id="bqY-Rq-kRs"/>
                     <constraint firstAttribute="bottom" secondItem="kAZ-WH-LWA" secondAttribute="bottom" constant="10.5" id="o4n-JT-S8K"/>
                     <constraint firstItem="yvb-7f-dyP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="qKa-hW-KCw"/>
                     <constraint firstItem="kAZ-WH-LWA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="sVT-X7-btu"/>
@@ -42,6 +42,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="indicatorImg" destination="kAZ-WH-LWA" id="08U-YO-sC8"/>
                 <outlet property="settingName" destination="yvb-7f-dyP" id="88K-fx-ZFL"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

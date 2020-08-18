@@ -14,4 +14,5 @@ struct ChartSectionInfo
     var section:Int
     var sectionAmount:Double
     var sectionBillAmount:Int
+    var symbol:String
 }

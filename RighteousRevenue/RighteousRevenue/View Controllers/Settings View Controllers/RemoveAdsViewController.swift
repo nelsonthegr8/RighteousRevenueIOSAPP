@@ -78,4 +78,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
             }
        }
        
+    func setColorTheme(){
+        
+    }
 }

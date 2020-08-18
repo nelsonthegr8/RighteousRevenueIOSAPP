@@ -32,17 +32,6 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var sectionInfo: [MoreInfoForPieSection] = []
     let db = dataAccess()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addGoogleAdsToView(addSection: addSection, view: self)
-        setCardViews()
-        grabSectionInfo()
-        setupTableView()
-        setupTextboxDelegates()
-        self.isModalInPresentation = true
-        addSection.delegate = self
-    }
-  
     @IBAction func xButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "returnHome", sender: dismiss(animated: true, completion: nil))
     }
@@ -176,6 +165,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func setupTextboxDelegates(){
         billAmountTxtbx.delegate = self
         billNameTxtbx.delegate = self
+        billAmountTxtbx.addDoneCancelToolbar()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -185,13 +175,13 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let specialChars = CharacterSet(charactersIn: "$")
-        billAmountTxtbx.text = billAmountTxtbx.text?.trimmingCharacters(in: CharacterSet.whitespaces)
+        //let specialChars = CharacterSet(charactersIn: "$")
+        //billAmountTxtbx.text = billAmountTxtbx.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         billNameTxtbx.text = billNameTxtbx.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         
-        if(textField.tag == 2){
-            billAmountTxtbx.text = billAmountTxtbx.text?.trimmingCharacters(in: specialChars)
-        }
+        //if(textField.tag == 2){
+          //  billAmountTxtbx.text = billAmountTxtbx.text?.trimmingCharacters(in: specialChars)
+        //}
         
     }
     
@@ -201,4 +191,25 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             bannerView.alpha = 1
         }
     }
+    
 }
+//MARK: - View Life Cycle
+extension AddViewController{
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setColorTheme()
+        addGoogleAdsToView(addSection: addSection, view: self)
+        setCardViews()
+        grabSectionInfo()
+        setupTableView()
+        setupTextboxDelegates()
+        self.isModalInPresentation = true
+        addSection.delegate = self
+      }
+    
+    func setColorTheme(){
+        
+    }
+}
+

@@ -35,6 +35,9 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - NVActivityIndicatorView (5.0.1):
+    - NVActivityIndicatorView/Base (= 5.0.1)
+  - NVActivityIndicatorView/Base (5.0.1)
   - PromisesObjC (1.2.10)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - BEMCheckBox
   - Charts
   - Google-Mobile-Ads-SDK
+  - NVActivityIndicatorView
   - SQLite.swift
   - TextFieldEffects
   - YouTubePlayer
@@ -59,6 +63,7 @@ SPEC REPOS:
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - nanopb
+    - NVActivityIndicatorView
     - PromisesObjC
     - SQLite.swift
     - TextFieldEffects
@@ -72,11 +77,12 @@ SPEC CHECKSUMS:
   GoogleUserMessagingPlatform: 9dc714d2e1f0aa727b9cc52d266dc1b155f4c3f2
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: ac8b60d9ce716fb8c74a76c4b9aa22559e52cd64
+PODFILE CHECKSUM: 1894f5ce69ede71ef7eb4f446fe24bded3be8fec
 
 COCOAPODS: 1.8.4

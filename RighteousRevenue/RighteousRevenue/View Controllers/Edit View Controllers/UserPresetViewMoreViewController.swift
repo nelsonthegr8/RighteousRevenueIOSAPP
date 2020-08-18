@@ -59,4 +59,7 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
         collectionView.dataSource = self
     }
 
+    func setColorTheme(){
+        
+    }
 }

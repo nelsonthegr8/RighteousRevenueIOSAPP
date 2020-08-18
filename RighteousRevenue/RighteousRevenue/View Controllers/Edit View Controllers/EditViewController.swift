@@ -9,60 +9,48 @@
 import UIKit
 import GoogleMobileAds
 
-class EditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, UITextFieldDelegate, GADBannerViewDelegate{
+class EditViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var headerTxt: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sectionHeaderTxtxbx: UITextField!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var googleAddSection: GADBannerView!
+    @IBOutlet weak var sectionColorLbl: UILabel!
+    @IBOutlet weak var sectionIconLbl: UILabel!
+    @IBOutlet weak var sectionColorImg: UIImageView!
+    @IBOutlet weak var sectionIconImg: UIImageView!
+    
     
     
     var selectedSectionPresets:IconChoice = IconChoice(iconID: 1, section: 1, iconName: "", sectionColor: "")
     var selectedHeader: String = ""
-    private var userSelectedRow:Int = 0
+    private var userSelectedRow:Int = 1
     let db = dataAccess()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load Ads.
         addGoogleAdsToView(addSection: googleAddSection, view: self)
-        sectionHeaderTxtxbx.delegate = self
-        getStylePresetsFromDB()
-        setUpTable()
-        setCardView()
+        //Setup the header text
         headerTxt.text = selectedHeader
         sectionHeaderTxtxbx.text = selectedHeader
+        //Get and set the styles
+        getStylePresetsFromDB()
+        setTextAndColors()
+        //setup the card view
+        setCardView()
+        //assign delegates and modal presentation for popup
         self.isModalInPresentation = true
         googleAddSection.delegate = self
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    //set style for the two cells either for the color or the icon since there are only two sections i have them hard coded
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EditPieSectionCell", for: indexPath) as! EditTableViewCell
-        
-        if(indexPath.row == 0){
-            cell.title.text = headerTxt.text! + " Color"
-            cell.img.backgroundColor = UIColor(named: selectedSectionPresets.sectionColor)
-        }else{
-            cell.title.text = headerTxt.text! + " Icon"
-            cell.img.image = UIImage(named: selectedSectionPresets.iconName)
-        }
-        return cell
+        sectionHeaderTxtxbx.delegate = self
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        userSelectedRow = indexPath.row + 1
-        performSegue(withIdentifier: "viewMore", sender: nil)
-    }
-    
-    func setUpTable(){
-        tableView.dataSource = self
-        tableView.delegate = self
+    func setTextAndColors(){
+        sectionColorLbl.text = sectionHeaderTxtxbx.text! + " Color"
+        sectionIconLbl.text = sectionHeaderTxtxbx.text! + " Icon"
+        sectionColorImg.backgroundColor = UIColor(named: selectedSectionPresets.sectionColor)
+        sectionIconImg.image = UIImage(named: selectedSectionPresets.iconName)
     }
     
     func getStylePresetsFromDB(){
@@ -71,7 +59,7 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if(segue.identifier == "viewMore"){
+        if(segue.identifier == "viewColorMore" || segue.identifier == "viewIconsMore" ){
             let vc = segue.destination as! UserPresetViewMoreViewController
             vc.selectedSection = userSelectedRow
             vc.pieSectionID = selectedSectionPresets.section
@@ -96,18 +84,28 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func returnFromViewMoreSegue(segue:UIStoryboardSegue){
         getStylePresetsFromDB()
-        tableView.reloadData()
+        setTextAndColors()
     }
     
     @IBAction func exitButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "returnHome", sender: dismiss(animated: true, completion: nil))
     }
     
+    @IBAction func tappedColorStack(_ sender: Any) {
+        userSelectedRow = 1
+        performSegue(withIdentifier: "viewColorMore", sender: nil)
+    }
+    
+    @IBAction func tappedIconStack(_ sender: Any) {
+        userSelectedRow = 2
+        performSegue(withIdentifier: "viewIconsMore", sender: nil)
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         sectionHeaderTxtxbx.text = sectionHeaderTxtxbx.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         db.updatePieCustomization(type: 3, section: selectedSectionPresets.section, item: sectionHeaderTxtxbx.text!)
         headerTxt.text = sectionHeaderTxtxbx.text!
-        tableView.reloadData()
+        setTextAndColors()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -122,4 +120,7 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func setColorTheme(){
+        
+    }
 }

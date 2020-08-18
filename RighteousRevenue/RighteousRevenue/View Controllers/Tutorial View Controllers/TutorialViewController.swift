@@ -98,6 +98,8 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
         }
     }
     
-   
+   func setColorTheme(){
+       
+   }
 
 }
