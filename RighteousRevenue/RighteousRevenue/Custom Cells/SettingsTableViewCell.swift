@@ -16,12 +16,19 @@ class SettingsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setColorTheme()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setColorTheme(){
+        contentView.theme_backgroundColor = GlobalPicker.cardColor
+        settingName.theme_textColor = GlobalPicker.textColor
+        indicatorImg.theme_tintColor = GlobalPicker.buttonTintColor
     }
     
 }

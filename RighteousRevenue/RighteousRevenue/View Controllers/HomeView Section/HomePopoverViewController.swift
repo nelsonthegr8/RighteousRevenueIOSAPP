@@ -7,21 +7,28 @@
 //
 
 import UIKit
+import SwiftTheme
 
 class HomePopoverViewController: UIViewController {
-
+    
+//MARK: - Outlets
     @IBOutlet weak var sectionHeader: UILabel!
+    @IBOutlet var addButton: UIButton!
+    @IBOutlet var editButton: UIButton!
+    
+//MARK: - Variables
     var sectionName:String = "test"
     var sectionNumber:Int = 1
-    
+    var expenseCheck:Bool = false
+
+//MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        sectionHeader.text = sectionName
-        overrideUserInterfaceStyle = .dark
+        setColorTheme()
     }
-    
+
+//MARK: - Segue Section
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "Add")
@@ -37,15 +44,18 @@ class HomePopoverViewController: UIViewController {
             let vc = segue.destination as! EditViewController
             vc.selectedSectionPresets.section = sectionNumber
             vc.selectedHeader = sectionName
+            vc.expenseChecker = expenseCheck
+            
         }
         
     }
     
-    @IBAction func returnFromSelectedItemSegue(segue:UIStoryboardSegue){
-        performSegue(withIdentifier: "returnFromPopUp", sender: nil)
-    }
-    
+//MARK: - Set Theme Section
     func setColorTheme(){
-        
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
+        sectionHeader.theme_textColor = GlobalPicker.textColor
+        addButton.theme_tintColor = GlobalPicker.buttonTintColor
+        editButton.theme_tintColor = GlobalPicker.buttonTintColor
+        overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
     }
 }

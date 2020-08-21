@@ -30,6 +30,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         addGoogleAdsToView(addSection: addSection, view: self)
+        setColorTheme()
         getLessonInfo()
         initializeTableVIew()
         addSection.delegate = self
@@ -89,6 +90,7 @@ class LessonsTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func setColorTheme(){
-        
+        tableView.theme_backgroundColor = GlobalPicker.backgroundColor
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
     }
 }

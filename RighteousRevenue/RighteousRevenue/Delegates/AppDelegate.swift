@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "FirstLaunch")
             UserDefaults.standard.set(false, forKey: "UserPayed")
             UserDefaults.standard.set(1000.56,forKey: "UserMonthlyIncome")
-            UserDefaults.standard.set("Dark", forKey: "ThemeChoice")
+            UserDefaults.standard.set(false, forKey: "CustomChoice")
             if(CheckInternet.Connection()){
                 UserDefaults.standard.set(false, forKey: "InternetDisconnected")
             }else{
@@ -30,6 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(!UserDefaults.standard.bool(forKey: "UserPayed")){
             GADMobileAds.sharedInstance().start(completionHandler: nil)
         }
+        
+        
+        if(!UserDefaults.standard.bool(forKey: "CustomChoice")){
+            MyThemes.restoreLastTheme()
+        }
+       
+        let tabBar = UITabBar.appearance()
+        
+        UIApplication.shared.theme_setStatusBarStyle([.default,.lightContent], animated: true)
+        tabBar.theme_barTintColor = GlobalPicker.barBackgroundColor
+        tabBar.theme_tintColor = GlobalPicker.tabButtonTintColor
+        tabBar.theme_unselectedItemTintColor = GlobalPicker.tabButtonTintColor
         
         return true
     }

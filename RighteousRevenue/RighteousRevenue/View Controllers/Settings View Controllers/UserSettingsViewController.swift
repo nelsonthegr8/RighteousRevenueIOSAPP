@@ -17,12 +17,7 @@ class UserSettingsViewController: UIViewController {
     }
     
     @IBAction func one(_ sender: Any) {
-        if(UserDefaults.standard.string(forKey: "ThemeChoice") == "Dark"){
-            UserDefaults.standard.set("Light", forKey: "ThemeChoice")
-            
-        }else{
-            UserDefaults.standard.set("Dark", forKey: "ThemeChoice")
-        }
+        MyThemes.switchToNext()
     }
     
     @IBAction func two(_ sender: Any) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTheme
 
 class LessonsTableViewCell: UITableViewCell {
 
@@ -19,6 +20,13 @@ class LessonsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(setCardThemeAndLayout),
+            name: NSNotification.Name(rawValue: ThemeUpdateNotification),
+            object: nil
+        )
+        setCardThemeAndLayout()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,13 +40,19 @@ class LessonsTableViewCell: UITableViewCell {
         CardImg.image = UIImage(named: cardInfo.img)
         CardTitle.text = cardInfo.title
         CardSubtitle.text = cardInfo.subheading
-        
-        CardView.layer.shadowColor = UIColor.gray.cgColor
+    }
+    
+    @objc func setCardThemeAndLayout() {
+        contentView.theme_backgroundColor = GlobalPicker.backgroundColor
+        CardView.theme_backgroundColor = GlobalPicker.cardColor
+        CardTitle.theme_textColor = GlobalPicker.textColor
+        CardSubtitle.theme_textColor = GlobalPicker.textColor
+        CardView.layer.shadowColor = GlobalPicker.ShadowColors[ThemeManager.currentThemeIndex]
         CardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         CardView.layer.shadowOpacity = 1.0
         CardView.layer.masksToBounds = false
         CardView.layer.cornerRadius = 2.0
-        //self.selectionStyle = .none
+        self.selectionStyle = .none
     }
     
 }

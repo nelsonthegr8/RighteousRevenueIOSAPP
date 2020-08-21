@@ -17,8 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJN-Qx-XYf" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="l84-iH-SZw"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-8e-Rbi">
+                                <rect key="frame" x="376" y="12" width="17.5" height="15.5"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Bvt-BQ-Pu4" appends="YES" id="9BI-nP-FBt"/>
+                                </connections>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61y-SD-GCJ">
-                                <rect key="frame" x="42" y="256" width="330" height="384"/>
+                                <rect key="frame" x="42" y="286" width="330" height="324"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Pie Section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkE-cT-UNW">
                                         <rect key="frame" x="8" y="8" width="314" height="48"/>
@@ -29,14 +44,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-ma-V5P" userLabel="Items Container">
-                                        <rect key="frame" x="31" y="75" width="269" height="145"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-ma-V5P" userLabel="Items Container">
+                                        <rect key="frame" x="31" y="75" width="269" height="190"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section Header" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Eo-4V-jVL" customClass="YokoTextField" customModule="TextFieldEffects">
                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Xgi-oq-BuQ"/>
-                                                    <constraint firstAttribute="width" constant="269" id="klt-BB-Rsj"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -51,7 +65,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <stackView opaque="NO" tag="1" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-ft-0oF" userLabel="Section Color ">
-                                                <rect key="frame" x="0.0" y="65" width="269" height="30"/>
+                                                <rect key="frame" x="0.0" y="63" width="269" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHD-lx-53O">
                                                         <rect key="frame" x="0.0" y="0.0" width="229" height="30"/>
@@ -73,7 +87,7 @@
                                                 </connections>
                                             </stackView>
                                             <stackView opaque="NO" tag="2" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NVm-OO-c5N" userLabel="Section Icon">
-                                                <rect key="frame" x="0.0" y="115" width="269" height="30"/>
+                                                <rect key="frame" x="0.0" y="111" width="269" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJZ-zc-EQD">
                                                         <rect key="frame" x="0.0" y="0.0" width="229" height="30"/>
@@ -94,16 +108,36 @@
                                                     <outletCollection property="gestureRecognizers" destination="Co5-y1-7Sx" appends="YES" id="jdw-Ki-lLS"/>
                                                 </connections>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ww4-zo-6UD" userLabel="Expense Stack">
+                                                <rect key="frame" x="0.0" y="159" width="269" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGC-xE-4A6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="212" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N65-qS-Q5b">
+                                                        <rect key="frame" x="222" y="0.0" width="49" height="31"/>
+                                                        <color key="onTintColor" name="IncomeColor"/>
+                                                        <color key="thumbTintColor" name="DarkUIColor"/>
+                                                        <connections>
+                                                            <action selector="expenseSwitchClicked:" destination="si4-Nf-yGh" eventType="valueChanged" id="XSi-Zc-qDU"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="ww4-zo-6UD" firstAttribute="width" secondItem="2Eo-4V-jVL" secondAttribute="width" id="6GJ-Am-mNR"/>
                                             <constraint firstItem="NVm-OO-c5N" firstAttribute="width" secondItem="2Eo-4V-jVL" secondAttribute="width" id="Lc9-8v-H2D"/>
+                                            <constraint firstItem="N65-qS-Q5b" firstAttribute="width" secondItem="bx4-VS-RCB" secondAttribute="width" multiplier="1.56667" id="VwT-UJ-7BJ"/>
                                             <constraint firstItem="fmQ-ft-0oF" firstAttribute="width" secondItem="2Eo-4V-jVL" secondAttribute="width" id="pWm-nh-Sb0"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="384" id="PKi-eV-MsB"/>
                                     <constraint firstItem="RkE-cT-UNW" firstAttribute="leading" secondItem="61y-SD-GCJ" secondAttribute="leading" constant="8" id="Xca-Ng-OR9"/>
                                     <constraint firstAttribute="trailing" secondItem="Apo-ma-V5P" secondAttribute="trailing" constant="30" id="ZuW-K2-ND7"/>
                                     <constraint firstAttribute="trailing" secondItem="RkE-cT-UNW" secondAttribute="trailing" constant="8" id="es8-gv-Tfp"/>
@@ -112,42 +146,27 @@
                                     <constraint firstItem="Apo-ma-V5P" firstAttribute="top" secondItem="RkE-cT-UNW" secondAttribute="bottom" constant="19" id="pAz-gJ-OsU"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-8e-Rbi">
-                                <rect key="frame" x="384" y="0.5" width="30" height="29"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="62K-S4-ZId"/>
-                                    <constraint firstAttribute="height" constant="30" id="gex-KV-zgB"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Bvt-BQ-Pu4" appends="YES" id="9BI-nP-FBt"/>
-                                </connections>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJN-Qx-XYf" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="l84-iH-SZw"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" id="4ps-bw-eFb"/>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="trailing" secondItem="bCP-LP-dX7" secondAttribute="trailing" id="7Tg-V3-pCS"/>
-                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="top" secondItem="vJO-Wy-4qi" secondAttribute="top" id="Afc-mL-jnQ"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="height" secondItem="61y-SD-GCJ" secondAttribute="height" multiplier="0.0617284" id="F3e-Zh-NZg"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerY" secondItem="vJO-Wy-4qi" secondAttribute="centerY" id="Lw6-dX-uzt"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" constant="42" id="LyB-QY-9bV"/>
-                            <constraint firstAttribute="trailing" secondItem="kc0-8e-Rbi" secondAttribute="trailing" id="TuG-AC-6ai"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="top" secondItem="vJO-Wy-4qi" secondAttribute="top" constant="10" id="cQZ-8y-dsM"/>
                             <constraint firstItem="bCP-LP-dX7" firstAttribute="trailing" secondItem="61y-SD-GCJ" secondAttribute="trailing" constant="42" id="qa1-nZ-dom"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerX" secondItem="vJO-Wy-4qi" secondAttribute="centerX" id="wrh-wU-9Mu"/>
+                            <constraint firstAttribute="trailing" secondItem="kc0-8e-Rbi" secondAttribute="trailing" constant="20.5" id="x62-BR-SfE"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="width" secondItem="61y-SD-GCJ" secondAttribute="width" multiplier="0.0530303" id="xR3-tR-2qj"/>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="bottom" secondItem="bCP-LP-dX7" secondAttribute="bottom" id="zgG-Eu-hYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCP-LP-dX7"/>
                     </view>
                     <connections>
                         <outlet property="cardView" destination="61y-SD-GCJ" id="1ht-eE-KIR"/>
+                        <outlet property="expenseLbl" destination="jGC-xE-4A6" id="wcP-5d-hgP"/>
+                        <outlet property="expenseSwitch" destination="N65-qS-Q5b" id="2dS-yS-JIn"/>
                         <outlet property="googleAddSection" destination="TJN-Qx-XYf" id="EG8-12-RM8"/>
                         <outlet property="headerTxt" destination="RkE-cT-UNW" id="3OW-2P-hlh"/>
                         <outlet property="sectionColorImg" destination="tpm-cU-QAE" id="zhc-Dr-1MD"/>
@@ -155,10 +174,11 @@
                         <outlet property="sectionHeaderTxtxbx" destination="2Eo-4V-jVL" id="TxW-ap-0al"/>
                         <outlet property="sectionIconImg" destination="bx4-VS-RCB" id="ioV-AI-acp"/>
                         <outlet property="sectionIconLbl" destination="gJZ-zc-EQD" id="Pkd-ZR-MWi"/>
+                        <outlet property="xButton" destination="kc0-8e-Rbi" id="fgg-Ma-7NL"/>
                         <segue destination="2Xa-6W-jQR" kind="popoverPresentation" identifier="viewColorMore" popoverAnchorView="tpm-cU-QAE" id="ugI-8p-YJh">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
-                        <segue destination="kOr-V1-wMV" kind="unwind" identifier="returnHome" unwindAction="returnFromSelectedItemSegueWithSegue:" id="Jjy-3o-x7c"/>
+                        <segue destination="kOr-V1-wMV" kind="unwind" identifier="returnHome" unwindAction="returnFromPopUpSegueWithSegue:" id="Jjy-3o-x7c"/>
                         <segue destination="2Xa-6W-jQR" kind="popoverPresentation" identifier="viewIconsMore" popoverAnchorView="bx4-VS-RCB" id="8pg-1Q-5P8">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
@@ -189,15 +209,14 @@
             <objects>
                 <viewController id="2Xa-6W-jQR" customClass="UserPresetViewMoreViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFg-cA-oIS">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K2y-A9-Ini">
-                                <rect key="frame" x="16" y="0.0" width="268" height="300"/>
+                                <rect key="frame" x="16" y="0.0" width="218" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r5m-2Z-ZJk">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="r5m-2Z-ZJk">
                                     <size key="itemSize" width="80" height="80"/>
-                                    <size key="estimatedItemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -223,7 +242,6 @@
                                                 <constraint firstItem="Iw4-6C-cmU" firstAttribute="top" secondItem="E5M-kh-GJb" secondAttribute="top" constant="8" id="djH-gK-FVM"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="80" height="80"/>
                                         <connections>
                                             <outlet property="imageOrIcon" destination="Iw4-6C-cmU" id="bog-Tv-bcT"/>
                                         </connections>
@@ -233,15 +251,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="K2y-A9-Ini" firstAttribute="bottom" secondItem="vL1-wi-G58" secondAttribute="bottom" id="Sh0-h0-CZN"/>
-                            <constraint firstItem="K2y-A9-Ini" firstAttribute="leading" secondItem="vL1-wi-G58" secondAttribute="leading" constant="16" id="kvc-Uo-cDj"/>
-                            <constraint firstItem="K2y-A9-Ini" firstAttribute="top" secondItem="VFg-cA-oIS" secondAttribute="top" id="nHJ-ke-QVx"/>
-                            <constraint firstItem="vL1-wi-G58" firstAttribute="trailing" secondItem="K2y-A9-Ini" secondAttribute="trailing" constant="16" id="tt5-Hx-Dmo"/>
+                            <constraint firstItem="K2y-A9-Ini" firstAttribute="leading" secondItem="vL1-wi-G58" secondAttribute="leading" constant="16" id="4EC-WB-oqM"/>
+                            <constraint firstItem="K2y-A9-Ini" firstAttribute="bottom" secondItem="vL1-wi-G58" secondAttribute="bottom" id="UXA-nZ-pq8"/>
+                            <constraint firstItem="vL1-wi-G58" firstAttribute="trailing" secondItem="K2y-A9-Ini" secondAttribute="trailing" constant="16" id="cek-IE-W2b"/>
+                            <constraint firstItem="K2y-A9-Ini" firstAttribute="top" secondItem="VFg-cA-oIS" secondAttribute="top" id="sW6-O9-aTa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vL1-wi-G58"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="300"/>
+                    <size key="freeformSize" width="250" height="200"/>
                     <connections>
                         <outlet property="collectionView" destination="K2y-A9-Ini" id="FHg-C5-ysC"/>
                         <segue destination="fXZ-S6-4fM" kind="unwind" identifier="selectedUnwind" unwindAction="returnFromViewMoreSegueWithSegue:" id="ZcL-Ck-I5k"/>
@@ -257,9 +275,15 @@
         <segue reference="8pg-1Q-5P8"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="BillsColor">
             <color red="1" green="0.80000001192092896" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkUIColor">
+            <color red="0.30196078431372547" green="0.30588235294117649" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="IncomeColor">
+            <color red="0.54100000858306885" green="0.65700000524520874" blue="0.42300000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

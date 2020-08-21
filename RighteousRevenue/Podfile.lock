@@ -42,6 +42,7 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - SwiftTheme (0.5.2)
   - TextFieldEffects (1.6.0)
   - YouTubePlayer (0.7.2)
 
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - NVActivityIndicatorView
   - SQLite.swift
+  - SwiftTheme
   - TextFieldEffects
   - YouTubePlayer
 
@@ -66,6 +68,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - PromisesObjC
     - SQLite.swift
+    - SwiftTheme
     - TextFieldEffects
     - YouTubePlayer
 
@@ -80,9 +83,10 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SwiftTheme: 8b02c479bb4441b2b6790ac126e961b1b6fb0932
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 1894f5ce69ede71ef7eb4f446fe24bded3be8fec
+PODFILE CHECKSUM: 309e83b16f93297d65cb7d9c011f89e3a7a63728
 
 COCOAPODS: 1.8.4

@@ -11,6 +11,7 @@ pod 'TextFieldEffects'
 pod 'BEMCheckBox'
 pod 'YouTubePlayer'
 pod 'NVActivityIndicatorView'
+pod 'SwiftTheme'
 
   # Pods for RighteousRevenue
 

@@ -14,4 +14,5 @@ struct MoreInfoForPieSection{
     var billName:String
     var billAmount: Double
     var payed:Bool = false
+    var symbol:String
 }

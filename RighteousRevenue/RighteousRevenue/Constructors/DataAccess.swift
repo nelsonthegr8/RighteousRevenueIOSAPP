@@ -105,13 +105,20 @@ class dataAccess{
     {
         var result:[MoreInfoForPieSection] = []
         let query = "SELECT BillName,BillAmount,DataID,BillPayed FROM PieData WHERE Section = \(Section)"
+        let query2 = "SELECT IncomeSymbol FROM IconChoice WHERE Section = \(Section)"
         
         for row in try! database.prepare(query){
             let billNames = row[0] as? String ?? ""
             let billAmounts = row[1] as? Double ?? 0.0
             let id = row[2] as? Int64 ?? 0
             let payed = row[3] as? String ?? ""
-            result.append(MoreInfoForPieSection(DataId: Int(id), billName: billNames, billAmount: billAmounts, payed: payed.bool!))
+            result.append(MoreInfoForPieSection(DataId: Int(id), billName: billNames, billAmount: billAmounts, payed: payed.bool!, symbol: ""))
+        }
+        
+        if(result.count != 0){
+            for row in try! database.prepare(query2){
+                result[0].symbol = row[0] as? String ?? ""
+            }
         }
         
         return result
@@ -140,12 +147,17 @@ class dataAccess{
         case 1:
             query =
             "UPDATE IconChoice SET SectionColor = '\(item)' WHERE Section = '\(section)'"
+        case 2:
+            query =
+            "UPDATE IconChoice SET IconName = '\(item)' WHERE Section = '\(section)'"
         case 3:
             query =
             "UPDATE IconChoice SET SectionName = '\(item)' WHERE Section = '\(section)'"
-        default:
+        case 4:
             query =
-            "UPDATE IconChoice SET IconName = '\(item)' WHERE Section = '\(section)'"
+            "UPDATE IconChoice SET IncomeSymbol = '\(item)' WHERE Section = '\(section)'"
+        default:
+            break
         }
         
         do {
