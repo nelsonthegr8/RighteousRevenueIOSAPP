@@ -101,4 +101,3 @@ extension SettingsMenuController: UITableViewDataSource, UITableViewDelegate {
        }
     
 }
-

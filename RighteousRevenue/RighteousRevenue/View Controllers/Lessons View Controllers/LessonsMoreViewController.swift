@@ -10,6 +10,7 @@ import UIKit
 import GoogleMobileAds
 import YouTubePlayer
 import NVActivityIndicatorView
+import SwiftTheme
 
 class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTubePlayerDelegate {
     
@@ -75,7 +76,7 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTube
         MoreInfoDescription.theme_textColor = GlobalPicker.textColor
         MoreInfoDescription.theme_backgroundColor = GlobalPicker.backgroundColor
         internetDisconectedView.theme_tintColor = GlobalPicker.buttonTintColor
-        loadingVideo.theme_tintColor = GlobalPicker.buttonTintColor
+        loadingVideo.color = UIColor(named: GlobalPicker.aTextColor[ThemeManager.currentThemeIndex])!
         xButton.theme_tintColor = GlobalPicker.buttonTintColor
         view.theme_backgroundColor = GlobalPicker.backgroundColor
     }

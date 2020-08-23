@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
     private var selectedSectionName = "test"
     private var selectedSectionNumber = 1
     private var selectedExpenseCheck = false
+    private var monthlyIncomeAmnt = UserDefaults.standard.double(forKey: "UserMonthlyIncome")
     private var monthlyExpense = 0.0
     private var defaultTheme = UserDefaults.standard.bool(forKey: "CustomChoice")
     private var pieSelected = false
@@ -45,6 +46,13 @@ class HomeViewController: UIViewController {
 
 //MARK: - View Controller Life Cycle
 extension HomeViewController{
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if(UserDefaults.standard.double(forKey: "UserMonthlyIncome") != monthlyIncomeAmnt){
+            monthlyIncomeAmnt = UserDefaults.standard.double(forKey: "UserMonthlyIncome")
+            updateUserPieTextWhenAmountIsChanged()
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -68,16 +76,15 @@ extension HomeViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(UserDefaults.standard.bool(forKey: "CustomChoice")){
-            getUserUiChoice()
+        if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
+            getUserDefaultThemeOnFirstLaunch()
         }
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(updateUserPieTextWhenThemeIsChanged),
+            selector: #selector(updateUserPieTextWhenAmountIsChanged),
             name: NSNotification.Name(rawValue: ThemeUpdateNotification),
             object: nil
         )
-        setcollectionViewSizes()
         assignThemeColors()
         addGoogleAdsToView(addSection: addSection, view: self)
         setUpPieData()
@@ -119,26 +126,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.scriptureImg.image = UIImage(named: "PNG image-74B59E263AFB-1")
         cell.scriptureImg.layer.cornerRadius = 10
         return cell
-    }
-    
-    func setcollectionViewSizes(){
-//        let itemWidth = scriptureOfTheDay.bounds.width/3 - 3
-//        let itemHeight = scriptureOfTheDay.bounds.height - 10
-//
-//        let layout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        print(scriptureOfTheDay.bounds.height)
-//        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-//        print(itemHeight)
-//        print(itemWidth)
-//        print(layout.itemSize.height)
-//        print(layout.itemSize.width)
-//        layout.minimumInteritemSpacing = 3
-//        layout.minimumLineSpacing = 3
-//        
-//        layout.scrollDirection = .horizontal
-//        
-//        scriptureOfTheDay.collectionViewLayout = layout
     }
 }
 
@@ -220,7 +207,7 @@ extension HomeViewController: ChartViewDelegate{
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         let textColor = UIColor(named: GlobalPicker.aTextColor[ThemeManager.currentThemeIndex])
         let header = "Revenue:\n"
-        let monthlyIncome = "+" + String(format: "$%.02f",UserDefaults.standard.double(forKey: "UserMonthlyIncome"))
+        let monthlyIncome = "+" + String(format: "$%.02f",monthlyIncomeAmnt)
         let middleheader = "\n\n Expenses:\n"
         let monthlyexpense = "-" + String(format: "$%.02f", monthlyExpense)
         let leftoverrev = UserDefaults.standard.double(forKey: "UserMonthlyIncome") - monthlyExpense
@@ -361,28 +348,21 @@ extension HomeViewController: GADBannerViewDelegate{
 
 //MARK: - Check For If User Changes The Theme By Default
 extension HomeViewController {
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard
-        #available(iOS 13.0, *),
-        traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
-        else { return }
 
-        if(UserDefaults.standard.bool(forKey: "CustomChoice")){
-        updateTheme()
-        }
-
+    func getUserDefaultThemeOnFirstLaunch(){
+            switch traitCollection.userInterfaceStyle {
+                case .light:
+                MyThemes.switchNight(isToNight: false)
+                case .dark:
+                MyThemes.switchNight(isToNight: true)
+                case .unspecified:
+                break
+                @unknown default:
+                break
+            }
     }
 
-    private func updateTheme() {
-        guard #available(iOS 12.0, *) else { return }
-
-        getUserUiChoice()
-        updateUserPieTextWhenThemeIsChanged()
-    }
-
-    @objc func updateUserPieTextWhenThemeIsChanged(){
+    @objc func updateUserPieTextWhenAmountIsChanged(){
     //this changes the text color of the inner circle for if it is selected and when it is not when the theme is changed
         if(billsPie.valuesToHighlight()){
         let highlighted = billsPie.highlighted[0]
@@ -390,19 +370,6 @@ extension HomeViewController {
         billsPie.highlightValue(highlighted, callDelegate: true)
         }else{
         clearPieChart()
-        }
-    }
-//Get User Ui Choice switch Statement
-    func getUserUiChoice(){
-        switch traitCollection.userInterfaceStyle {
-            case .light:
-            MyThemes.switchNight(isToNight: false)
-            case .dark:
-            MyThemes.switchNight(isToNight: true)
-            case .unspecified:
-            break
-            @unknown default:
-            break
         }
     }
 

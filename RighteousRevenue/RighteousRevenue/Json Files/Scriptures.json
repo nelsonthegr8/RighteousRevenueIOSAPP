@@ -2,18 +2,12 @@
     
   "scriptureInfo":[
      {
-       "img": "cat",
-       "title": "Get Your Cat",
-       "subheading": "Now!",
-       "lesson": "Get it nwo asdasdasdasdasdadasdasdasdasdasdasd",
-       "videolink": "https://www.youtube.com/watch?v=e0dlz1sCYag"
+       "scriptureimg": "cat",
+       "biblelink": "Get Your Cat"
      },
      {
-       "img": "Bills",
-       "title": "Pay Your Bils",
-       "subheading": "Now!",
-       "lesson": "boy you better pay dem billsss",
-       "videolink": "https://www.youtube.com/watch?v=2mgUPt2KI08&t=1s"
+       "scriptureimg": "cat",
+       "biblelink": "Get Your Cat"
      }
   ]
   

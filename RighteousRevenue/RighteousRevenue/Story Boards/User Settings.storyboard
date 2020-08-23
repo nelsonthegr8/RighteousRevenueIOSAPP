@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,30 +17,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-3A-KFx">
-                                <rect key="frame" x="111" y="267" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change Theme"/>
-                                <connections>
-                                    <action selector="one:" destination="e0K-17-sZ7" eventType="touchUpInside" id="k7k-Mp-JKG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvw-Tz-PB2">
-                                <rect key="frame" x="210" y="401" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change Ad Payed"/>
-                                <connections>
-                                    <action selector="two:" destination="e0K-17-sZ7" eventType="touchUpInside" id="NWO-AA-9pP"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-aG-25W" userLabel="CardView">
+                                <rect key="frame" x="47" y="138" width="320" height="345"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="niG-PV-v6t" userLabel="Items Container">
+                                        <rect key="frame" x="10" y="10" width="300" height="233.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAn-g5-RrI">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-80-bZX">
+                                                <rect key="frame" x="0.0" y="30.5" width="300" height="148"/>
+                                                <color key="backgroundColor" red="0.25495144720000001" green="0.26225596670000001" blue="0.30980831380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dxY-6x-qLh">
+                                                    <size key="itemSize" width="94" height="77"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThemeChooserCell" id="jU5-eG-BCn" customClass="UserSettingsCollectionViewCell" customModule="RighteousRevenue" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.5" width="94" height="77"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K5O-ZB-AUn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="77"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-a5-gki">
+                                                                    <rect key="frame" x="-1" y="0.0" width="95" height="54"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Theme Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3i-6C-M6M">
+                                                                    <rect key="frame" x="0.0" y="62" width="94" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="94" height="77"/>
+                                                        <connections>
+                                                            <outlet property="themeImg" destination="AMm-a5-gki" id="XnK-r0-hko"/>
+                                                            <outlet property="themeName" destination="n3i-6C-M6M" id="7Bc-6Y-ItA"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Monthly Income" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vI-Av-B1p" customClass="YokoTextField" customModule="TextFieldEffects">
+                                                <rect key="frame" x="0.0" y="188.5" width="300" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Wd7-6S-mvU"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="foregroundColor">
+                                                        <color key="value" name="BillsColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="niG-PV-v6t" secondAttribute="trailing" constant="10" id="T4b-N1-XgT"/>
+                                    <constraint firstItem="niG-PV-v6t" firstAttribute="leading" secondItem="t5u-aG-25W" secondAttribute="leading" constant="10" id="UQD-qH-IzU"/>
+                                    <constraint firstItem="niG-PV-v6t" firstAttribute="top" secondItem="t5u-aG-25W" secondAttribute="top" constant="10" id="USB-fC-saL"/>
+                                    <constraint firstItem="Ja6-80-bZX" firstAttribute="height" secondItem="t5u-aG-25W" secondAttribute="height" multiplier="0.428986" id="bBj-oD-wvs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="centerX" secondItem="4Gb-Ce-1ha" secondAttribute="centerX" id="9e2-MQ-rth"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="top" secondItem="nX2-Hy-Img" secondAttribute="top" constant="94" id="Gxk-bo-on5"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="leading" secondItem="nX2-Hy-Img" secondAttribute="leading" constant="47" id="N9V-YS-CAd"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="height" secondItem="4Gb-Ce-1ha" secondAttribute="height" multiplier="0.385045" id="Rve-xU-5PW"/>
+                            <constraint firstItem="nX2-Hy-Img" firstAttribute="trailing" secondItem="t5u-aG-25W" secondAttribute="trailing" constant="47" id="cIA-hI-9Nf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nX2-Hy-Img"/>
                     </view>
+                    <connections>
+                        <outlet property="cardView" destination="t5u-aG-25W" id="sFh-MD-mSe"/>
+                        <outlet property="monthlyIncomeTxtbx" destination="3vI-Av-B1p" id="JKq-Xy-5Nq"/>
+                        <outlet property="themeChoiceHeadertxtbx" destination="kAn-g5-RrI" id="ijY-Q7-Mrq"/>
+                        <outlet property="themeCollectionView" destination="Ja6-80-bZX" id="lae-Pz-680"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5x-0o-qs0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="419" y="-178"/>
+            <point key="canvasLocation" x="418.84057971014494" y="-178.125"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BillsColor">
+            <color red="1" green="0.80000001192092896" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

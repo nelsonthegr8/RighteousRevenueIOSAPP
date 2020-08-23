@@ -12,7 +12,7 @@ import SwiftTheme
 private let lastThemeIndexKey = "lastedThemeIndex"
 private let defaults = UserDefaults.standard
 
-enum MyThemes: Int {
+enum MyThemes: Int, CaseIterable {
     
     case light = 0
     case night = 1

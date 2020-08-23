@@ -9,7 +9,8 @@
 import SwiftTheme
 
 public let incomeColor = UIColor(named: "IncomeColor")!
-public let expenseColor = UIColor(named: "ExspenseColor")!
+public let expenseColor = UIColor(named: "ExpenseColor")!
+public let themeNames = ["light","dark"]
 
 enum GlobalPicker {
     static let backgroundColor: ThemeColorPicker = ["#BB5D5E", "#4D4E5D"]

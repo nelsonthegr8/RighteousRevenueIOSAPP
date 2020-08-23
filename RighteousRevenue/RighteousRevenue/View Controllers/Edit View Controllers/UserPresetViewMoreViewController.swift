@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftTheme
 
-class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class UserPresetViewMoreViewController: UIViewController {
   //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -27,10 +28,20 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
         setSelectionStrings()
         collectionView.delegate = self
         collectionView.dataSource = self
-        setcollectionViewSizes()
     }
     
-//MARK: - Collection View Delegate and Style
+//MARK: - Set up Color Scheme
+    func setColorTheme(){
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
+        collectionView.theme_backgroundColor = GlobalPicker.backgroundColor
+        overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
+    }
+}
+
+//MARK: - CollectionView Data and Delegate and Flow Delegate
+
+extension UserPresetViewMoreViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return itemStrings.count
     }
@@ -52,22 +63,7 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
         db.updatePieCustomization(type: selectedSection, section: pieSectionID, item: itemStrings[indexPath.row])
         self.performSegue(withIdentifier: "selectedUnwind", sender: nil)
     }
-    
-    func setcollectionViewSizes(){
-        let itemSize = collectionView.bounds.width/3 - 3
 
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: itemSize, height: itemSize)
-
-        layout.minimumInteritemSpacing = 3
-        layout.minimumLineSpacing = 3
-        
-        layout.scrollDirection = .vertical
-
-        collectionView.collectionViewLayout = layout
-    }
-    
     func setSelectionStrings()
     {
         if(selectedSection == 1){
@@ -76,10 +72,8 @@ class UserPresetViewMoreViewController: UIViewController, UICollectionViewDelega
             itemStrings = ImageNames
         }
     }
-
-//MARK: - Set up Color Scheme
-    func setColorTheme(){
-        view.theme_backgroundColor = GlobalPicker.backgroundColor
-        collectionView.theme_backgroundColor = GlobalPicker.backgroundColor
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.height/4)
     }
 }

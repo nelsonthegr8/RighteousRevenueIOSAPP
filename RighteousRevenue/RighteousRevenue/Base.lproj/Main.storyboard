@@ -52,7 +52,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Ng-42-Bf9">
-                                <rect key="frame" x="0.0" y="77" width="414" height="79"/>
+                                <rect key="frame" x="0.0" y="77" width="414" height="124"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="3" minimumInteritemSpacing="3" sectionInsetReference="safeArea" id="u6H-dJ-83T">
                                     <size key="itemSize" width="177.80000000000001" height="100"/>
@@ -62,15 +62,15 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ScriptureCollectionViewCell" id="4pa-o3-6WR" customClass="ScriptureOfTheDayCollectionViewCell" customModule="RighteousRevenue" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="124" height="70"/>
+                                        <rect key="frame" x="5" y="27" width="124" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="PYE-vb-tDw">
                                             <rect key="frame" x="0.0" y="0.0" width="124.44" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2th-Rr-fQD">
-                                                    <rect key="frame" x="1" y="-3" width="121" height="69"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2th-Rr-fQD">
+                                                    <rect key="frame" x="1" y="0.0" width="121" height="69"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
@@ -87,27 +87,27 @@
                                 <color key="backgroundColor" name="InvestmentColor"/>
                             </view>
                             <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="uET-Lh-R27" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="156" width="414" height="587"/>
+                                <rect key="frame" x="0.0" y="201" width="414" height="542"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="DarkUIColor"/>
                         <constraints>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="height" secondItem="vKj-76-vFc" secondAttribute="height" multiplier="0.0861009" id="0af-QW-UVW"/>
-                            <constraint firstItem="uET-Lh-R27" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="5UT-dK-r4z"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="bottom" secondItem="SuO-PS-nWV" secondAttribute="bottom" id="9eQ-BI-iG0"/>
                             <constraint firstItem="BLK-6r-bHA" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="Dhr-4H-zkK"/>
+                            <constraint firstItem="uET-Lh-R27" firstAttribute="height" secondItem="vKj-76-vFc" secondAttribute="height" multiplier="2:3" id="HaP-Xb-wwf"/>
+                            <constraint firstItem="uET-Lh-R27" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="J1u-Mw-DvA"/>
                             <constraint firstItem="BLK-6r-bHA" firstAttribute="top" secondItem="vKj-76-vFc" secondAttribute="top" constant="33" id="Mdr-ce-HFK"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="NzV-xF-IlS"/>
                             <constraint firstItem="BLK-6r-bHA" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="Q6U-zM-1vy"/>
-                            <constraint firstItem="uET-Lh-R27" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="Qlc-Ez-dpv"/>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="T2J-hx-2RI"/>
-                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="Vka-Nj-ida"/>
-                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="height" secondItem="mMa-RX-cMG" secondAttribute="height" multiplier="1.12857" id="Y3M-sg-JM2"/>
-                            <constraint firstItem="uET-Lh-R27" firstAttribute="top" secondItem="6Ng-42-Bf9" secondAttribute="bottom" id="Z8z-FU-PIl"/>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="top" secondItem="uET-Lh-R27" secondAttribute="bottom" id="b5a-n4-wVg"/>
-                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="top" secondItem="BLK-6r-bHA" secondAttribute="bottom" id="gts-A1-nOY"/>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="bottom" secondItem="SuO-PS-nWV" secondAttribute="bottom" id="jXd-G8-Zwr"/>
-                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="kNr-EO-Tbu"/>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="kzv-De-qFy"/>
+                            <constraint firstItem="uET-Lh-R27" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="TdG-4R-S8R"/>
+                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="top" secondItem="BLK-6r-bHA" secondAttribute="bottom" id="XBQ-5t-1yk"/>
+                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="jMr-rO-Y6u"/>
+                            <constraint firstItem="uET-Lh-R27" firstAttribute="top" secondItem="6Ng-42-Bf9" secondAttribute="bottom" id="laG-ZK-wYF"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="r47-Pb-ukf"/>
+                            <constraint firstItem="6Ng-42-Bf9" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="raq-5g-rQD"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="top" secondItem="uET-Lh-R27" secondAttribute="bottom" id="t68-YF-cfp"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="height" secondItem="uET-Lh-R27" secondAttribute="height" multiplier="0.129151" id="xrE-16-Lyp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SuO-PS-nWV"/>
                     </view>
