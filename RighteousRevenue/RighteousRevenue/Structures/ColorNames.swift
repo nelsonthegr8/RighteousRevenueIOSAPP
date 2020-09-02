@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 
 public let ColorNames:[String] =
-["BillsColor",
-"DebtColor",
-"GivingColor",
-"InvestmentColor",
-"RecreationColor",
-"SavingColor"]
+["DarkDefault1",
+"DarkDefault2",
+"DarkDefault3",
+"DarkDefault4",
+"DarkDefault5",
+"DarkDefault6",
+"LightDefault1",
+"LightDefault2",
+"LightDefault3",
+"LightDefault4",
+"LightDefault5",
+"LightDefault6"]

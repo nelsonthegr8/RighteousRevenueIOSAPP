@@ -77,7 +77,7 @@ class LessonsMoreViewController: UIViewController,GADBannerViewDelegate, YouTube
         MoreInfoDescription.theme_backgroundColor = GlobalPicker.backgroundColor
         internetDisconectedView.theme_tintColor = GlobalPicker.buttonTintColor
         loadingVideo.color = UIColor(named: GlobalPicker.aTextColor[ThemeManager.currentThemeIndex])!
-        xButton.theme_tintColor = GlobalPicker.buttonTintColor
+        xButton.theme_tintColor = GlobalPicker.tabButtonTintColor
         view.theme_backgroundColor = GlobalPicker.backgroundColor
     }
     

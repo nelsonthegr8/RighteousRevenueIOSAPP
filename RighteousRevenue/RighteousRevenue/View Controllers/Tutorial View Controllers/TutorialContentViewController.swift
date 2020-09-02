@@ -40,6 +40,14 @@ class TutorialContentViewController: UIViewController {
         headinglabel.text = heading
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
+        setupColorTheme()
     }
     
+    //MARK: - Set Color Theme
+    
+    private func setupColorTheme(){
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
+        headinglabel.theme_textColor = GlobalPicker.textColor
+        subHeadingLabel.theme_textColor = GlobalPicker.textColor
+    }
 }

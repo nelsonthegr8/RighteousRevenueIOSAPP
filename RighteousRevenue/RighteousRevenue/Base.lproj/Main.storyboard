@@ -32,20 +32,20 @@
         <!--Home-->
         <scene sceneID="MFP-uy-SIY">
             <objects>
-                <viewController title="Home" id="oSD-St-pah" customClass="HomeViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="oSD-St-pah" customClass="HomeViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vKj-76-vFc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLK-6r-bHA">
                                 <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                                <color key="backgroundColor" name="LightCardColor"/>
                                 <items>
                                     <navigationItem title="Righteous Revenue" id="CcV-CZ-Hen">
                                         <barButtonItem key="rightBarButtonItem" image="ellipsis" catalog="system" id="ftM-TT-IUa">
+                                            <color key="tintColor" name="LightTextColor"/>
                                             <connections>
-                                                <segue destination="IGP-GG-JFh" kind="popoverPresentation" identifier="showPopover" popoverAnchorBarButtonItem="ftM-TT-IUa" id="uPx-qN-0YW">
-                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
-                                                </segue>
+                                                <action selector="extraBtnPressed" destination="oSD-St-pah" id="dGR-V6-7Ct"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -53,7 +53,7 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Ng-42-Bf9">
                                 <rect key="frame" x="0.0" y="77" width="414" height="124"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="LightUIColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="3" minimumInteritemSpacing="3" sectionInsetReference="safeArea" id="u6H-dJ-83T">
                                     <size key="itemSize" width="177.80000000000001" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -61,15 +61,15 @@
                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ScriptureCollectionViewCell" id="4pa-o3-6WR" customClass="ScriptureOfTheDayCollectionViewCell" customModule="RighteousRevenue" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="27" width="124" height="70"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ScriptureCollectionViewCell" id="4pa-o3-6WR" customClass="ScriptureOfTheDayCollectionViewCell" customModule="Revenue" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="27" width="124.44" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="PYE-vb-tDw">
                                             <rect key="frame" x="0.0" y="0.0" width="124.44" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2th-Rr-fQD">
-                                                    <rect key="frame" x="1" y="0.0" width="121" height="69"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1Timothy6:10" translatesAutoresizingMaskIntoConstraints="NO" id="2th-Rr-fQD">
+                                                    <rect key="frame" x="2" y="0.0" width="119" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -84,14 +84,14 @@
                             </collectionView>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="mMa-RX-cMG" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="743" width="414" height="70"/>
-                                <color key="backgroundColor" name="InvestmentColor"/>
+                                <color key="backgroundColor" name="LightUIColor"/>
                             </view>
                             <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="uET-Lh-R27" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="201" width="414" height="542"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="LightUIColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="DarkUIColor"/>
+                        <color key="backgroundColor" name="LightCardColor"/>
                         <constraints>
                             <constraint firstItem="mMa-RX-cMG" firstAttribute="bottom" secondItem="SuO-PS-nWV" secondAttribute="bottom" id="9eQ-BI-iG0"/>
                             <constraint firstItem="BLK-6r-bHA" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="Dhr-4H-zkK"/>
@@ -106,12 +106,14 @@
                             <constraint firstItem="uET-Lh-R27" firstAttribute="top" secondItem="6Ng-42-Bf9" secondAttribute="bottom" id="laG-ZK-wYF"/>
                             <constraint firstItem="mMa-RX-cMG" firstAttribute="trailing" secondItem="SuO-PS-nWV" secondAttribute="trailing" id="r47-Pb-ukf"/>
                             <constraint firstItem="6Ng-42-Bf9" firstAttribute="leading" secondItem="SuO-PS-nWV" secondAttribute="leading" id="raq-5g-rQD"/>
-                            <constraint firstItem="mMa-RX-cMG" firstAttribute="top" secondItem="uET-Lh-R27" secondAttribute="bottom" id="t68-YF-cfp"/>
+                            <constraint firstItem="mMa-RX-cMG" firstAttribute="top" secondItem="uET-Lh-R27" secondAttribute="bottom" priority="250" id="t68-YF-cfp"/>
                             <constraint firstItem="mMa-RX-cMG" firstAttribute="height" secondItem="uET-Lh-R27" secondAttribute="height" multiplier="0.129151" id="xrE-16-Lyp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SuO-PS-nWV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="Lii-h5-p3X"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="Lii-h5-p3X">
+                        <color key="badgeColor" name="LightButtonColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home" id="rFg-dZ-HXV"/>
                     <connections>
@@ -121,6 +123,9 @@
                         <outlet property="navSection" destination="BLK-6r-bHA" id="qkj-rs-3aw"/>
                         <outlet property="popOverBtn" destination="ftM-TT-IUa" id="MF4-7z-B0H"/>
                         <outlet property="scriptureOfTheDay" destination="6Ng-42-Bf9" id="Yqo-8t-Evm"/>
+                        <segue destination="IGP-GG-JFh" kind="popoverPresentation" identifier="showPopover" popoverAnchorBarButtonItem="ftM-TT-IUa" id="FOb-c8-O21">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asI-iR-1JE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -130,7 +135,7 @@
         <!--Home Popover View Controller-->
         <scene sceneID="kAT-wZ-FMe">
             <objects>
-                <viewController storyboardIdentifier="HomePopover" id="IGP-GG-JFh" customClass="HomePopoverViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePopover" id="IGP-GG-JFh" customClass="HomePopoverViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="zrW-st-Sk6">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +160,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRV-QQ-sPq">
                                         <rect key="frame" x="0.0" y="61.5" width="196" height="30.5"/>
-                                        <state key="normal" title="Edit">
+                                        <state key="normal" title="Customize">
                                             <color key="titleColor" name="ButtonColor"/>
                                         </state>
                                         <connections>
@@ -196,8 +201,8 @@
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-sB-ESC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="BillsColor"/>
-                        <color key="selectedImageTintColor" name="DarkButtonColor"/>
+                        <color key="barTintColor" name="LightCardColor"/>
+                        <color key="selectedImageTintColor" name="LightButtonColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="oSD-St-pah" kind="relationship" relationship="viewControllers" id="kR1-Lm-7Uq"/>
@@ -212,9 +217,9 @@
         <!--Lessons-->
         <scene sceneID="O3n-ry-dgp">
             <objects>
-                <viewController title="Lessons" id="Rv1-NX-Mzu" customClass="LessonsTableViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lessons" id="Rv1-NX-Mzu" customClass="LessonsTableViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pej-Zd-zNc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5m-zA-Ejf">
@@ -253,7 +258,7 @@
         <!--Lessons More View Controller-->
         <scene sceneID="Mww-xg-ZeU">
             <objects>
-                <viewController id="psQ-Q9-o1B" customClass="LessonsMoreViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="psQ-Q9-o1B" customClass="LessonsMoreViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ka-rf-rSx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,22 +299,21 @@
                                     <constraint firstItem="Me9-2Y-CyY" firstAttribute="centerY" secondItem="3KK-gG-oqM" secondAttribute="centerY" id="UnD-MM-t5m"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-xk-Y97">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-xk-Y97">
                                 <rect key="frame" x="20" y="447.5" width="374" height="344.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me0-Q6-F0K">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me0-Q6-F0K">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38.5" id="EsQ-ZH-deN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76e-ch-He7">
-                                        <rect key="frame" x="0.0" y="60.5" width="374" height="284"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="374" height="303"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -317,7 +321,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="76e-ch-He7" firstAttribute="leading" secondItem="ZdR-xk-Y97" secondAttribute="leading" id="5Jf-DR-e4J"/>
-                                    <constraint firstItem="76e-ch-He7" firstAttribute="top" secondItem="Me0-Q6-F0K" secondAttribute="bottom" constant="22" id="KMA-Ow-6hc"/>
                                     <constraint firstAttribute="trailing" secondItem="Me0-Q6-F0K" secondAttribute="trailing" id="aaY-DO-XO3"/>
                                     <constraint firstItem="Me0-Q6-F0K" firstAttribute="leading" secondItem="ZdR-xk-Y97" secondAttribute="leading" id="gOE-IW-Q3K"/>
                                     <constraint firstAttribute="bottom" secondItem="76e-ch-He7" secondAttribute="bottom" id="nvc-ep-NdZ"/>
@@ -326,7 +329,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KXs-kx-WFI">
-                                <rect key="frame" x="384.5" y="52" width="17.5" height="15.5"/>
+                                <rect key="frame" x="384" y="46" width="30" height="15.5"/>
                                 <color key="tintColor" name="DarkButtonColor"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Vmg-qO-1Ua" appends="YES" id="D6D-Sm-YUc"/>
@@ -340,17 +343,17 @@
                             <constraint firstItem="3KK-gG-oqM" firstAttribute="leading" secondItem="DHO-2V-UtQ" secondAttribute="leading" id="4rn-fa-M6U"/>
                             <constraint firstItem="0lJ-5d-RZx" firstAttribute="height" secondItem="2ka-rf-rSx" secondAttribute="height" multiplier="0.078125" id="8r6-Ri-obf"/>
                             <constraint firstItem="3KK-gG-oqM" firstAttribute="top" secondItem="DHO-2V-UtQ" secondAttribute="top" constant="48" id="9oV-bk-I8K"/>
-                            <constraint firstItem="KXs-kx-WFI" firstAttribute="height" secondItem="2ka-rf-rSx" secondAttribute="height" multiplier="0.0223214" id="Fbr-tE-IJc"/>
+                            <constraint firstItem="KXs-kx-WFI" firstAttribute="width" secondItem="3KK-gG-oqM" secondAttribute="width" multiplier="0.0724638" id="Cph-cl-ZKQ"/>
+                            <constraint firstItem="KXs-kx-WFI" firstAttribute="height" secondItem="3KK-gG-oqM" secondAttribute="height" multiplier="0.0574713" id="Ffz-cW-hjn"/>
                             <constraint firstItem="ZdR-xk-Y97" firstAttribute="top" secondItem="3KK-gG-oqM" secondAttribute="bottom" constant="7.5" id="GLI-YE-TGo"/>
                             <constraint firstItem="ZdR-xk-Y97" firstAttribute="height" secondItem="2ka-rf-rSx" secondAttribute="height" multiplier="0.384487" id="V73-Eh-qBT"/>
                             <constraint firstItem="ZdR-xk-Y97" firstAttribute="leading" secondItem="DHO-2V-UtQ" secondAttribute="leading" constant="20" id="XvT-Mw-DZO"/>
-                            <constraint firstItem="DHO-2V-UtQ" firstAttribute="trailing" secondItem="KXs-kx-WFI" secondAttribute="trailing" constant="12" id="aOu-Ur-yyY"/>
                             <constraint firstItem="3KK-gG-oqM" firstAttribute="trailing" secondItem="DHO-2V-UtQ" secondAttribute="trailing" id="crN-v1-8pM"/>
-                            <constraint firstItem="KXs-kx-WFI" firstAttribute="width" secondItem="2ka-rf-rSx" secondAttribute="width" multiplier="0.0422705" id="e39-LU-bCu"/>
                             <constraint firstItem="0lJ-5d-RZx" firstAttribute="bottom" secondItem="DHO-2V-UtQ" secondAttribute="bottom" id="ex0-9i-8xi"/>
+                            <constraint firstItem="KXs-kx-WFI" firstAttribute="top" secondItem="DHO-2V-UtQ" secondAttribute="top" id="f5V-rf-yhA"/>
                             <constraint firstItem="0lJ-5d-RZx" firstAttribute="trailing" secondItem="DHO-2V-UtQ" secondAttribute="trailing" id="hXr-I0-L1m"/>
+                            <constraint firstItem="KXs-kx-WFI" firstAttribute="trailing" secondItem="DHO-2V-UtQ" secondAttribute="trailing" id="j9S-nO-op7"/>
                             <constraint firstItem="DHO-2V-UtQ" firstAttribute="trailing" secondItem="ZdR-xk-Y97" secondAttribute="trailing" constant="20" id="mRN-QB-Mel"/>
-                            <constraint firstItem="KXs-kx-WFI" firstAttribute="top" secondItem="DHO-2V-UtQ" secondAttribute="top" constant="6" id="tSx-nu-3qQ"/>
                             <constraint firstItem="0lJ-5d-RZx" firstAttribute="leading" secondItem="DHO-2V-UtQ" secondAttribute="leading" id="tgM-21-eOs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHO-2V-UtQ"/>
@@ -378,9 +381,9 @@
         <!--More-->
         <scene sceneID="Kal-ZF-V3o">
             <objects>
-                <viewController id="bYA-XP-Y6C" customClass="SettingsMenuController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bYA-XP-Y6C" customClass="SettingsMenuController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNJ-1K-uze">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="qXe-uX-MJ7">
@@ -415,7 +418,6 @@
                         <outlet property="versionNumber" destination="aKj-hw-tkj" id="Avl-L5-DNS"/>
                         <segue destination="61E-Lf-kw6" kind="presentation" identifier="Help" id="IC0-bf-3TZ"/>
                         <segue destination="cIm-oF-MtW" kind="presentation" identifier="RemoveAds" id="9TK-Uf-nyv"/>
-                        <segue destination="Nw8-Qw-n2f" kind="presentation" identifier="ContactUs" id="dO0-Kg-coa"/>
                         <segue destination="GG5-yb-EHC" kind="presentation" identifier="UserSettings" id="ozY-OB-u52"/>
                     </connections>
                 </viewController>
@@ -429,7 +431,7 @@
                 <viewControllerPlaceholder storyboardName="Tutorial" id="61E-Lf-kw6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6d-OO-1EX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="1023"/>
+            <point key="canvasLocation" x="1680" y="1023"/>
         </scene>
         <!--RemoveAds-->
         <scene sceneID="e66-9p-QZo">
@@ -437,17 +439,7 @@
                 <viewControllerPlaceholder storyboardName="RemoveAds" id="cIm-oF-MtW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9m-a2-11U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="1023"/>
-        </scene>
-        <!--ContactUs-->
-        <scene sceneID="tT8-de-8Pd">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ContactUs" id="Nw8-Qw-n2f" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zCp-Q9-Qq2"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EsO-Tx-UOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2043" y="1023"/>
+            <point key="canvasLocation" x="1925" y="1023"/>
         </scene>
         <!--User Settings-->
         <scene sceneID="0My-KH-Ob2">
@@ -457,10 +449,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLU-8I-dLI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="1023"/>
+            <point key="canvasLocation" x="2143" y="1023"/>
         </scene>
     </scenes>
     <resources>
+        <image name="1Timothy6:10" width="1337" height="1080"/>
         <image name="book" catalog="system" width="128" height="101"/>
         <image name="book.fill" catalog="system" width="128" height="100"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
@@ -470,9 +463,6 @@
         <image name="square.stack.3d.up.fill" catalog="system" width="128" height="124"/>
         <image name="wifi.slash" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="BillsColor">
-            <color red="1" green="0.80000001192092896" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ButtonColor">
             <color red="0.69413620229999995" green="0.69385182860000005" blue="0.72156703470000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -485,8 +475,17 @@
         <namedColor name="DarkUIColor">
             <color red="0.30196078431372547" green="0.30588235294117649" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="InvestmentColor">
-            <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="LightButtonColor">
+            <color red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LightCardColor">
+            <color red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LightTextColor">
+            <color red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LightUIColor">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="0.99999326470000005" green="0.99999350310000001" blue="0.99999183420000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

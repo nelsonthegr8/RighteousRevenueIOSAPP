@@ -51,7 +51,8 @@ class LessonsTableViewCell: UITableViewCell {
         CardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         CardView.layer.shadowOpacity = 1.0
         CardView.layer.masksToBounds = false
-        CardView.layer.cornerRadius = 2.0
+        CardView.layer.cornerRadius = 10.0
+        CardImg.layer.cornerRadius = 5
         self.selectionStyle = .none
     }
     

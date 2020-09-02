@@ -12,6 +12,8 @@ pod 'BEMCheckBox'
 pod 'YouTubePlayer'
 pod 'NVActivityIndicatorView'
 pod 'SwiftTheme'
+pod 'SwiftyStoreKit'
+pod 'SCLAlertView'
 
   # Pods for RighteousRevenue
 

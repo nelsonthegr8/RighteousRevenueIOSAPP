@@ -10,7 +10,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="QIe-Ht-mBJ">
             <objects>
-                <viewController storyboardIdentifier="TutorialViewController" id="6sA-Gf-13Z" customClass="TutorialViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="6sA-Gf-13Z" customClass="TutorialViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rkv-l3-oGS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,8 +27,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yCY-iV-0xx">
                                         <rect key="frame" x="108" y="53" width="198" height="166"/>
                                         <subviews>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="T9Q-ra-6LA">
-                                                <rect key="frame" x="79.5" y="0.0" width="39" height="37"/>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="T9Q-ra-6LA">
+                                                <rect key="frame" x="55.5" y="0.0" width="87" height="37"/>
                                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.23150700330000001" green="0.7300961614" blue="0.61015987400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
@@ -80,6 +80,7 @@
                         <viewLayoutGuide key="safeArea" id="M8n-tN-Ut5"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="qRn-Ub-DcZ" id="4ky-Se-YWp"/>
                         <outlet property="nextButton" destination="jI8-pE-6YY" id="DyA-pP-5LG"/>
                         <outlet property="pageControl" destination="T9Q-ra-6LA" id="LTr-yj-zaF"/>
                         <outlet property="skipButton" destination="hcv-YY-7iB" id="E6M-Vo-fIL"/>
@@ -92,7 +93,7 @@
         <!--Tutorial Page View Controller-->
         <scene sceneID="h7n-O4-b7p">
             <objects>
-                <pageViewController storyboardIdentifier="TutorialPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ore-WG-3yv" customClass="TutorialPageViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="TutorialPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ore-WG-3yv" customClass="TutorialPageViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMc-sw-9z3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2007" y="191"/>
@@ -100,7 +101,7 @@
         <!--Tutorial Content View Controller-->
         <scene sceneID="K3l-sZ-1cF">
             <objects>
-                <viewController storyboardIdentifier="TutorialContentViewController" id="0lZ-9B-uAj" customClass="TutorialContentViewController" customModule="RighteousRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialContentViewController" id="0lZ-9B-uAj" customClass="TutorialContentViewController" customModule="Revenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m6h-U3-iX7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

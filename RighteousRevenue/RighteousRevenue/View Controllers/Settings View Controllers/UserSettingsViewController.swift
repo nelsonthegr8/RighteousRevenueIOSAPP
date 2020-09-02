@@ -18,9 +18,12 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet var themeCollectionView: UICollectionView!
     @IBOutlet var monthlyIncomeTxtbx: YokoTextField!
     @IBOutlet var cardView: UIView!
-
+    @IBOutlet var monthChoice: UISegmentedControl!
+    @IBOutlet var reminderDayLbl: UILabel!
+    
 //MARK: - Variables
     private var monthlyIncome = String(format: "%.02f",UserDefaults.standard.double(forKey: "UserMonthlyIncome"))
+    let colorThemeOptions:[String] = ["LightUIImage","DarkUIImage"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +46,15 @@ class UserSettingsViewController: UIViewController {
 //MARK: - Set Color Theme
     func setColorTheme(){
         view.theme_backgroundColor = GlobalPicker.backgroundColor
+        monthChoice.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "SelectedReminderDay")
         themeCollectionView.theme_backgroundColor = GlobalPicker.cardColor
         themeChoiceHeadertxtbx.theme_textColor = GlobalPicker.textColor
         updateThemeThatIsNotNative()
         setCardView()
+        CheckIfUserHasNotiesOn()
+        monthChoice.theme_selectedSegmentTintColor = GlobalPicker.tabButtonTintColor
+        monthChoice.theme_tintColor = GlobalPicker.backgroundColor
+        reminderDayLbl.theme_textColor = GlobalPicker.textColor
     }
     
     func setCardView(){
@@ -62,10 +70,32 @@ class UserSettingsViewController: UIViewController {
         monthlyIncomeTxtbx.placeholderColor = UIColor(named: GlobalPicker.aTextColor[ThemeManager.currentThemeIndex])!
         monthlyIncomeTxtbx.theme_textColor = GlobalPicker.textColor
         cardView.layer.shadowColor = GlobalPicker.ShadowColors[ThemeManager.currentThemeIndex]
+        overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
     }
+    
+    func CheckIfUserHasNotiesOn(){
+        let center = UNUserNotificationCenter.current()
+        
+        center.getNotificationSettings { (settings) in
+            switch settings.authorizationStatus{
+            case .denied:
+                DispatchQueue.main.async {
+                    self.monthChoice.isEnabled = false
+                    }
+                break
+            default:
+                DispatchQueue.main.async {
+                self.monthChoice.isEnabled = true
+                }
+                break
+            }
+        }
+    }
+    
 }
 
-//MARK: - Actions and Functions
+
+//MARK: - TextField Delegate
 extension UserSettingsViewController: UITextFieldDelegate{
     
     @objc func cancelButtonTapped() { monthlyIncomeTxtbx.resignFirstResponder(); monthlyIncomeTxtbx.text = monthlyIncome }
@@ -103,12 +133,12 @@ extension UserSettingsViewController: UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThemeChooserCell", for: indexPath) as! UserSettingsCollectionViewCell
         
-        cell.themeImg.image = UIImage(named: "cat")
-        cell.themeImg.layer.borderWidth = 2
+        cell.themeImg.image = UIImage(named: colorThemeOptions[indexPath.row])
+        cell.themeImg.layer.borderWidth = 1.5
         if(indexPath.row == ThemeManager.currentThemeIndex){
-            cell.themeImg.layer.borderColor = UIColor.blue.cgColor
+            cell.themeImg.layer.borderColor = UIColor(named: "SelectedColorSchemeBorderColor")?.cgColor
         }else{
-            cell.themeImg.layer.borderColor = GlobalPicker.textBoxBorderColor[indexPath.row].cgColor
+            cell.themeImg.layer.borderColor = GlobalPicker.colorSchemeImageBorderColor[indexPath.row].cgColor
         }
         
         cell.themeImg.layer.cornerRadius = 10
@@ -124,7 +154,22 @@ extension UserSettingsViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3 - 10, height: collectionView.frame.height - 4)
+        return CGSize(width: collectionView.frame.width/2.5 - 10, height: collectionView.frame.height - 4)
+    }
+    
+}
+
+//MARK: - Segmented Control Funtions
+extension UserSettingsViewController{
+    
+    @IBAction func userSelectedDifferentDayOfTheMonth(_ sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0){
+            UserDefaults.standard.set(0,forKey: "SelectedReminderDay")
+            SetUpTheMonthlyNotification(day: 1)
+        }else{
+            UserDefaults.standard.set(1,forKey: "SelectedReminderDay")
+            SetUpTheMonthlyNotification(day: 15)
+        }
     }
     
 }

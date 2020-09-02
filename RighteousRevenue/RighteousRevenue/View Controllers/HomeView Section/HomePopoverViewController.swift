@@ -55,8 +55,8 @@ class HomePopoverViewController: UIViewController {
     func setColorTheme(){
         view.theme_backgroundColor = GlobalPicker.backgroundColor
         sectionHeader.theme_textColor = GlobalPicker.textColor
-        addButton.theme_tintColor = GlobalPicker.buttonTintColor
-        editButton.theme_tintColor = GlobalPicker.buttonTintColor
+        addButton.theme_setTitleColor(GlobalPicker.tabButtonTintColor, forState: .normal)
+        editButton.theme_setTitleColor(GlobalPicker.tabButtonTintColor, forState: .normal)
         overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
     }
 }

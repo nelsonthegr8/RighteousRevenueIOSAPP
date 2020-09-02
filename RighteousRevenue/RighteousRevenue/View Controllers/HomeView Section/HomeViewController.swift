@@ -10,7 +10,8 @@ import UIKit
 import Charts
 import GoogleMobileAds
 import SwiftTheme
-
+import UserNotifications
+import SCLAlertView
 
 class HomeViewController: UIViewController {
     //MARK: - Outlets
@@ -41,7 +42,19 @@ class HomeViewController: UIViewController {
     private var monthlyExpense = 0.0
     private var defaultTheme = UserDefaults.standard.bool(forKey: "CustomChoice")
     private var pieSelected = false
-    let db = dataAccess()
+    private var scripturesOfTheDay:[ScripturesOfTheDay] = []
+    var db: dataAccess?
+
+//MARK: - Actions
+    @IBAction func extraBtnPressed(){
+        
+        if(billsPie.highlighted.count == 0){ SCLAlertView().showError("No Selection", subTitle: "Please choose one of the pie sections that you would like to Add To or Customize.")
+        }else{
+            performSegue(withIdentifier: "showPopover", sender: nil)
+        }
+        
+    }
+    
 }
 
 //MARK: - View Controller Life Cycle
@@ -79,6 +92,7 @@ extension HomeViewController{
         if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
             getUserDefaultThemeOnFirstLaunch()
         }
+        db = dataAccess()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(updateUserPieTextWhenAmountIsChanged),
@@ -93,18 +107,19 @@ extension HomeViewController{
         addSection.delegate = self
     }
     
+
 //MARK: - Set Color Scheme
     func assignThemeColors() {
         billsPie.theme_backgroundColor = GlobalPicker.backgroundColor
         billsPie.holeColor = UIColor.clear
         addSection.theme_backgroundColor = GlobalPicker.backgroundColor
         addSection.theme_tintColor = GlobalPicker.textColor
-        navSection.theme_barTintColor = GlobalPicker.backgroundColor
+        navSection.theme_barTintColor = GlobalPicker.cardColor
         navSection.theme_titleTextAttributes = GlobalPicker.navBarTitleText
-        popOverBtn.theme_tintColor = GlobalPicker.buttonTintColor
-        view.theme_backgroundColor = GlobalPicker.backgroundColor
+        popOverBtn.theme_tintColor = GlobalPicker.tabButtonTintColor
+        view.theme_backgroundColor = GlobalPicker.cardColor
         scriptureOfTheDay.theme_backgroundColor = GlobalPicker.backgroundColor
-        
+        UIApplication.shared.theme_setStatusBarStyle(GlobalPicker.StatusBarStyle, animated: true)
     }
 
 }
@@ -113,19 +128,65 @@ extension HomeViewController{
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupScriptureOfTheDayCollectionView(){
+//        let df = DateFormatter()
+//        df.dateFormat = "dd/MM/yyyy"
+//        let currentDate = df.string(from: Date())
+//
+//        let scriptureDate = UserDefaults.standard.string(forKey: "ScriptureOfTheDayDate")
+//
+//        if(UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay").count > 0 && currentDate == scriptureDate){
+//                scripturesOfTheDay = UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay")
+//            }else{
+//            scripturesOfTheDay = loadDailyScriptureJson(filename: "Scriptures") ?? []
+//            if(scripturesOfTheDay.count > 0){
+//                var randomIndexes:[Int] = []
+//                var scripturesPicked = false
+//
+//                while !scripturesPicked{
+//                    let randomNum = Int.random(in: 0..<scripturesOfTheDay.count)
+//
+//                    if(randomIndexes.count < 3){
+//                        if(!randomIndexes.contains(randomNum)){
+//                            randomIndexes.append(randomNum)
+//                        }
+//                    }else{
+//                        scripturesPicked = true
+//                    }
+//
+//                }
+//
+//                var newChosenScriptures:[ScripturesOfTheDay] = []
+//
+//                for indexes in randomIndexes{
+//                    newChosenScriptures.append(scripturesOfTheDay[indexes])
+//                }
+//
+//                scripturesOfTheDay = newChosenScriptures
+//
+//                UserDefaults.standard.setStructArray(scripturesOfTheDay, forKey: "ScripturesOfTheDay")
+//                UserDefaults.standard.set(currentDate, forKey: "ScriptureOfTheDayDate")
+//            }
+//        }
+        scripturesOfTheDay = loadDailyScriptureJson(filename: "Scriptures") ?? []
         scriptureOfTheDay.delegate = self
         scriptureOfTheDay.dataSource = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        scripturesOfTheDay.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScriptureCollectionViewCell", for: indexPath) as! ScriptureOfTheDayCollectionViewCell
-        cell.scriptureImg.image = UIImage(named: "PNG image-74B59E263AFB-1")
+        cell.scriptureImg.image = UIImage(named: scripturesOfTheDay[indexPath.row].scriptureimg)
         cell.scriptureImg.layer.cornerRadius = 10
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var url : URL?
+        url = URL(string: scripturesOfTheDay[indexPath.row].biblelink)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
 }
 
@@ -134,7 +195,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width/2.3, height: collectionView.frame.height - 6)
     }
 }
 
@@ -143,15 +204,15 @@ extension HomeViewController{
     
     func setUpPieData()
     {
-        sectionNames = db.getSectionNames()
+        sectionNames = db!.getSectionNames()
         
         for sectionID in sectionNames.indices{
-            pieSections.append(db.getPieData(Section: sectionID + 1))
+            pieSections.append(db!.getPieData(Section: sectionID + 1))
         }
         
         for section in pieSections{
             let labelDisplay = sectionNames[section.section - 1]
-            let sectionIcon = db.getIconForSection(Section: section.section)
+            let sectionIcon = db!.getIconForSection(Section: section.section)
             let dataEntry = PieChartDataEntry(value: 16.6, label: labelDisplay, icon: UIImage(named: sectionIcon.iconName)!)
             if(section.symbol == "-"){
                 monthlyExpense = monthlyExpense + section.sectionAmount
@@ -262,7 +323,7 @@ extension HomeViewController: ChartViewDelegate{
         monthlyIncomeAttribute.append(monthlyLeftOverRevenueAttribute)
         billsPie.centerAttributedText = monthlyIncomeAttribute
         
-        popOverBtn.isEnabled = false
+        //popOverBtn.isEnabled = false
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -302,10 +363,11 @@ extension HomeViewController: ChartViewDelegate{
         attribute.addAttribute(.paragraphStyle, value: style, range: allRange)
         //finish other implementations for selected section number and name to pass to popover
         billsPie.centerAttributedText = attribute
-        popOverBtn.isEnabled = true
+        //popOverBtn.isEnabled = true
         selectedSectionNumber = Int(highlight.x)
         selectedSectionName = sectionNames[Int(highlight.x)]
     }
+    
     
 }
 
@@ -331,7 +393,7 @@ extension HomeViewController: UIPopoverPresentationControllerDelegate{
     }
     
     @IBAction func returnFromPopUpSegue(segue:UIStoryboardSegue){
-        clearPieChart()
+        updateUserPieTextWhenAmountIsChanged()
     }
     
 }

@@ -24,16 +24,8 @@
                                     <constraint firstAttribute="height" constant="70" id="l84-iH-SZw"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-8e-Rbi">
-                                <rect key="frame" x="376" y="12" width="17.5" height="15.5"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Bvt-BQ-Pu4" appends="YES" id="9BI-nP-FBt"/>
-                                </connections>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61y-SD-GCJ">
-                                <rect key="frame" x="42" y="286" width="330" height="324"/>
+                                <rect key="frame" x="42" y="290" width="330" height="316"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Pie Section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkE-cT-UNW">
                                         <rect key="frame" x="8" y="8" width="314" height="48"/>
@@ -146,19 +138,27 @@
                                     <constraint firstItem="Apo-ma-V5P" firstAttribute="top" secondItem="RkE-cT-UNW" secondAttribute="bottom" constant="19" id="pAz-gJ-OsU"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-8e-Rbi">
+                                <rect key="frame" x="384" y="2" width="30" height="15.5"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Bvt-BQ-Pu4" appends="YES" id="9BI-nP-FBt"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" id="4ps-bw-eFb"/>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="trailing" secondItem="bCP-LP-dX7" secondAttribute="trailing" id="7Tg-V3-pCS"/>
-                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="height" secondItem="61y-SD-GCJ" secondAttribute="height" multiplier="0.0617284" id="F3e-Zh-NZg"/>
+                            <constraint firstAttribute="trailing" secondItem="kc0-8e-Rbi" secondAttribute="trailing" id="FBY-b9-FH9"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerY" secondItem="vJO-Wy-4qi" secondAttribute="centerY" id="Lw6-dX-uzt"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="leading" secondItem="bCP-LP-dX7" secondAttribute="leading" constant="42" id="LyB-QY-9bV"/>
-                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="top" secondItem="vJO-Wy-4qi" secondAttribute="top" constant="10" id="cQZ-8y-dsM"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="height" secondItem="61y-SD-GCJ" secondAttribute="height" multiplier="0.0632716" id="SwW-z9-Sro"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="width" secondItem="61y-SD-GCJ" secondAttribute="width" multiplier="0.0909091" id="ffc-iX-1rG"/>
                             <constraint firstItem="bCP-LP-dX7" firstAttribute="trailing" secondItem="61y-SD-GCJ" secondAttribute="trailing" constant="42" id="qa1-nZ-dom"/>
+                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="top" secondItem="vJO-Wy-4qi" secondAttribute="top" id="v69-Zh-ngG"/>
                             <constraint firstItem="61y-SD-GCJ" firstAttribute="centerX" secondItem="vJO-Wy-4qi" secondAttribute="centerX" id="wrh-wU-9Mu"/>
-                            <constraint firstAttribute="trailing" secondItem="kc0-8e-Rbi" secondAttribute="trailing" constant="20.5" id="x62-BR-SfE"/>
-                            <constraint firstItem="kc0-8e-Rbi" firstAttribute="width" secondItem="61y-SD-GCJ" secondAttribute="width" multiplier="0.0530303" id="xR3-tR-2qj"/>
                             <constraint firstItem="TJN-Qx-XYf" firstAttribute="bottom" secondItem="bCP-LP-dX7" secondAttribute="bottom" id="zgG-Eu-hYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCP-LP-dX7"/>

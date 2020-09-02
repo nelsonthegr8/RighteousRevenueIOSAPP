@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftTheme
 
 protocol TutorialPageViewControllerDelegate: class {
     func didUpdatePageIndex(currentIndex: Int)
@@ -19,9 +19,15 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
     
     weak var tutorialDelegate: TutorialPageViewControllerDelegate?
     
-    var pageHeadings = ["God","Jesus","Cross"]
-    var pageImages = ["onboarding-1","onboarding-2","onboarding-3"]
-    var pageSubheadings = ["Loves You","Died For you","Is Where Jesus Payed The Price For Your Sin"]
+    var pageHeadings = ["Monthly Budget Pie Chart","Daily Scriptures","Pie chart Options","Add to Pie Chart","Entry View","Keep Track"]
+    
+    var pageSubheadings = [
+        "The sections of the pie chart are used to put your expenses and savings in sections. Keep your budget Organized.","Sciptures that are tappable to view the scripture in the Bible. Have God's Word be a guide to your heart towards finance.","Have the ability to add entries to the sections in the pie chart and customize the color, icon, section name, and choose if it is a expense or not.","Add your entries to the pie chart and it will be saved right to your phone!","View and edit your entries in this area. Delete multiple entries with the edit button or remove an entry with the swipe of a finger","Keep Track of your payments per month by tapping the payed button!"]
+    
+    var pageImages:[[String]] = [
+        ["LightTutorial 1","LightTutorial 2","LightTutorial 3","LightTutorial 4","LightTutorial 5","LightTutorial 6"],
+        ["DarkTutorial 1","DarkTutorial 2","DarkTutorial 3","DarkTutorial 4","DarkTutorial 5","DarkTutorial 6"]
+    ]
     
     var currentIndex = 0
     
@@ -64,7 +70,7 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         // Create a new view controller and pass suitable data
         let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
         if let pageContentViewController = storyboard.instantiateViewController(identifier: "TutorialContentViewController") as? TutorialContentViewController{
-            pageContentViewController.imageFile = pageImages[index]
+            pageContentViewController.imageFile = pageImages[ThemeManager.currentThemeIndex][index]
             pageContentViewController.heading = pageHeadings[index]
             pageContentViewController.subHeading = pageSubheadings[index]
             pageContentViewController.index = index

@@ -15,5 +15,17 @@ public let ImageNames:[String] =
 "Giving",
 "Investment",
 "Recreation",
-"Saving"]
+"Saving",
+"bandage.fill",
+"bed.double.fill",
+"bitcoinsign.square",
+"bolt.circle",
+"car.fill",
+"creditcard",
+"dollarsign.square",
+"heart.fill",
+"person.fill",
+"shield.fill",
+"tortoise.fill",
+"waveform.path.ecg"]
 

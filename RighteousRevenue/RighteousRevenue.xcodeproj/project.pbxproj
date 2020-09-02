@@ -23,8 +23,6 @@
 		12348A4624EC0F540077ECBA /* ThemeSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A4524EC0F540077ECBA /* ThemeSwitcher.swift */; };
 		12348A4824EC101C0077ECBA /* GlobalThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A4724EC101C0077ECBA /* GlobalThemePicker.swift */; };
 		12348A4C24EC5AA50077ECBA /* ScriptureOfTheDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A4B24EC5AA50077ECBA /* ScriptureOfTheDayCollectionViewCell.swift */; };
-		12348A4F24ECA06E0077ECBA /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A4E24ECA06E0077ECBA /* CollectionViewFlowLayout.swift */; };
-		12348A5124ECA0C50077ECBA /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A5024ECA0C50077ECBA /* DynamicHeightCollectionView.swift */; };
 		12348A5424ECB06F0077ECBA /* Scriptures.json in Resources */ = {isa = PBXBuildFile; fileRef = 12348A5324ECB06F0077ECBA /* Scriptures.json */; };
 		12711ADC24DB7EE1001281AB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADB24DB7EE1001281AB /* AddViewController.swift */; };
 		12711ADF24DD07B6001281AB /* BillsSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711ADD24DD07B6001281AB /* BillsSectionTableViewCell.swift */; };
@@ -42,6 +40,7 @@
 		12711AFA24E34626001281AB /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AF924E34626001281AB /* ImageNames.swift */; };
 		12711AFC24E348C8001281AB /* ColorNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AFB24E348C8001281AB /* ColorNames.swift */; };
 		12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12711AFD24E58E54001281AB /* GoogleAdInformation.swift */; };
+		12B80A6A24F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B80A6924F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift */; };
 		12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1724D60AF900C01778 /* AppDelegate.swift */; };
 		12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1924D60AF900C01778 /* SceneDelegate.swift */; };
 		12C03F1C24D60AF900C01778 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F1B24D60AF900C01778 /* HomeViewController.swift */; };
@@ -51,7 +50,6 @@
 		12C03F2F24D60AFA00C01778 /* RighteousRevenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F2E24D60AFA00C01778 /* RighteousRevenueTests.swift */; };
 		12C03F3A24D60AFA00C01778 /* RighteousRevenueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C03F3924D60AFA00C01778 /* RighteousRevenueUITests.swift */; };
 		12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F4B24D60C1300C01778 /* Tutorial.storyboard */; };
-		12C03F5724D60CC900C01778 /* ContactUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F5624D60CC900C01778 /* ContactUs.storyboard */; };
 		12C03F5B24D60D2700C01778 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C03F5A24D60D2700C01778 /* Add.storyboard */; };
 		12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */; };
 		12C1981524D767A8002A7151 /* LessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981424D767A8002A7151 /* LessonsTableViewController.swift */; };
@@ -60,6 +58,8 @@
 		12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */; };
 		12C1981D24D77E5E002A7151 /* LessonCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981C24D77E5E002A7151 /* LessonCards.swift */; };
 		12C1982624D8C8F1002A7151 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982524D8C8F1002A7151 /* DataAccess.swift */; };
+		12F171FA24F8898100FF40C5 /* ScripturesOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */; };
+		12F171FC24F97B8900FF40C5 /* UserDefaultsExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */; };
 		12F3884424F173C300B8337E /* UserSettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3884324F173C300B8337E /* UserSettingsCollectionViewCell.swift */; };
 		712B4FDBC49D84C572EECD0F /* Pods_RighteousRevenueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA1A7E52349ECFFF4219A28 /* Pods_RighteousRevenueTests.framework */; };
 		958DE2A782F45832F5DF4D38 /* Pods_RighteousRevenue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977F8725DFAFBE439D9F99C9 /* Pods_RighteousRevenue.framework */; };
@@ -102,8 +102,6 @@
 		12348A4524EC0F540077ECBA /* ThemeSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitcher.swift; sourceTree = "<group>"; };
 		12348A4724EC101C0077ECBA /* GlobalThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalThemePicker.swift; sourceTree = "<group>"; };
 		12348A4B24EC5AA50077ECBA /* ScriptureOfTheDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureOfTheDayCollectionViewCell.swift; sourceTree = "<group>"; };
-		12348A4E24ECA06E0077ECBA /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		12348A5024ECA0C50077ECBA /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		12348A5324ECB06F0077ECBA /* Scriptures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Scriptures.json; sourceTree = "<group>"; };
 		12711ADB24DB7EE1001281AB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		12711ADD24DD07B6001281AB /* BillsSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsSectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,7 +120,8 @@
 		12711AFB24E348C8001281AB /* ColorNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNames.swift; sourceTree = "<group>"; };
 		12711AFD24E58E54001281AB /* GoogleAdInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdInformation.swift; sourceTree = "<group>"; };
 		12A8FD73329CEEA8C0CB89B0 /* Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; path = "Target Support Files/Pods-RighteousRevenue-RighteousRevenueUITests/Pods-RighteousRevenue-RighteousRevenueUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		12C03F1424D60AF900C01778 /* RighteousRevenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RighteousRevenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B80A6924F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIfUserWantsMonthlyReminders.swift; sourceTree = "<group>"; };
+		12C03F1424D60AF900C01778 /* Revenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C03F1724D60AF900C01778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C03F1924D60AF900C01778 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		12C03F1B24D60AF900C01778 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 		12C03F3924D60AFA00C01778 /* RighteousRevenueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RighteousRevenueUITests.swift; sourceTree = "<group>"; };
 		12C03F3B24D60AFA00C01778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12C03F4B24D60C1300C01778 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
-		12C03F5624D60CC900C01778 /* ContactUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactUs.storyboard; sourceTree = "<group>"; };
 		12C03F5A24D60D2700C01778 /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		12C1980C24D66F49002A7151 /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
 		12C1981424D767A8002A7151 /* LessonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsTableViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +144,8 @@
 		12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsMoreViewController.swift; sourceTree = "<group>"; };
 		12C1981C24D77E5E002A7151 /* LessonCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCards.swift; sourceTree = "<group>"; };
 		12C1982524D8C8F1002A7151 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScripturesOfTheDay.swift; sourceTree = "<group>"; };
+		12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtention.swift; sourceTree = "<group>"; };
 		12F3884324F173C300B8337E /* UserSettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519E2EAE4DFC2CC8E76745B /* Pods-RighteousRevenueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RighteousRevenueTests.debug.xcconfig"; path = "Target Support Files/Pods-RighteousRevenueTests/Pods-RighteousRevenueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AFAF35026D0FB5171990E69 /* Pods_RighteousRevenue_RighteousRevenueUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RighteousRevenue_RighteousRevenueUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,15 +274,6 @@
 			path = " Theme";
 			sourceTree = "<group>";
 		};
-		12348A4D24ECA0180077ECBA /* Collection View Flow Layout Fixer */ = {
-			isa = PBXGroup;
-			children = (
-				12348A4E24ECA06E0077ECBA /* CollectionViewFlowLayout.swift */,
-				12348A5024ECA0C50077ECBA /* DynamicHeightCollectionView.swift */,
-			);
-			path = "Collection View Flow Layout Fixer";
-			sourceTree = "<group>";
-		};
 		12348A5224ECAFD60077ECBA /* Json Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +298,7 @@
 		12C03F1524D60AF900C01778 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				12C03F1424D60AF900C01778 /* RighteousRevenue.app */,
+				12C03F1424D60AF900C01778 /* Revenue.app */,
 				12C03F2A24D60AFA00C01778 /* RighteousRevenueTests.xctest */,
 				12C03F3524D60AFA00C01778 /* RighteousRevenueUITests.xctest */,
 			);
@@ -318,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				12348A5224ECAFD60077ECBA /* Json Files */,
-				12348A4D24ECA0180077ECBA /* Collection View Flow Layout Fixer */,
 				12348A3724EB5A7B0077ECBA /*  Theme */,
 				1200561D24E723F6004A6D86 /* Structures */,
 				12C1982224D892C5002A7151 /* Static Gobal Items */,
@@ -358,6 +348,7 @@
 			children = (
 				12C1981C24D77E5E002A7151 /* LessonCards.swift */,
 				12C1982524D8C8F1002A7151 /* DataAccess.swift */,
+				12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */,
 			);
 			path = Constructors;
 			sourceTree = "<group>";
@@ -379,7 +370,6 @@
 			isa = PBXGroup;
 			children = (
 				12C03F4B24D60C1300C01778 /* Tutorial.storyboard */,
-				12C03F5624D60CC900C01778 /* ContactUs.storyboard */,
 				12C03F5A24D60D2700C01778 /* Add.storyboard */,
 				12711AED24E30361001281AB /* Edit.storyboard */,
 				1200562224E83633004A6D86 /* RemoveAds.storyboard */,
@@ -420,6 +410,8 @@
 				12711AFD24E58E54001281AB /* GoogleAdInformation.swift */,
 				1200562C24E96BC9004A6D86 /* CheckInternet.swift */,
 				1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */,
+				12B80A6924F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift */,
+				12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */,
 			);
 			path = "Static Gobal Items";
 			sourceTree = "<group>";
@@ -454,7 +446,7 @@
 			);
 			name = RighteousRevenue;
 			productName = RighteousRevenue;
-			productReference = 12C03F1424D60AF900C01778 /* RighteousRevenue.app */;
+			productReference = 12C03F1424D60AF900C01778 /* Revenue.app */;
 			productType = "com.apple.product-type.application";
 		};
 		12C03F2924D60AFA00C01778 /* RighteousRevenueTests */ = {
@@ -550,7 +542,6 @@
 				12348A5424ECB06F0077ECBA /* Scriptures.json in Resources */,
 				12C03F2124D60AFA00C01778 /* Assets.xcassets in Resources */,
 				12348A3424EB32F70077ECBA /* User Settings.storyboard in Resources */,
-				12C03F5724D60CC900C01778 /* ContactUs.storyboard in Resources */,
 				12711AE024DD07B6001281AB /* BillsSectionTableViewCell.xib in Resources */,
 				12C03F4C24D60C1300C01778 /* Tutorial.storyboard in Resources */,
 				12C03F1F24D60AF900C01778 /* Main.storyboard in Resources */,
@@ -689,7 +680,6 @@
 				12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */,
 				12711AEC24E2F7BA001281AB /* HomePopoverViewController.swift in Sources */,
 				12348A4C24EC5AA50077ECBA /* ScriptureOfTheDayCollectionViewCell.swift in Sources */,
-				12348A4F24ECA06E0077ECBA /* CollectionViewFlowLayout.swift in Sources */,
 				12348A3624EB38BE0077ECBA /* UserSettingsViewController.swift in Sources */,
 				12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */,
 				12711AE824E1B092001281AB /* IconChoice.swift in Sources */,
@@ -707,10 +697,11 @@
 				12711AFC24E348C8001281AB /* ColorNames.swift in Sources */,
 				12F3884424F173C300B8337E /* UserSettingsCollectionViewCell.swift in Sources */,
 				12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */,
-				12348A5124ECA0C50077ECBA /* DynamicHeightCollectionView.swift in Sources */,
 				12348A4824EC101C0077ECBA /* GlobalThemePicker.swift in Sources */,
 				1200562D24E96BC9004A6D86 /* CheckInternet.swift in Sources */,
+				12F171FA24F8898100FF40C5 /* ScripturesOfTheDay.swift in Sources */,
 				12C03F1824D60AF900C01778 /* AppDelegate.swift in Sources */,
+				12F171FC24F97B8900FF40C5 /* UserDefaultsExtention.swift in Sources */,
 				1200562524E8375D004A6D86 /* RemoveAdsViewController.swift in Sources */,
 				12711AF824E33430001281AB /* UserPresetViewMoreViewController.swift in Sources */,
 				12711AFA24E34626001281AB /* ImageNames.swift in Sources */,
@@ -721,6 +712,7 @@
 				12C03F1A24D60AF900C01778 /* SceneDelegate.swift in Sources */,
 				12C1981824D767C1002A7151 /* LessonsTableViewCell.swift in Sources */,
 				12711AF024E319B4001281AB /* EditViewController.swift in Sources */,
+				12B80A6A24F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift in Sources */,
 				12711AE624E0F510001281AB /* MoreInfoForPieSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,8 +896,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenue;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenueApp;
+				PRODUCT_NAME = Revenue;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -926,8 +918,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenue;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenueApp;
+				PRODUCT_NAME = Revenue;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

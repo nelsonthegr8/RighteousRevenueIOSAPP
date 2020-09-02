@@ -8,17 +8,36 @@
 
 import UIKit
 import GoogleMobileAds
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                @unknown default:
+                    break
+                }
+            }
+        }
         
         if(UserDefaults.standard.object(forKey: "FirstLaunch") == nil){
             UserDefaults.standard.set(true, forKey: "FirstLaunch")
             UserDefaults.standard.set(false, forKey: "UserPayed")
             UserDefaults.standard.set(1000.56,forKey: "UserMonthlyIncome")
+            UserDefaults.standard.set(0,forKey: "SelectedReminderDay")
+            UIApplication.shared.theme_setStatusBarStyle(GlobalPicker.StatusBarStyle, animated: true)
             if(CheckInternet.Connection()){
                 UserDefaults.standard.set(false, forKey: "InternetDisconnected")
             }else{
@@ -36,8 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
        
         let tabBar = UITabBar.appearance()
-        
-        UIApplication.shared.theme_setStatusBarStyle([.default,.lightContent], animated: true)
+                
         tabBar.theme_barTintColor = GlobalPicker.barBackgroundColor
         tabBar.theme_tintColor = GlobalPicker.tabButtonTintColor
         tabBar.theme_unselectedItemTintColor = GlobalPicker.tabButtonTintColor

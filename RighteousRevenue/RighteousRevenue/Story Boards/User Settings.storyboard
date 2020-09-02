@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-aG-25W" userLabel="CardView">
-                                <rect key="frame" x="47" y="138" width="320" height="345"/>
+                                <rect key="frame" x="47" y="242.5" width="320" height="411"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="niG-PV-v6t" userLabel="Items Container">
-                                        <rect key="frame" x="10" y="10" width="300" height="233.5"/>
+                                        <rect key="frame" x="10" y="10" width="300" height="391"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAn-g5-RrI">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -30,7 +30,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-80-bZX">
-                                                <rect key="frame" x="0.0" y="30.5" width="300" height="148"/>
+                                                <rect key="frame" x="0.0" y="63" width="300" height="104"/>
                                                 <color key="backgroundColor" red="0.25495144720000001" green="0.26225596670000001" blue="0.30980831380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dxY-6x-qLh">
                                                     <size key="itemSize" width="94" height="77"/>
@@ -40,16 +40,12 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThemeChooserCell" id="jU5-eG-BCn" customClass="UserSettingsCollectionViewCell" customModule="RighteousRevenue" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="35.5" width="94" height="77"/>
+                                                        <rect key="frame" x="0.0" y="13.5" width="94" height="77"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K5O-ZB-AUn">
                                                             <rect key="frame" x="0.0" y="0.0" width="94" height="77"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-a5-gki">
-                                                                    <rect key="frame" x="-1" y="0.0" width="95" height="54"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Theme Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3i-6C-M6M">
                                                                     <rect key="frame" x="0.0" y="62" width="94" height="14"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -57,6 +53,10 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-a5-gki">
+                                                                    <rect key="frame" x="1" y="1" width="92" height="53"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
                                                             </subviews>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="94" height="77"/>
@@ -68,7 +68,7 @@
                                                 </cells>
                                             </collectionView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Monthly Income" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vI-Av-B1p" customClass="YokoTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="0.0" y="188.5" width="300" height="45"/>
+                                                <rect key="frame" x="0.0" y="209.5" width="300" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Wd7-6S-mvU"/>
                                                 </constraints>
@@ -84,31 +84,54 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="424-m3-TuS">
+                                                <rect key="frame" x="0.0" y="297" width="300" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-af-qLE">
+                                                <rect key="frame" x="0.0" y="360" width="300" height="32"/>
+                                                <segments>
+                                                    <segment title="1st"/>
+                                                    <segment title="15th"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="userSelectedDifferentDayOfTheMonth:" destination="e0K-17-sZ7" eventType="valueChanged" id="aas-dq-eXs"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="424-m3-TuS" firstAttribute="height" secondItem="kAn-g5-RrI" secondAttribute="height" id="6Hr-wD-3sB"/>
+                                            <constraint firstItem="3vI-Av-B1p" firstAttribute="height" secondItem="ekd-af-qLE" secondAttribute="height" multiplier="1.45161" id="cBx-br-uGB"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="niG-PV-v6t" secondAttribute="bottom" constant="10" id="6m6-st-81q"/>
+                                    <constraint firstItem="Ja6-80-bZX" firstAttribute="height" secondItem="t5u-aG-25W" secondAttribute="height" multiplier="0.253041" id="EDi-2k-o4j"/>
                                     <constraint firstAttribute="trailing" secondItem="niG-PV-v6t" secondAttribute="trailing" constant="10" id="T4b-N1-XgT"/>
                                     <constraint firstItem="niG-PV-v6t" firstAttribute="leading" secondItem="t5u-aG-25W" secondAttribute="leading" constant="10" id="UQD-qH-IzU"/>
                                     <constraint firstItem="niG-PV-v6t" firstAttribute="top" secondItem="t5u-aG-25W" secondAttribute="top" constant="10" id="USB-fC-saL"/>
-                                    <constraint firstItem="Ja6-80-bZX" firstAttribute="height" secondItem="t5u-aG-25W" secondAttribute="height" multiplier="0.428986" id="bBj-oD-wvs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="t5u-aG-25W" firstAttribute="centerX" secondItem="4Gb-Ce-1ha" secondAttribute="centerX" id="9e2-MQ-rth"/>
-                            <constraint firstItem="t5u-aG-25W" firstAttribute="top" secondItem="nX2-Hy-Img" secondAttribute="top" constant="94" id="Gxk-bo-on5"/>
-                            <constraint firstItem="t5u-aG-25W" firstAttribute="leading" secondItem="nX2-Hy-Img" secondAttribute="leading" constant="47" id="N9V-YS-CAd"/>
-                            <constraint firstItem="t5u-aG-25W" firstAttribute="height" secondItem="4Gb-Ce-1ha" secondAttribute="height" multiplier="0.385045" id="Rve-xU-5PW"/>
-                            <constraint firstItem="nX2-Hy-Img" firstAttribute="trailing" secondItem="t5u-aG-25W" secondAttribute="trailing" constant="47" id="cIA-hI-9Nf"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="centerY" secondItem="4Gb-Ce-1ha" secondAttribute="centerY" id="D3a-9i-BQi"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="height" secondItem="4Gb-Ce-1ha" secondAttribute="height" multiplier="0.458705" id="U0h-tG-SiJ"/>
+                            <constraint firstItem="t5u-aG-25W" firstAttribute="leading" secondItem="nX2-Hy-Img" secondAttribute="leading" constant="47" id="m99-Ii-MGP"/>
+                            <constraint firstItem="nX2-Hy-Img" firstAttribute="trailing" secondItem="t5u-aG-25W" secondAttribute="trailing" constant="47" id="sdD-7U-ul7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nX2-Hy-Img"/>
                     </view>
                     <connections>
                         <outlet property="cardView" destination="t5u-aG-25W" id="sFh-MD-mSe"/>
+                        <outlet property="monthChoice" destination="ekd-af-qLE" id="YY9-g1-lIH"/>
                         <outlet property="monthlyIncomeTxtbx" destination="3vI-Av-B1p" id="JKq-Xy-5Nq"/>
+                        <outlet property="reminderDayLbl" destination="424-m3-TuS" id="3hl-te-4ik"/>
                         <outlet property="themeChoiceHeadertxtbx" destination="kAn-g5-RrI" id="ijY-Q7-Mrq"/>
                         <outlet property="themeCollectionView" destination="Ja6-80-bZX" id="lae-Pz-680"/>
                     </connections>

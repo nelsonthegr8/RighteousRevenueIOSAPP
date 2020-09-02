@@ -8,6 +8,8 @@
 
 import Foundation
 import SQLite
+import UIKit
+import SwiftTheme
 
 extension String {
     var bool: Bool? {
@@ -60,9 +62,19 @@ class dataAccess{
 
    private func createTables()
        {
+        var defaultColorsIndexes:[String] = []
+        if(ThemeManager.currentThemeIndex == 1){
+            for i in 0...5{
+                defaultColorsIndexes.append(ColorNames[i])
+            }
+        }else{
+            for i in 6...11{
+                defaultColorsIndexes.append(ColorNames[i])
+            }
+        }
            let createPieDataTable = "CREATE TABLE PieData(DataID INTEGER PRIMARY KEY AUTOINCREMENT, Section INTEGER, BillName STRING, BillAmount DOUBLE, BillPayed STRING)"
            let createIconChoiceTable = "CREATE TABLE IconChoice(IconID INTEGER PRIMARY KEY AUTOINCREMENT,Section INTEGER,SectionName STRING, IconName STRING, SectionColor STRING, IncomeSymbol STRING)"
-           let createDefaultStyleValues = "INSERT INTO IconChoice (Section,SectionName,IconName,SectionColor,IncomeSymbol)VALUES (1,'Debt','Debt','DebtColor','-'),(2,'Bills','Bills','BillsColor','-'),(3,'Recreation','Recreation','RecreationColor','-'),(4,'Saving','Saving','SavingColor','+'),(5,'Giving','Giving','GivingColor','-'),(6,'Investments','Investment','InvestmentColor','+');"
+           let createDefaultStyleValues = "INSERT INTO IconChoice (Section,SectionName,IconName,SectionColor,IncomeSymbol)VALUES (1,'Debt','Debt','\(defaultColorsIndexes[0])','-'),(2,'Bills','Bills','\(defaultColorsIndexes[1])','-'),(3,'Recreation','Recreation','\(defaultColorsIndexes[2])','-'),(4,'Saving','Saving','\(defaultColorsIndexes[3])','+'),(5,'Giving','Giving','\(defaultColorsIndexes[4])','-'),(6,'Investments','Investment','\(defaultColorsIndexes[5])','+');"
         
         do
            {

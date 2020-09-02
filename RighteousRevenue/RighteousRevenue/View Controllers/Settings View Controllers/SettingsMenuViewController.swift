@@ -51,6 +51,7 @@ class SettingsMenuController: UIViewController{
     
 //MARK: - Set Color Theme
     func setColorTheme(){
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
         tableView.theme_backgroundColor = GlobalPicker.backgroundColor
         tableView.theme_separatorColor = GlobalPicker.cardColor
         versionNumber.theme_textColor = GlobalPicker.textColor
@@ -82,22 +83,29 @@ extension SettingsMenuController: UITableViewDataSource, UITableViewDelegate {
        }
        
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           // Relay to delegate about menu item selection
-           let selectedItem = menuItems.allCases[indexPath.row]
-           switch selectedItem{
-           case .userSettings:
-           performSegue(withIdentifier: "UserSettings", sender: self)
-           tableView.deselectRow(at: indexPath, animated: false)
-           case .help:
-               performSegue(withIdentifier: "Help", sender: self)
-               tableView.deselectRow(at: indexPath, animated: false)
-           case .contact:
-               performSegue(withIdentifier: "ContactUs", sender: self)
-               tableView.deselectRow(at: indexPath, animated: false)
-           case .removeAds:
-               performSegue(withIdentifier: "RemoveAds", sender: self)
-               tableView.deselectRow(at: indexPath, animated: false)
-           }
+            var url : URL?
+            // Relay to delegate about menu item selection
+            let selectedItem = menuItems.allCases[indexPath.row]
+            switch selectedItem{
+                case .userSettings:
+                    performSegue(withIdentifier: "UserSettings", sender: self)
+                    tableView.deselectRow(at: indexPath, animated: false)
+                case .help:
+                    performSegue(withIdentifier: "Help", sender: self)
+                    tableView.deselectRow(at: indexPath, animated: false)
+                case .contact:
+                //performSegue(withIdentifier: "ContactUs", sender: self)
+                    url = URL(string: "http://forms.gle/DoZWRQf8a7m66pqs5")
+                    tableView.deselectRow(at: indexPath, animated: false)
+                case .removeAds:
+                    performSegue(withIdentifier: "RemoveAds", sender: self)
+                    tableView.deselectRow(at: indexPath, animated: false)
+            }
+
+            if(url != nil){
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            }
+     
        }
     
 }

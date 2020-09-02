@@ -30,6 +30,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var xButton: UIImageView!
+    @IBOutlet weak var runningTotalTxtbx: UILabel!
 
 //MARK: - Variables
     var idToDelete:[Int] = []
@@ -62,6 +63,7 @@ extension AddViewController{
             Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { timer in
                 self.setTextFieldTheme()
             }
+            runningTotalTxtbx.text = "0.00"
             refreshAfterDBCall()
         }
         
@@ -80,7 +82,8 @@ extension AddViewController{
                 {
                     db.removeBillFromDB(ID: item)
                 }
-
+                
+                runningTotalTxtbx.text = "0.00"
                 refreshAfterDBCall()
                 idToDelete.removeAll()
             }
@@ -137,6 +140,8 @@ extension AddViewController{
         editBtn.theme_tintColor = GlobalPicker.tabButtonTintColor
         addBtn.theme_tintColor = GlobalPicker.tabButtonTintColor
         xButton.theme_tintColor = GlobalPicker.tabButtonTintColor
+        
+        overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
         setCardViews()
         setTextFieldTheme()
     }
@@ -173,6 +178,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource{
         if (editingStyle == .delete)
         {
             db.removeBillFromDB(ID: sectionInfo[indexPath.row].DataId)
+            runningTotalTxtbx.text = "0.00"
             refreshAfterDBCall()
         }
     }
@@ -192,6 +198,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource{
             cell.billAmountTxtbx.text = String(format: "-$%.02f",sectionInfo[indexPath.row].billAmount)
         }
         //
+        runningTotalTxtbx.textColor = cell.billAmountTxtbx.textColor
         cell.payedCheckbx.tag = sectionInfo[indexPath.row].DataId
         return cell
     }
@@ -227,6 +234,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource{
         }else{
             cell.payedTxtUnderneath.theme_textColor = GlobalPicker.buttonTintColor
         }
+        
     }
     
     // Function That Sets Up the table view Delegate and Data Source
@@ -245,6 +253,15 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource{
     
     func grabSectionInfo(){
         sectionInfo = db.grabMoreInfoForSection(Section: Section)
+        var sectionAmnt = 0.00
+        for section in sectionInfo{
+            sectionAmnt += section.billAmount
+        }
+        
+        runningTotalTxtbx.text = String(format: "%.02f",sectionAmnt)
+        if(sectionAmnt == 0){
+            runningTotalTxtbx.theme_textColor = GlobalPicker.textColor
+        }
     }
     
 }
@@ -266,6 +283,7 @@ extension AddViewController: UITextFieldDelegate{
         billNameTxtbx.delegate = self
         billAmountTxtbx.addDoneCancelToolbar()
     }
+    
 }
 
 //MARK: - Google Admob Delegate

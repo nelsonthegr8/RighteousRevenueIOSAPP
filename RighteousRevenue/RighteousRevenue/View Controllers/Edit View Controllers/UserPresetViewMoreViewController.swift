@@ -56,6 +56,8 @@ extension UserPresetViewMoreViewController: UICollectionViewDelegateFlowLayout, 
             cell.imageOrIcon.theme_tintColor = GlobalPicker.tabButtonTintColor
         }
         
+        cell.imageOrIcon.layer.cornerRadius = 10
+        
         return cell
     }
     

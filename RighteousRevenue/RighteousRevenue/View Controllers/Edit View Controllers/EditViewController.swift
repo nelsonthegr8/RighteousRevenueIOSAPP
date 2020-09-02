@@ -144,6 +144,7 @@ class EditViewController: UIViewController, UIPopoverPresentationControllerDeleg
         headerTxt.theme_textColor = GlobalPicker.textColor
         sectionHeaderTxtxbx.foregroundColor = GlobalPicker.textBoxBorderColor[ThemeManager.currentThemeIndex]
         sectionHeaderTxtxbx.placeholderColor = UIColor(named: GlobalPicker.aTextColor[ThemeManager.currentThemeIndex])!
+        sectionHeaderTxtxbx.theme_textColor = GlobalPicker.textColor
         cardView.theme_backgroundColor = GlobalPicker.cardColor
         sectionColorLbl.theme_textColor = GlobalPicker.textColor
         sectionIconLbl.theme_textColor = GlobalPicker.textColor
@@ -152,6 +153,8 @@ class EditViewController: UIViewController, UIPopoverPresentationControllerDeleg
         expenseSwitch.theme_thumbTintColor = GlobalPicker.backgroundColor
         expenseSwitch.theme_onTintColor = GlobalPicker.tabButtonTintColor
         sectionIconImg.theme_tintColor = GlobalPicker.tabButtonTintColor
+        overrideUserInterfaceStyle = GlobalPicker.userInterfaceStyle[ThemeManager.currentThemeIndex]
+        sectionColorImg.layer.cornerRadius = 5
     }
     
     func setCardView(){

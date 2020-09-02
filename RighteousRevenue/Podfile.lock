@@ -6,12 +6,12 @@ PODS:
   - Google-Mobile-Ads-SDK (7.64.0):
     - GoogleAppMeasurement (~> 6.0)
     - GoogleUserMessagingPlatform (~> 1.1)
-  - GoogleAppMeasurement (6.7.2):
+  - GoogleAppMeasurement (6.8.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30905.0)
+    - nanopb (~> 1.30906.0)
   - GoogleUserMessagingPlatform (1.1.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
@@ -30,19 +30,21 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.7.2)"
   - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
-  - nanopb (1.30905.0):
-    - nanopb/decode (= 1.30905.0)
-    - nanopb/encode (= 1.30905.0)
-  - nanopb/decode (1.30905.0)
-  - nanopb/encode (1.30905.0)
+  - nanopb (1.30906.0):
+    - nanopb/decode (= 1.30906.0)
+    - nanopb/encode (= 1.30906.0)
+  - nanopb/decode (1.30906.0)
+  - nanopb/encode (1.30906.0)
   - NVActivityIndicatorView (5.0.1):
     - NVActivityIndicatorView/Base (= 5.0.1)
   - NVActivityIndicatorView/Base (5.0.1)
   - PromisesObjC (1.2.10)
+  - SCLAlertView (0.8)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
   - SwiftTheme (0.5.2)
+  - SwiftyStoreKit (0.16.1)
   - TextFieldEffects (1.6.0)
   - YouTubePlayer (0.7.2)
 
@@ -51,8 +53,10 @@ DEPENDENCIES:
   - Charts
   - Google-Mobile-Ads-SDK
   - NVActivityIndicatorView
+  - SCLAlertView
   - SQLite.swift
   - SwiftTheme
+  - SwiftyStoreKit
   - TextFieldEffects
   - YouTubePlayer
 
@@ -67,8 +71,10 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - PromisesObjC
+    - SCLAlertView
     - SQLite.swift
     - SwiftTheme
+    - SwiftyStoreKit
     - TextFieldEffects
     - YouTubePlayer
 
@@ -76,17 +82,19 @@ SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Google-Mobile-Ads-SDK: aec52559ce73ddf1e6478d1904dd71a741f1bc61
-  GoogleAppMeasurement: 3def7652b1f5b5a576178dc332e2a36a260fbef6
+  GoogleAppMeasurement: ecc30d0ab5b66d7d18e85ce1b8e2b345db60626d
   GoogleUserMessagingPlatform: 9dc714d2e1f0aa727b9cc52d266dc1b155f4c3f2
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftTheme: 8b02c479bb4441b2b6790ac126e961b1b6fb0932
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 309e83b16f93297d65cb7d9c011f89e3a7a63728
+PODFILE CHECKSUM: fe3acec363272e4279fd2d1435b282fdca45fd55
 
 COCOAPODS: 1.8.4

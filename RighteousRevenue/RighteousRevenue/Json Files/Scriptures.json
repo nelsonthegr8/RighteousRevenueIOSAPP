@@ -2,12 +2,24 @@
     
   "scriptureInfo":[
      {
-       "scriptureimg": "cat",
-       "biblelink": "Get Your Cat"
+       "scriptureimg": "1Timothy6:10",
+       "biblelink": "https://www.bible.com/bible/111/1ti.6.10.niv"
      },
      {
-       "scriptureimg": "cat",
-       "biblelink": "Get Your Cat"
+       "scriptureimg": "Luke12:15",
+       "biblelink": "https://www.bible.com/bible/111/luk.12.15.niv"
+     },
+     {
+       "scriptureimg": "Matthew6:2-4",
+       "biblelink": "https://www.bible.com/bible/111/mat.6.2-4.niv"
+     },
+     {
+       "scriptureimg": "Proverbs13:22",
+       "biblelink": "https://www.bible.com/bible/111/pro.13.22.niv"
+     },
+     {
+       "scriptureimg": "Matthew6:24",
+       "biblelink": "https://www.bible.com/bible/111/mat.6.24.niv"
      }
   ]
   

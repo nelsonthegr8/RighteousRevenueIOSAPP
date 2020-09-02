@@ -11,6 +11,7 @@ import UIKit
 class TutorialViewController: UIViewController, TutorialPageViewControllerDelegate {
 
     //MARK: - Outlets
+    @IBOutlet var containerView: UIView!
     
     @IBOutlet var pageControl: UIPageControl!
     
@@ -27,21 +28,27 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
     
     var tutorialPageViewController: TutorialPageViewController?
     var buttonsVisible = false
+    var alert:UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
+            CheckIfUserWantsNotifications()
+        }
         nextButton.isHidden = buttonsVisible
         skipButton.isHidden = buttonsVisible
+        setColorTheme()
     }
     
-    //MARK: - Actions
+    //MARK: - Actions and Functions
     
     @IBAction func skipButtonTapped(sender: UIButton){
-        dismiss(animated: true, completion: nil)
         UserDefaults.standard.set(false, forKey: "FirstLaunch")
+        dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func nextButtonTapped(sender: UIButton){
         
@@ -50,15 +57,49 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
             case 0...1:
                 tutorialPageViewController?.forwardPage()
             case 2:
-                dismiss(animated: true, completion: nil)
                 UserDefaults.standard.set(false, forKey: "FirstLaunch")
-                
+                dismiss(animated: true, completion: nil)
             default: break
             }
+             
         }
         
         updateUI()
     }
+    
+//MARK: - Function for setting up monthly alerts
+    func CheckIfUserWantsNotifications(){
+        
+           let center = UNUserNotificationCenter.current()
+           //first step give the person a choice to have monthly noties or not
+               center.requestAuthorization(options: [.alert, .sound], completionHandler: {(granted, error) in
+                
+                if(granted){
+                    DispatchQueue.main.async {
+                        self.alertSystem(message: "Great You will be getting monthly reminders to get those bills payed! Currently The reminders are set for the first of every month. You can change it to the 15th of every month in the Settings area if you would like.")
+                    }
+                 
+                }else{
+                    DispatchQueue.main.async {
+                        self.alertSystem(message: "At anytime you can go to user settings on your iphone and enable alerts to receive a monthly remider to pay your bills.")
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    SetUpTheMonthlyNotification(day: 1)
+                }
+                
+           })
+           
+       }
+    
+//MARK: - Alert System for Monthly Reminders
+    func alertSystem(message: String){
+        let alert = UIAlertController(title: "Righteous Revenue", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+        
     
     //MARK: - View Controller life cycle
     func updateUI(){
@@ -98,8 +139,11 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
         }
     }
     
-   func setColorTheme(){
-       
-   }
+    func setColorTheme(){
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
+        containerView.theme_backgroundColor = GlobalPicker.backgroundColor
+        pageControl.theme_pageIndicatorTintColor = GlobalPicker.cardColor
+        pageControl.theme_currentPageIndicatorTintColor = GlobalPicker.tabButtonTintColor
+    }
 
 }
