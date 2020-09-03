@@ -128,46 +128,45 @@ extension HomeViewController{
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupScriptureOfTheDayCollectionView(){
-//        let df = DateFormatter()
-//        df.dateFormat = "dd/MM/yyyy"
-//        let currentDate = df.string(from: Date())
-//
-//        let scriptureDate = UserDefaults.standard.string(forKey: "ScriptureOfTheDayDate")
-//
-//        if(UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay").count > 0 && currentDate == scriptureDate){
-//                scripturesOfTheDay = UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay")
-//            }else{
-//            scripturesOfTheDay = loadDailyScriptureJson(filename: "Scriptures") ?? []
-//            if(scripturesOfTheDay.count > 0){
-//                var randomIndexes:[Int] = []
-//                var scripturesPicked = false
-//
-//                while !scripturesPicked{
-//                    let randomNum = Int.random(in: 0..<scripturesOfTheDay.count)
-//
-//                    if(randomIndexes.count < 3){
-//                        if(!randomIndexes.contains(randomNum)){
-//                            randomIndexes.append(randomNum)
-//                        }
-//                    }else{
-//                        scripturesPicked = true
-//                    }
-//
-//                }
-//
-//                var newChosenScriptures:[ScripturesOfTheDay] = []
-//
-//                for indexes in randomIndexes{
-//                    newChosenScriptures.append(scripturesOfTheDay[indexes])
-//                }
-//
-//                scripturesOfTheDay = newChosenScriptures
-//
-//                UserDefaults.standard.setStructArray(scripturesOfTheDay, forKey: "ScripturesOfTheDay")
-//                UserDefaults.standard.set(currentDate, forKey: "ScriptureOfTheDayDate")
-//            }
-//        }
-        scripturesOfTheDay = loadDailyScriptureJson(filename: "Scriptures") ?? []
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy"
+        let currentDate = df.string(from: Date())
+
+        let scriptureDate = UserDefaults.standard.string(forKey: "ScriptureOfTheDayDate")
+
+        if(UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay").count > 0 && currentDate == scriptureDate){
+                scripturesOfTheDay = UserDefaults.standard.structArrayData(ScripturesOfTheDay.self, forKey: "ScripturesOfTheDay")
+            }else{
+            scripturesOfTheDay = loadDailyScriptureJson(filename: "Scriptures") ?? []
+            if(scripturesOfTheDay.count > 0){
+                var randomIndexes:[Int] = []
+                var scripturesPicked = false
+
+                while !scripturesPicked{
+                    let randomNum = Int.random(in: 0..<scripturesOfTheDay.count)
+
+                    if(randomIndexes.count < 3){
+                        if(!randomIndexes.contains(randomNum)){
+                            randomIndexes.append(randomNum)
+                        }
+                    }else{
+                        scripturesPicked = true
+                    }
+
+                }
+
+                var newChosenScriptures:[ScripturesOfTheDay] = []
+
+                for indexes in randomIndexes{
+                    newChosenScriptures.append(scripturesOfTheDay[indexes])
+                }
+
+                scripturesOfTheDay = newChosenScriptures
+
+                UserDefaults.standard.setStructArray(scripturesOfTheDay, forKey: "ScripturesOfTheDay")
+                UserDefaults.standard.set(currentDate, forKey: "ScriptureOfTheDayDate")
+            }
+        }
         scriptureOfTheDay.delegate = self
         scriptureOfTheDay.dataSource = self
     }

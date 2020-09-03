@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(UserDefaults.standard.object(forKey: "FirstLaunch") == nil){
             UserDefaults.standard.set(true, forKey: "FirstLaunch")
             UserDefaults.standard.set(false, forKey: "UserPayed")
-            UserDefaults.standard.set(1000.56,forKey: "UserMonthlyIncome")
+            UserDefaults.standard.set(1000.00,forKey: "UserMonthlyIncome")
             UserDefaults.standard.set(0,forKey: "SelectedReminderDay")
             UIApplication.shared.theme_setStatusBarStyle(GlobalPicker.StatusBarStyle, animated: true)
             if(CheckInternet.Connection()){
@@ -49,10 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GADMobileAds.sharedInstance().start(completionHandler: nil)
         }
         
-        
-        if(!UserDefaults.standard.bool(forKey: "CustomChoice")){
-            MyThemes.restoreLastTheme()
-        }
+        MyThemes.restoreLastTheme()
        
         let tabBar = UITabBar.appearance()
                 

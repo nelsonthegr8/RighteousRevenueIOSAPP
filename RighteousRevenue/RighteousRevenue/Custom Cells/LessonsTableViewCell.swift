@@ -16,7 +16,6 @@ class LessonsTableViewCell: UITableViewCell {
     @IBOutlet weak var CardTitle: UILabel!
     @IBOutlet weak var CardSubtitle: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -54,9 +54,9 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
         
         if let index = tutorialPageViewController?.currentIndex{
             switch  index {
-            case 0...1:
+            case 0...4:
                 tutorialPageViewController?.forwardPage()
-            case 2:
+            case 5:
                 UserDefaults.standard.set(false, forKey: "FirstLaunch")
                 dismiss(animated: true, completion: nil)
             default: break
@@ -106,13 +106,13 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
         
         if let index = tutorialPageViewController?.currentIndex{
             switch index {
-            case 0...1:
+            case 0...4:
                 if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
                     nextButton.setTitle("NEXT", for: .normal)
                     skipButton.isHidden = false
                 }
                 
-            case 2:
+            case 5:
                 if(UserDefaults.standard.bool(forKey: "FirstLaunch")){
                     nextButton.setTitle("Get Started", for: .normal)
                     skipButton.isHidden = true
@@ -144,6 +144,7 @@ class TutorialViewController: UIViewController, TutorialPageViewControllerDelega
         containerView.theme_backgroundColor = GlobalPicker.backgroundColor
         pageControl.theme_pageIndicatorTintColor = GlobalPicker.cardColor
         pageControl.theme_currentPageIndicatorTintColor = GlobalPicker.tabButtonTintColor
+        skipButton.theme_setTitleColor(GlobalPicker.tabButtonTintColor, forState: .normal)
     }
 
 }

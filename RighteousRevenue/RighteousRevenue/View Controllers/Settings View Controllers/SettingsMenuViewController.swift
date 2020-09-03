@@ -63,7 +63,7 @@ class SettingsMenuController: UIViewController{
         let version = dictionary[kVersion] as! String
         let build = dictionary[kBuildNumber] as! String
         
-        return "App version \(version)(\(build))"
+        return "App version \(version).\(build)"
     }
 }
 

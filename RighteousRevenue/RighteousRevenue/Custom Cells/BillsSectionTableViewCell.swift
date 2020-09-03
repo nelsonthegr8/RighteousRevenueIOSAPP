@@ -18,7 +18,6 @@ class BillsSectionTableViewCell: UITableViewCell, BEMCheckBoxDelegate {
     @IBOutlet weak var payedTxtUnderneath: UILabel!
     let db = dataAccess()
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
