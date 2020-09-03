@@ -9,7 +9,14 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+<<<<<<< Updated upstream
   - SideMenu
+=======
+  - Google-Mobile-Ads-SDK
+  - GoogleUserMessagingPlatform
+  - NVActivityIndicatorView
+  - SCLAlertView
+>>>>>>> Stashed changes
   - SQLite.swift
 
 SPEC REPOS:
@@ -23,6 +30,10 @@ SPEC CHECKSUMS:
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
+<<<<<<< Updated upstream
 PODFILE CHECKSUM: ff4502c7313c9c3d8b8a7d20e8900fbc7fd7fd63
+=======
+PODFILE CHECKSUM: 132c5641b6abf7c609d19202f0cba60673701afc
+>>>>>>> Stashed changes
 
 COCOAPODS: 1.8.4

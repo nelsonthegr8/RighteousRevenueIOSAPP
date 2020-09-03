@@ -7,6 +7,18 @@ target 'RighteousRevenue' do
 pod 'Charts'
 pod 'SideMenu'
 pod 'SQLite.swift'
+<<<<<<< Updated upstream
+=======
+pod 'Google-Mobile-Ads-SDK'
+pod 'TextFieldEffects'
+pod 'BEMCheckBox'
+pod 'YouTubePlayer'
+pod 'NVActivityIndicatorView'
+pod 'SwiftTheme'
+pod 'SwiftyStoreKit'
+pod 'SCLAlertView'
+pod 'GoogleUserMessagingPlatform'
+>>>>>>> Stashed changes
 
   # Pods for RighteousRevenue
 
