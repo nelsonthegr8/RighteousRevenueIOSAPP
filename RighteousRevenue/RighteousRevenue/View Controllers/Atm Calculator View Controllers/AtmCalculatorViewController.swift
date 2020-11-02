@@ -68,6 +68,9 @@ class AtmCalculatorViewController: UIViewController {
         if(billDropDown.selectedIndex != nil)
         {
             grabAtmBillsInfo(id: billDropDown.optionIds![billDropDown.selectedIndex!])
+            breakdownAmnt = 0
+            atmTotalLbl.text = String(format: "$%.02f",breakdownAmnt)
+            calculateAtmInformation()
         }
     }
     
