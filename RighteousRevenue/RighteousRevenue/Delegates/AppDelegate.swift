@@ -14,6 +14,11 @@ import SwiftyStoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+      
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        
         // Override point for customization after application launch.
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
@@ -43,10 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else{
                 UserDefaults.standard.set(true, forKey: "InternetDisconnected")
             }
-        }
-        
-        if(!UserDefaults.standard.bool(forKey: "UserPayed")){
-            GADMobileAds.sharedInstance().start(completionHandler: nil)
         }
         
         MyThemes.restoreLastTheme()

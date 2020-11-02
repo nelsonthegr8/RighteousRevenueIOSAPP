@@ -6,7 +6,6 @@ target 'RighteousRevenue' do
   use_frameworks!
 pod 'Charts'
 pod 'SQLite.swift'
-pod 'Google-Mobile-Ads-SDK'
 pod 'TextFieldEffects'
 pod 'BEMCheckBox'
 pod 'YouTubePlayer'
@@ -14,6 +13,8 @@ pod 'NVActivityIndicatorView'
 pod 'SwiftTheme'
 pod 'SwiftyStoreKit'
 pod 'SCLAlertView'
+pod 'iOSDropDown'
+pod 'Google-Mobile-Ads-SDK'
 
   # Pods for RighteousRevenue
 

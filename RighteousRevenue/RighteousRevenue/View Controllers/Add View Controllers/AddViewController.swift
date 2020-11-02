@@ -36,6 +36,7 @@ class AddViewController: UIViewController {
     var idToDelete:[Int] = []
     public var Section: Int = 0
     public var SectionTitle: String = ""
+    public var isAccessedFromCalculator = false
     var sectionInfo: [MoreInfoForPieSection] = []
     let db = dataAccess()
     
@@ -45,7 +46,16 @@ class AddViewController: UIViewController {
 extension AddViewController{
     
     @IBAction func xButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "returnHome", sender: dismiss(animated: true, completion: nil))
+        
+        if(isAccessedFromCalculator)
+        {
+            performSegue(withIdentifier: "returnToAtmCalculatorView", sender: dismiss(animated: true, completion: nil))
+        }
+        else
+        {
+            performSegue(withIdentifier: "returnHome", sender: dismiss(animated: true, completion: nil))
+        }
+        
     }
 
     @IBAction func addBtnPressed(_ sender: Any) {

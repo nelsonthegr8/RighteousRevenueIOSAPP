@@ -26,7 +26,9 @@ enum GlobalPicker {
     static let userInterfaceStyle: [UIUserInterfaceStyle] = [.light,.dark]
     static let textBoxBorderColor: [UIColor] = [UIColor(named: "LightBorderBoxColor")!,UIColor(named: "DarkButtonColor")!]
     static let colorSchemeImageBorderColor: [UIColor] = [UIColor(named: "LightUIColor")!,UIColor(named: "DarkUIColor")!]
+    static let colorSchemeDropDownColor: [UIColor] = [UIColor(named: "LightCardColor")!,UIColor(named: "DarkCardColor")!]
     static let ShadowColors = [UIColor.gray.cgColor,UIColor(named: "DarkCardColor")?.cgColor]
     static let StatusBarStyle:ThemeStatusBarStylePicker = [.darkContent,.lightContent]
+    static let buttonColor: [UIColor] = [UIColor(named: "LightTabButtonColor")!, UIColor(named: "DarkTabButtonColor")!]
     
 }

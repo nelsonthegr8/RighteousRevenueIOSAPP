@@ -18,6 +18,8 @@
 		1200563124E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */; };
 		12124A2524DB4247008A7AF2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */; };
 		12124A2624DB4247008A7AF2 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */; };
+		122D50C0254F3A3F00D8270E /* AtmBillInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122D50BF254F3A3F00D8270E /* AtmBillInfoCollectionViewCell.swift */; };
+		122D50C5254F50ED00D8270E /* atmCalculationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122D50C4254F50ED00D8270E /* atmCalculationResults.swift */; };
 		12348A3424EB32F70077ECBA /* User Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12348A3324EB32F70077ECBA /* User Settings.storyboard */; };
 		12348A3624EB38BE0077ECBA /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A3524EB38BE0077ECBA /* UserSettingsViewController.swift */; };
 		12348A4624EC0F540077ECBA /* ThemeSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12348A4524EC0F540077ECBA /* ThemeSwitcher.swift */; };
@@ -58,6 +60,7 @@
 		12C1981B24D77D01002A7151 /* LessonsMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */; };
 		12C1981D24D77E5E002A7151 /* LessonCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1981C24D77E5E002A7151 /* LessonCards.swift */; };
 		12C1982624D8C8F1002A7151 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1982524D8C8F1002A7151 /* DataAccess.swift */; };
+		12D78A74254B657F002861C2 /* AtmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D78A73254B657F002861C2 /* AtmCalculatorViewController.swift */; };
 		12F171FA24F8898100FF40C5 /* ScripturesOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */; };
 		12F171FC24F97B8900FF40C5 /* UserDefaultsExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */; };
 		12F3884424F173C300B8337E /* UserSettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3884324F173C300B8337E /* UserSettingsCollectionViewCell.swift */; };
@@ -97,6 +100,8 @@
 		1200563024E996EF004A6D86 /* AddDoneCancelButtonToTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDoneCancelButtonToTextField.swift; sourceTree = "<group>"; };
 		12124A2324DB4247008A7AF2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		12124A2424DB4247008A7AF2 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		122D50BF254F3A3F00D8270E /* AtmBillInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmBillInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		122D50C4254F50ED00D8270E /* atmCalculationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmCalculationResults.swift; sourceTree = "<group>"; };
 		12348A3324EB32F70077ECBA /* User Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "User Settings.storyboard"; sourceTree = "<group>"; };
 		12348A3524EB38BE0077ECBA /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		12348A4524EC0F540077ECBA /* ThemeSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitcher.swift; sourceTree = "<group>"; };
@@ -144,6 +149,7 @@
 		12C1981A24D77D01002A7151 /* LessonsMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsMoreViewController.swift; sourceTree = "<group>"; };
 		12C1981C24D77E5E002A7151 /* LessonCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCards.swift; sourceTree = "<group>"; };
 		12C1982524D8C8F1002A7151 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		12D78A73254B657F002861C2 /* AtmCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmCalculatorViewController.swift; sourceTree = "<group>"; };
 		12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScripturesOfTheDay.swift; sourceTree = "<group>"; };
 		12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtention.swift; sourceTree = "<group>"; };
 		12F3884324F173C300B8337E /* UserSettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 				12C1981C24D77E5E002A7151 /* LessonCards.swift */,
 				12C1982524D8C8F1002A7151 /* DataAccess.swift */,
 				12F171F924F8898100FF40C5 /* ScripturesOfTheDay.swift */,
+				122D50C4254F50ED00D8270E /* atmCalculationResults.swift */,
 			);
 			path = Constructors;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 		12C03F4824D60B1000C01778 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				12D78A72254B653A002861C2 /* Atm Calculator View Controllers */,
 				1200563F24EB29EA004A6D86 /* Settings View Controllers */,
 				1200563E24EB29C5004A6D86 /* Edit View Controllers */,
 				1200563D24EB29B3004A6D86 /* Add View Controllers */,
@@ -400,6 +408,7 @@
 				12711AF524E333F7001281AB /* UserPresetCollectionViewCell.swift */,
 				12348A4B24EC5AA50077ECBA /* ScriptureOfTheDayCollectionViewCell.swift */,
 				12F3884324F173C300B8337E /* UserSettingsCollectionViewCell.swift */,
+				122D50BF254F3A3F00D8270E /* AtmBillInfoCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -414,6 +423,14 @@
 				12F171FB24F97B8900FF40C5 /* UserDefaultsExtention.swift */,
 			);
 			path = "Static Gobal Items";
+			sourceTree = "<group>";
+		};
+		12D78A72254B653A002861C2 /* Atm Calculator View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12D78A73254B657F002861C2 /* AtmCalculatorViewController.swift */,
+			);
+			path = "Atm Calculator View Controllers";
 			sourceTree = "<group>";
 		};
 		6829D4B74D4B32E3BD259759 /* Frameworks */ = {
@@ -676,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D78A74254B657F002861C2 /* AtmCalculatorViewController.swift in Sources */,
 				12711AE424E0F18F001281AB /* UserSectionInput.swift in Sources */,
 				12C1980D24D66F49002A7151 /* SettingsMenuViewController.swift in Sources */,
 				12711AEC24E2F7BA001281AB /* HomePopoverViewController.swift in Sources */,
@@ -695,6 +713,7 @@
 				12711AF624E333F7001281AB /* UserPresetCollectionViewCell.swift in Sources */,
 				12348A4624EC0F540077ECBA /* ThemeSwitcher.swift in Sources */,
 				12711AFC24E348C8001281AB /* ColorNames.swift in Sources */,
+				122D50C5254F50ED00D8270E /* atmCalculationResults.swift in Sources */,
 				12F3884424F173C300B8337E /* UserSettingsCollectionViewCell.swift in Sources */,
 				12711AFE24E58E54001281AB /* GoogleAdInformation.swift in Sources */,
 				12348A4824EC101C0077ECBA /* GlobalThemePicker.swift in Sources */,
@@ -713,6 +732,7 @@
 				12C1981824D767C1002A7151 /* LessonsTableViewCell.swift in Sources */,
 				12711AF024E319B4001281AB /* EditViewController.swift in Sources */,
 				12B80A6A24F3402E00F3B66E /* CheckIfUserWantsMonthlyReminders.swift in Sources */,
+				122D50C0254F3A3F00D8270E /* AtmBillInfoCollectionViewCell.swift in Sources */,
 				12711AE624E0F510001281AB /* MoreInfoForPieSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,6 +916,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenueApp;
 				PRODUCT_NAME = Revenue;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -918,6 +939,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NelsonBrumaire.RighteousRevenueApp;
 				PRODUCT_NAME = Revenue;
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -15,11 +15,8 @@ public func addGoogleAdsToView(addSection: GADBannerView, view: UIViewController
     if(!UserDefaults.standard.bool(forKey: "UserPayed")){
         addSection.adUnitID = globalAddUnitID;
         addSection.rootViewController = view;
-        let addRequest = GADRequest()
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
-        [globalAddUnitID]; // Sample device ID
-        addSection.load(addRequest)
-        print(addSection.adSize)
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "f832a6d30718bf1b9e619800e1173c6d" ] // Sample device ID
+        addSection.load(GADRequest())
     }else{
         addSection.removeConstraints(addSection.constraints)
         addSection.heightAnchor.constraint(equalToConstant: 1).isActive = true

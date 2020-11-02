@@ -191,6 +191,17 @@ class dataAccess{
         return result
     }
     
+    public func getSectionIds() -> [Int]{
+        var result:[Int] = []
+        let query = "SELECT Section FROM IconChoice"
+        
+        for row in try! database.prepare(query){
+            result.append(Int(row[0] as! Int64))
+        }
+        
+        return result
+    }
+    
     public func removeBillFromDB(ID: Int){
         let deleteBill = "DELETE FROM PieData WHERE DataID = \(ID);"
         

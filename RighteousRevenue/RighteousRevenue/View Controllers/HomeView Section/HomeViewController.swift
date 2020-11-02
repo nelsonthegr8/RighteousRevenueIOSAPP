@@ -65,6 +65,7 @@ extension HomeViewController{
             monthlyIncomeAmnt = UserDefaults.standard.double(forKey: "UserMonthlyIncome")
             updateUserPieTextWhenAmountIsChanged()
         }
+        updateUserPieTextWhenAmountIsChanged()
     }
     
     override func viewDidAppear(_ animated: Bool) {

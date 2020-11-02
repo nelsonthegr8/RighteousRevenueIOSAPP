@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iA-G1-gB7">
                         <rect key="frame" x="10" y="17" width="400" height="376"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="2uk-JC-vi9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2uk-JC-vi9">
                                 <rect key="frame" x="8" y="8" width="384" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2uk-JC-vi9" secondAttribute="height" multiplier="16:9" id="Mce-qh-K3z"/>
@@ -63,8 +64,8 @@
                     <constraint firstItem="6iA-G1-gB7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="qKc-iS-eox"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="DarkUIColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="DarkUIColor"/>
             <connections>
                 <outlet property="CardImg" destination="2uk-JC-vi9" id="VLJ-VZ-d56"/>
                 <outlet property="CardSubtitle" destination="y6f-1g-R3P" id="WdK-bU-qPt"/>
@@ -75,7 +76,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cat" width="300" height="168"/>
         <namedColor name="DarkCardColor">
             <color red="0.25490196078431371" green="0.25882352941176473" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
