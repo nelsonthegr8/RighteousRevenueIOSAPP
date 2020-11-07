@@ -16,7 +16,13 @@ class atmCalculationResult{
     var five = 0
     var one = 0
     
+    init()
+    {
+        
+    }
+    
     init(amount: Int, hundredEnabled: Bool, fiftyEnabled: Bool) {
+        
         var remainder = amount
         
         if(hundredEnabled)

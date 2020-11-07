@@ -44,6 +44,8 @@ class AtmCalculatorViewController: UIViewController {
     var billsInfo:[MoreInfoForPieSection] = []
     let reuseIdentifier = "atmBillInfoCell"
     var breakdownAmnt:Double = 0.0
+    var defaultAtmCalc = atmCalculationResult()
+    var selectedAmounts:[Int] = []
     
 //MARK: View Life Cycle
     override func viewDidLoad() {
@@ -70,6 +72,7 @@ class AtmCalculatorViewController: UIViewController {
             grabAtmBillsInfo(id: billDropDown.optionIds![billDropDown.selectedIndex!])
             breakdownAmnt = 0
             atmTotalLbl.text = String(format: "$%.02f",breakdownAmnt)
+            selectedAmounts.removeAll()
             calculateAtmInformation()
         }
     }
@@ -214,12 +217,13 @@ extension AtmCalculatorViewController: UICollectionViewDelegateFlowLayout,UIColl
         {
             cell.rowChkbx.setOn(false, animated: true)
             billsInfo[i].selected = false
-            breakdownAmnt = breakdownAmnt - billsInfo[i].billAmount
+            let j = selectedAmounts.firstIndex(of: Int(billsInfo[i].billAmount))
+            selectedAmounts.remove(at: j!)
             calculateAtmInformation()
         }else{
             cell.rowChkbx.setOn(true, animated: true)
             billsInfo[i].selected = true
-            breakdownAmnt = breakdownAmnt + billsInfo[i].billAmount
+            selectedAmounts.append(Int(billsInfo[i].billAmount))
             calculateAtmInformation()
         }
         
@@ -258,22 +262,43 @@ extension AtmCalculatorViewController{
         billDropDown.didSelect { (selectedName, index, id) in
             self.grabAtmBillsInfo(id: id)
             self.breakdownAmnt = 0
+            self.selectedAmounts.removeAll()
             self.calculateAtmInformation()
         }
     }
     
     private func calculateAtmInformation()
     {
-        let info = atmCalculationResult(amount: Int(breakdownAmnt), hundredEnabled: switch100.isOn, fiftyEnabled: switch50.isOn)
+        calcAtmInfoHelper()
         
         atmTotalLbl.text = String(format: "$%.02f",breakdownAmnt)
-        lbl100.text = String(info.hundred)
-        lbl50.text = String(info.fifty)
-        lbl20.text = String(info.twenty)
-        lbl10.text = String(info.ten)
-        lbl5.text = String(info.five)
-        lbl1.text = String(info.one)
+        lbl100.text = String(defaultAtmCalc.hundred)
+        lbl50.text = String(defaultAtmCalc.fifty)
+        lbl20.text = String(defaultAtmCalc.twenty)
+        lbl10.text = String(defaultAtmCalc.ten)
+        lbl5.text = String(defaultAtmCalc.five)
+        lbl1.text = String(defaultAtmCalc.one)
         
+    }
+    
+    private func calcAtmInfoHelper()
+    {
+        defaultAtmCalc = atmCalculationResult()
+        breakdownAmnt = 0
+        
+        if(selectedAmounts.count > 0){
+            for Amount in selectedAmounts{
+                let info = atmCalculationResult(amount: Amount, hundredEnabled: switch100.isOn, fiftyEnabled: switch50.isOn)
+                
+                breakdownAmnt += Double(Amount)
+                defaultAtmCalc.hundred += info.hundred
+                defaultAtmCalc.fifty += info.fifty
+                defaultAtmCalc.twenty += info.twenty
+                defaultAtmCalc.ten += info.ten
+                defaultAtmCalc.five += info.five
+                defaultAtmCalc.one += info.one
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
