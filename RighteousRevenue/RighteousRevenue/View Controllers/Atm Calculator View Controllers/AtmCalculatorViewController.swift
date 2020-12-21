@@ -18,6 +18,7 @@ class AtmCalculatorViewController: UIViewController {
     @IBOutlet weak var billDropDown: DropDown!
     @IBOutlet var billsCollectionView: UICollectionView!
     @IBOutlet var atmTotalLbl: UILabel!
+    @IBOutlet var switch10: UISwitch!
     @IBOutlet var switch50: UISwitch!
     @IBOutlet var switch100: UISwitch!
     @IBOutlet var lbl100: UILabel!
@@ -37,6 +38,7 @@ class AtmCalculatorViewController: UIViewController {
     @IBOutlet var calculationsView: UIView!
     @IBOutlet var cardView: UIView!
     @IBOutlet var navButton: UIBarButtonItem!
+    @IBOutlet var breakdownSegmentedControl: UISegmentedControl!
     
     
 //MARK: Variables
@@ -98,6 +100,8 @@ class AtmCalculatorViewController: UIViewController {
         UIApplication.shared.theme_setStatusBarStyle(GlobalPicker.StatusBarStyle, animated: true)
         addSection.backgroundColor = UIColor.clear
         navButton.theme_tintColor = GlobalPicker.tabButtonTintColor
+        breakdownSegmentedControl.theme_selectedSegmentTintColor = GlobalPicker.tabButtonTintColor
+        breakdownSegmentedControl.theme_tintColor = GlobalPicker.backgroundColor
         styleSwitches()
         styleViewWithThemeIndex()
         roundViewCorners()
@@ -132,7 +136,7 @@ class AtmCalculatorViewController: UIViewController {
     
     private func styleSwitches()
     {
-        let switches:[UISwitch] = [switch50,switch100]
+        let switches:[UISwitch] = [switch50,switch100,switch10]
         
         for Switch in switches
         {
@@ -156,6 +160,14 @@ class AtmCalculatorViewController: UIViewController {
     }
     
 //MARK: IBActions
+    
+    @IBAction func breakdownSegmentedTabSwitched(_ sender: UISegmentedControl) {
+        calculateAtmInformation()
+    }
+    
+    @IBAction func TenSwitchTapped(_ sender: Any) {
+        calculateAtmInformation()
+    }
     
     @IBAction func FiftySwitchTapped(_ sender: Any) {
         calculateAtmInformation()
@@ -285,10 +297,20 @@ extension AtmCalculatorViewController{
     {
         defaultAtmCalc = atmCalculationResult()
         breakdownAmnt = 0
+        var breakdownOffsetNum = 0
+        
+        switch breakdownSegmentedControl.selectedSegmentIndex {
+        case 0:
+            breakdownOffsetNum = 4
+        case 1:
+            breakdownOffsetNum = 2
+        default:
+            breakdownOffsetNum = 1
+        }
         
         if(selectedAmounts.count > 0){
             for Amount in selectedAmounts{
-                let info = atmCalculationResult(amount: Amount, hundredEnabled: switch100.isOn, fiftyEnabled: switch50.isOn)
+                let info = atmCalculationResult(amount: Amount, hundredEnabled: switch100.isOn, fiftyEnabled: switch50.isOn, tenEnabled: switch10.isOn, breakdownOffset: breakdownOffsetNum)
                 
                 breakdownAmnt += Double(Amount)
                 defaultAtmCalc.hundred += info.hundred

@@ -21,9 +21,9 @@ class atmCalculationResult{
         
     }
     
-    init(amount: Int, hundredEnabled: Bool, fiftyEnabled: Bool) {
+    init(amount: Int, hundredEnabled: Bool, fiftyEnabled: Bool, tenEnabled: Bool, breakdownOffset: Int) {
         
-        var remainder = amount
+        var remainder = amount / breakdownOffset
         
         if(hundredEnabled)
         {
@@ -40,8 +40,11 @@ class atmCalculationResult{
         twenty = remainder / 20
         remainder = remainder - (twenty * 20)
         
-        ten = remainder / 10
-        remainder = remainder - (ten * 10)
+        if(tenEnabled)
+        {
+            ten = remainder / 10
+            remainder = remainder - (ten * 10)
+        }
         
         five = remainder / 5
         remainder = remainder - (five * 5)
